@@ -15,8 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('admin');
+})->middleware(['auth'])->name('dashboard');
+
+Route::get('/admin', function () {
+    return view('admin');
+})->middleware(['auth'])->name('admin');
+
+Route::get('/lecturer', function () {
+    return view('lecturer');
+})->middleware(['auth'])->name('lecturer');
+
+Route::get('/invig', function () {
+    return view('invig');
+})->middleware(['auth'])->name('invig');
+
+Route::get('/student', function () {
+    return view('student');
+})->middleware(['auth'])->name('student');
+
+require __DIR__.'/auth.php';
