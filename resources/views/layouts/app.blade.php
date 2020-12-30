@@ -14,8 +14,7 @@
                     <form action="{{ route('home') }}" method="get" >
                         <button type="submit" class="inline-flex h-full py-4 px-3 hover:bg-white hover:text-primary focus:outline-none focus:text-highlight">
                             <div class="flex items-center">
-                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-                                </svg>
+                                    <x-home-logo/>
                                 <span class="w-2">
                                 </span>
                                 Home
@@ -25,7 +24,6 @@
                 </li>
 
                 <!--usertype navbar connection-->
-
                             @switch(auth()->user()->usertype)
                                 @case('admin')
                                     <a href="{{ route('adminmanagemodules')}}" class="p-3">Manage Modules</a>
@@ -71,6 +69,10 @@
                                     @break
                                 @default
                             @endswitch
+                            <span class="w-8"></span>
+                            <li>
+                                <img class="object-contain py-1.5 w-36" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
+                            </li>
                     </li>
                 </ul>
             <ul class= "flex items-center">
@@ -79,9 +81,9 @@
                             <a href="" class="p-3 hover:text-highlight">{{auth()->user()->name}}</a>
                     </li>
                     <li>
-                        <form action="{{ route('logout') }}" method="post" class="inline px-3 py-4 hover:bg-white hover:text-primary h-full border-none focus:outline-none focus:text-highlight">
+                        <form action="{{ route('logout') }}" method="post">
                             @csrf
-                            <button type="submit">Logout</button>
+                            <button type="submit" class="inline px-3 py-4 hover:bg-white hover:text-primary h-full border-none focus:outline-none focus:text-highlight">Logout</button>
                         </form>
                     </li>
                 @endauth
