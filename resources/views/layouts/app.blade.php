@@ -73,11 +73,6 @@
                             @endswitch
                     </li>
                 </ul>
-            <ul>
-                <li>
-                    <img src="/img/nmu.png" alt="">
-                </li>
-            </ul>
             <ul class= "flex items-center">
                 @auth
                     <li>
