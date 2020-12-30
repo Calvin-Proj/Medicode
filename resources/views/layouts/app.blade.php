@@ -7,13 +7,24 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>NMU Test Schedular</title>
     </head>
-    <body class="bg-gray-400">
-        <nav class="p-6 bg-white flex justify-between mb-5">
+    <body class="bg-primary">
+        <nav class=" bg-secondary text-white flex justify-between mb-5 h-14">
+            <ul class="flex items-center">
+                <li>
+                    <form action="{{ route('home') }}" method="get" >
+                        <button type="submit" class="inline-flex h-full py-4 px-3 hover:bg-white hover:text-primary focus:outline-none focus:text-highlight">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                </svg>
+                                <span class="w-2">
+                                </span>
+                                Home
+                            </div>
+                        </button>
+                </li>
 
                 <!--usertype navbar connection-->
-                <ul class= "flex items center">
-                    <li>
-                            <a href="/" class="p-3">Home</a>
+
                             @switch(auth()->user()->usertype)
                                 @case('admin')
                                     <a href="{{ route('adminmanagemodules')}}" class="p-3">Manage Modules</a>
@@ -34,40 +45,30 @@
                                     <a href="{{ route('invighours')}}" class="p-3">Submit Hours</a>
                                     @break
                                 @case('student')
-                                    <a href="{{ route('studenttestsched')}}" class="p-3">View Test Schedule</a>
-                                    <a href="{{ route('studentbooksicktest')}}" class="p-3">Book Sick Test</a>
+                                    <a href="{{ route('studenttestsched')}}" class="px-3 py-4 hover:bg-white hover:text-primary h-full focus:text-highlight">
+                                        View Test Schedule
+                                    </a>
+                                    <a href="{{ route('studentbooksicktest')}}" class="px-3 py-4 hover:bg-white hover:text-primary h-full focus:text-highlight">
+                                        Book Sick Test
+                                    </a>
                                     @break
                                 @default
-
                             @endswitch
                     </li>
-
                 </ul>
 
-            <ul class= "flex items center">
+            <ul class= "flex items-center">
                 @auth
                     <li>
-                            <a href="" class="p-3">{{auth()->user()->name}}</a>
+                            <a href="" class="p-3 hover:text-highlight">{{auth()->user()->name}}</a>
                     </li>
                     <li>
-                        <form action="{{ route('logout') }}" method="post" class="inline">
+                        <form action="{{ route('logout') }}" method="post" class="inline px-3 py-4 hover:bg-white hover:text-primary h-full border-none focus:outline-none focus:text-highlight">
                             @csrf
                             <button type="submit">Logout</button>
                         </form>
-
                     </li>
                 @endauth
-                @guest
-                    <li>
-                        <a href="{{ route('login')}}" class="p-3">Login</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('register')}}" class="p-3">Register</a>
-                    </li>
-                @endguest
-
-
-
             </ul>
         </nav>
 
