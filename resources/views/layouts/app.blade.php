@@ -11,18 +11,9 @@
         <nav class=" bg-secondary text-white flex justify-between mb-5 h-14">
             <ul class="flex items-center">
                 <li>
-                    <form action="{{ route('home') }}" method="get" >
-                        <button type="submit" class="inline-flex h-full py-4 px-3 hover:bg-white hover:text-primary focus:outline-none focus:text-highlight">
-                            <div class="flex items-center">
-                                    <x-home-logo/>
-                                <span class="w-2">
-                                </span>
-                                Home
-                            </div>
-                        </button>
-                    </form>
+                    <!--home/dashboard button-->
+                       <x-home-button/>
                 </li>
-
                 <!--usertype navbar connection-->
                             @switch(auth()->user()->usertype)
                                 @case('admin')
@@ -44,22 +35,11 @@
                                     <a href="{{ route('invighours')}}" class="p-3">Submit Hours</a>
                                     @break
                                 @case('student')
-                                <form action="{{ route('studenttestsched') }}" method="get" >
-                                    <button type="submit" class="inline-flex h-full py-4 px-3 hover:bg-white hover:text-primary focus:outline-none focus:text-highlight">
-                                        <div class="flex items-center">
-                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M9 4.8A7.97 7.97 0 005.5 4c-1.25 0-2.44.29-3.5.8v10a7.97 7.97 0 013.5-.8c1.67 0 3.22.51 4.5 1.39A7.96 7.96 0 0114.5 14c1.25 0 2.44.29 3.5.8v-10a7.97 7.97 0 00-3.5-.8c-1.25 0-2.44.29-3.5.8V12a1 1 0 11-2 0V4.8z"/>
-                                            </svg>
-                                            <span class="w-2">
-                                            </span>
-                                            View Test Schedule
-                                        </div>
-                                    </button>
-                                </form>
+                                            <x-test-sched-ico/>
                                 <form action="{{ route('studentbooksicktest') }}" method="get" >
                                     <button type="submit" class="inline-flex h-full py-4 px-3 hover:bg-white hover:text-primary focus:outline-none focus:text-highlight">
                                         <div class="flex items-center">
-                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/>
-                                            </svg>
+                                            <x-stud-sick-ico/>
                                             <span class="w-2">
                                             </span>
                                             Book Sick Test
