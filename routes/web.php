@@ -42,7 +42,7 @@ Route::get('/invig/subhours', [InvigController::class, 'indexinvighours'])->name
 });
 //student routes + Multi authenticate
 Route::middleware(['checkUsertype:stud'])->group(function(){
-Route::get('/student/testschedule', [StudentController::class, 'indextestsched'])->name('studenttestsched');
+Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
 });
 
