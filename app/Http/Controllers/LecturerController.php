@@ -28,4 +28,5 @@ class LecturerController extends Controller
     {
         return view('usertypes.lecturer.managemiscon');
     }
+    
 }
