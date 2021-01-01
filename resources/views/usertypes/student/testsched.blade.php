@@ -1,7 +1,5 @@
-@extends('layouts.app')
-
-@section('content')
 <!DOCTYPE html>
+<html lang="en" class="antialiased">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -128,7 +126,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal">
+<body class="bg-gray-100 text-gray-900 tracking-wider leading-normal flex">
 
 <!--Container-->
 <div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
@@ -193,6 +191,4 @@
     });
     </script>
 </body>
-    @endsection
-
-</div>
+</html>
