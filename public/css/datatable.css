@@ -82,14 +82,13 @@ table.dataTable thead tr th {
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:not(.disabled) {
-    background: #6875f5 !important;
+    background: #103A5C !important;
     color: #ffffff !important;
-    border-color: #8da2fb !important
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    background-color: #8da2fb !important;
-    color: #ffffff !important;
+    background-color: #103A5C !important;
+    color: #FFCC01 !important;
     border-color: #8da2fb !important
 }
 
