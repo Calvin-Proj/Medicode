@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="{{ url('/css/datatable.css') }}" rel="stylesheet">
 <div class="container bg-white min-w-full flex justify-center">
         <table id="managetest" class="px-4 flex-auto items-center">
             <thead class="">
