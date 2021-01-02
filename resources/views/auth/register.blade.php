@@ -45,15 +45,13 @@
                                 name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button class="ml-4">
+            <div class="flex items-center mt-10">
+                <x-button class="">
                     {{ __('Register') }}
                 </x-button>
             </div>
         </form>
             <div>
-                <x-button-r>
-                </x-button-r>
             </div>
     </x-auth-card>
 </x-guest-layout>

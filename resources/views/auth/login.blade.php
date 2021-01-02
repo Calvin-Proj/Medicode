@@ -39,7 +39,15 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
-                <div class="flex justify-center md:px-8 mt-4 py-2">
+            <div class="flex justify-center mt-4">
+                <x-button class="">
+                    {{ __('Login') }}
+                </x-button>
+            </div>
+
+
+
+                <div class="flex justify-center items-center mt-4 py-2">
                     @if (Route::has('password.request'))
                         <a class="flex px-8 underline text-sm text-white hover:text-gray-200" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
@@ -47,11 +55,8 @@
                     @endif
                 <!--to register page-->
                     <a class="flex px-8 underline text-sm text-white hover:text-gray-200" href="{{ route('register') }}">
-                        {{__('register') }}
+                        {{__('Register Account') }}
                     </a>
-                    <x-button class="ml-3">
-                        {{ __('Login') }}
-                    </x-button>
             </div>
         </form>
     </x-auth-card>
