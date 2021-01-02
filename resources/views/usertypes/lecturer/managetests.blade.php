@@ -3,28 +3,22 @@
 @section('content')
 <link href="{{ url('/css/datatable.css') }}" rel="stylesheet">
 <div class="container bg-white min-w-full flex justify-center">
-        <table id="managetest" class="px-4 flex-auto items-center">
-            <thead class="">
+        <table id="managetest" class="px-4 flex-auto items-center min-w-full">
+            <thead>
                 <tr>
                     <th data-priority="1">Test ID</th>
                     <th data-priority="2">Test Date</th>
                     <th data-priority="3">Test Type</th>
                     <th data-priority="4">Test Description</th>
+                    <th>Action</th>
                 </tr>
-            </thead>
+            </thead >
                 <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                        </tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th></th>
                 </tbody>
         </table>
 </div>
@@ -44,6 +38,18 @@
                     ]
             }).columns.adjust().responsive.recalc();
         });
+    </script>
+    <script>
+        public function data()
+{
+        $test = Test::all();
+        return datatables()->of($test)
+        ->addColumn('action', function ($row) {
+            $html = '<a href="#" class="btn btn-xs btn-secondary">Edit</a> ';
+            $html .= '<button data-rowid="'.$row->id.'" class="btn btn-xs btn-danger">Del</button>';
+            return $html;
+        })->toJson();
+}
     </script>
 </div>
 

@@ -1,6 +1,6 @@
 .dataTables_wrapper {
     padding-top: 0.25rem;
-    padding-bottom: 0.25rem
+    padding-bottom: 0.25rem;
 }
 
 table.dataTable.no-footer {
@@ -11,7 +11,9 @@ table.dataTable.no-footer {
 table.dataTable tbody td, table.dataTable tbody th {
     padding: 0.75rem 1rem;
     border-bottom-width: 1px;
-    border-color: #dddddd
+    border-color: #dddddd;
+    text-align: center;
+
 }
 
 div.dt-buttons {
@@ -29,13 +31,13 @@ div.dt-buttons {
 }
 
 .dataTables_filter label input {
-    padding: 0.5rem;
-    border-width: 2px;
-    border-radius: 0.5rem
+    background-color: #ffffff;
+    padding: 0.25rem;
+    border-width: 1px;
+    border-radius: 0.1rem
 }
 
 .dataTables_filter label input:focus {
-    box-shadow: 0 0 0 3px rgba(118, 169, 250, 0.45);
     outline: 0
 }
 
@@ -44,14 +46,14 @@ table.dataTable thead tr {
 }
 
 table.dataTable thead tr th:not(.text-center) {
-    text-align: left
+    text-align: center
 }
 
 table.dataTable thead tr th {
     background-color: #edf2f7;
     border-bottom-width: 2px;
     border-top-width: 1px;
-    border-color: #666666
+    border-color: #666666;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.next:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.previous:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled), button.dt-button {
@@ -95,7 +97,7 @@ table.dataTable thead tr th {
 }
 
 .dataTables_length select {
-    padding: .25rem;
+    padding: 0rem;
     border-radius: .25rem;
     width: 8ex;
     background-color: #ffffff;
@@ -104,3 +106,4 @@ table.dataTable thead tr th {
 .dataTables_length {
     padding-top: 1.25rem;
 }
+

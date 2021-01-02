@@ -15,6 +15,7 @@
         <!--Button Extension Datatables CSS-->
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
     </head>
+    
     <body class="bg-primary">
         <nav class=" bg-secondary text-white flex justify-between mb-5 h-14">
             <ul class="flex items-center">
