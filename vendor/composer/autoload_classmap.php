@@ -22,6 +22,7 @@ return array(
     'App\\Http\\Controllers\\InvigController' => $baseDir . '/app/Http/Controllers/InvigController.php',
     'App\\Http\\Controllers\\LecturerController' => $baseDir . '/app/Http/Controllers/LecturerController.php',
     'App\\Http\\Controllers\\StudentController' => $baseDir . '/app/Http/Controllers/StudentController.php',
+    'App\\Http\\Controllers\\TestController' => $baseDir . '/app/Http/Controllers/TestController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

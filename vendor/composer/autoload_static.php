@@ -538,6 +538,7 @@ class ComposerStaticInit9e024d3754e67bfeaa76153da355ba66
         'App\\Http\\Controllers\\InvigController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvigController.php',
         'App\\Http\\Controllers\\LecturerController' => __DIR__ . '/../..' . '/app/Http/Controllers/LecturerController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
+        'App\\Http\\Controllers\\TestController' => __DIR__ . '/../..' . '/app/Http/Controllers/TestController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
