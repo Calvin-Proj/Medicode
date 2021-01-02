@@ -1,26 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex container justify-center w-screen bg-white shadow overflow-hidden">
-    <table id="managetest" class="px-4">
-        
-        <thead>
-            <tr>
-                <th data-priority="1">Test ID</th>
-                <th data-priority="2">Test Date</th>
-                <th data-priority="3">Test Type</th>
-                <th data-priority="4">Test Description</th>
-            </tr>
-        </thead>
-            <tbody>
-                    <tr>
-                        <td></td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                    </tr>
-            </tbody>
-    </table>
+<div class="container bg-white min-w-full flex justify-center">
+        <table id="managetest" class="px-4 flex-auto items-center">
+            <thead class="">
+                <tr>
+                    <th data-priority="1">Test ID</th>
+                    <th data-priority="2">Test Date</th>
+                    <th data-priority="3">Test Type</th>
+                    <th data-priority="4">Test Description</th>
+                </tr>
+            </thead>
+                <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                </tbody>
+        </table>
 </div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
