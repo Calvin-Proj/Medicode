@@ -39,18 +39,6 @@
             }).columns.adjust().responsive.recalc();
         });
     </script>
-    <script>
-        public function data()
-{
-        $test = Test::all();
-        return datatables()->of($test)
-        ->addColumn('action', function ($row) {
-            $html = '<a href="#" class="btn btn-xs btn-secondary">Edit</a> ';
-            $html .= '<button data-rowid="'.$row->id.'" class="btn btn-xs btn-danger">Del</button>';
-            return $html;
-        })->toJson();
-}
-    </script>
 </div>
 
 @endsection

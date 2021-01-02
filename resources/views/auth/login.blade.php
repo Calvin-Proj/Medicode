@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo/>
             </a>
         </x-slot>
 
@@ -41,12 +41,12 @@
             </div>
                 <div class="flex justify-center md:px-8 mt-4 py-2">
                     @if (Route::has('password.request'))
-                        <a class="flex px-8 underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        <a class="flex px-8 underline text-sm text-white hover:text-gray-200" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     @endif
                 <!--to register page-->
-                    <a class="flex px-8 underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    <a class="flex px-8 underline text-sm text-white hover:text-gray-200" href="{{ route('register') }}">
                         {{__('register') }}
                     </a>
                     <x-button class="ml-3">
