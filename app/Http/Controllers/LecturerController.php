@@ -11,11 +11,18 @@ class LecturerController extends Controller
         $this->middleware(['auth']);
     }
 
-    //button routes for admin
+    //button routes for manage tests
     public function indextest()
     {
         return view('usertypes.lecturer.managetests');
     }
+
+    public function indextestAdd()
+    {
+        return view('usertypes.lecturer.addTests');
+    }
+    //
+
     public function indexsicknotes()
     {
         return view('usertypes.lecturer.managesicknotes');

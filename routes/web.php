@@ -30,6 +30,7 @@ Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->na
 //lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
 Route::get('/lecturer/managetests', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
+Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextestAdd'])->name('lectureraddTest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicktest');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattend');
 Route::get('/lecturer/managemisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');

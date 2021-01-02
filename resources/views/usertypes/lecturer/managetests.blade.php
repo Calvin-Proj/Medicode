@@ -21,6 +21,13 @@
                     <th></th>
                 </tbody>
         </table>
+        <form action="{{ route('lectureraddTest')}}" method="get">
+            <div class="justify-center mt-4">
+                <x-button class="">
+                    {{ __('ADD TEST') }}
+                </x-button>
+            </div> 
+          </form>       
 </div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
@@ -37,8 +44,11 @@
                         'copy', 'excel', 'pdf'
                     ]
             }).columns.adjust().responsive.recalc();
+            
         });
+        
     </script>
+    
 </div>
 
 @endsection
