@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('style')
+<!--Regular Datatables CSS-->
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+<!--Responsive Extension Datatables CSS-->
+<link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+<!--Button Extension Datatables CSS-->
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+@endsection
+
 @section('content')
 <link href="{{ url('/css/datatable.css') }}" rel="stylesheet">
 <div class="container bg-white min-w-full flex justify-center">
@@ -26,8 +35,8 @@
                 <x-button class="">
                     {{ __('ADD TEST') }}
                 </x-button>
-            </div> 
-          </form>       
+            </div>
+          </form>
 </div>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
@@ -44,11 +53,11 @@
                         'copy', 'excel', 'pdf'
                     ]
             }).columns.adjust().responsive.recalc();
-            
+
         });
-        
+
     </script>
-    
+
 </div>
 
 @endsection
