@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="flex justify-center bg-white shadow overflow-hidden sm:rounded-sm ">
-    lecturer manage sick notes
+    Lecturer Manages Normal Attendance and Sick Notes Here
 </div>
 @endsection
