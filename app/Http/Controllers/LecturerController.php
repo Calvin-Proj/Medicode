@@ -17,11 +17,6 @@ class LecturerController extends Controller
         return view('usertypes.lecturer.managetests');
     }
 
-    public function indextestAdd()
-    {
-        return view('usertypes.lecturer.addTests');
-    }
-    //
 
     public function indexsicknotes()
     {
