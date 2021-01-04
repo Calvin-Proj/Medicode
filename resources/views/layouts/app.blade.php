@@ -30,23 +30,23 @@
                 <!--usertype navbar connection-->
                             @switch(auth()->user()->usertype)
                                 @case('admin')
-                                    <x-admin-manage-mod-btn/>
-                                    <x-admin-manage-venue-btn/>
-                                    <x-admin-manage-lect-btn/>
-                                    <x-admin-manage-invigilator-btn/>
-                                    <x-admin-manage-students-btn/>
+                                            <x-admin-manage-mod-btn/>
+                                            <x-admin-manage-venue-btn/>
+                                            <x-admin-manage-lect-btn/>
+                                            <x-admin-manage-invigilator-btn/>
+                                            <x-admin-manage-students-btn/>
                                     @break
                                 @case('lecturer')
-                                    <x-lect-manage-test-btn/>
-                                    <x-lect-view-miscon-btn/>
-                                    <a href="{{ route('lecturermanageattendants')}}" class="p-3">Manage Attendants</a>
+                                            <x-lect-manage-test-btn/>
+                                            <x-lect-view-miscon-btn/>
+                                            <a href="{{ route('lecturermanageattendants')}}" class="p-3">Manage Attendants</a>
 
 
                                     @break
                                 @case('invig')
-                                    <a href="{{ route('invigschedules')}}" class="p-3">Invigilations Schedule</a>
-                                    <a href="{{ route('invigmisconduct')}}" class="p-3">Submit Misconduct</a>
-                                    <a href="{{ route('invighours')}}" class="p-3">Submit Hours</a>
+                                            <x-invig-schedule-btn/>
+                                            <x-invig-submit-miscon-btn/>
+                                            <x-invig-submit-hours-btn/>
                                     @break
                                 @case('student')
                                             <x-test-sched-ico/>
