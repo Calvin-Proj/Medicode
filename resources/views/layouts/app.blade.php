@@ -49,8 +49,8 @@
                                             <x-invig-submit-hours-btn/>
                                     @break
                                 @case('student')
-                                            <x-test-sched-ico/>
-                                            <x-stud-sick-ico/>
+                                            <x-stud-view-test-sched-btn/>
+                                            <x-stud-book-sick-btn/>
                                     @break
                                 @default
                             @endswitch
