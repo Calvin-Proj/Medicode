@@ -37,6 +37,7 @@
                                     <a href="{{ route('lecturermanagesicktest')}}" class="p-3">Manage Sick Notes</a>
                                     <a href="{{ route('lecturermanageattend')}}" class="p-3">View Attendants</a>
                                     <a href="{{ route('lecturermanagemiscon')}}" class="p-3">View Misconduct</a>
+                                    
                                     @break
                                 @case('invig')
                                     <a href="{{ route('invigschedules')}}" class="p-3">Invigilations Schedule</a>
@@ -56,15 +57,9 @@
                     </li>
                 </ul>
             <ul class= "flex items-center">
-                @auth
+                @auth                   
                     <li>
-                            <a href="" class="p-3 hover:text-highlight">{{auth()->user()->name}}</a>
-                    </li>
-                    <li>
-                        <form action="{{ route('logout') }}" method="post">
-                            @csrf
-                            <button type="submit" class="inline px-3 py-4 hover:bg-white hover:text-primary h-full border-none focus:outline-none focus:text-highlight">Logout</button>
-                        </form>
+                       <x-dropdown-menu/>
                     </li>
                 @endauth
             </ul>
