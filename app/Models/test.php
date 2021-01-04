@@ -5,27 +5,36 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class test extends Model
+class Test extends Model
 {
     use HasFactory;
 
-     /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'testid',
+        'test_date',
+        'test_type',
+        'test_desc',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
      *
-     * 
+     * @var array
      */
+    protected $hidden = [
+
+    ];
 
     /**
      * The attributes that should be cast to native types.
      *
-     * 
+     * @var array
      */
-   
+    protected $casts = [
+    ];
 }
