@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class test extends Model
+class Test extends Model
 {
     use HasFactory;
 
@@ -19,13 +19,13 @@ class test extends Model
     /**
      * The attributes that should be hidden for arrays.
      *
-     * 
+     *
      */
 
     /**
      * The attributes that should be cast to native types.
      *
-     * 
+     *
      */
-   
+
 }
