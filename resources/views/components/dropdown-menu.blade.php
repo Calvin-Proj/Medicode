@@ -49,12 +49,13 @@
 </svg>
    </div>
 
-  <div class="dropdown-content flex-auto justify-center">
+  <div class="dropdown-content flex-auto justify-center rounded-sm">
     <a href="#">Account settings</a>
-    <a href="#">Log Out</a>
+    <form action="{{ route('logout') }}" method="post" class="flex min-width-max">
+      @csrf                             
+       <button type="submit" class="inline min-width-full hover:bg-white hover:text-primary h-full border-none focus:outline-none focus:text-highlight">Logout</button>                         
+   </form>
   </div>
- 
- 
 </div>
 
 </body>
