@@ -30,11 +30,11 @@
                 <!--usertype navbar connection-->
                             @switch(auth()->user()->usertype)
                                 @case('admin')
-                                    <a href="{{ route('adminmanagemodules')}}" class="p-3">Manage Modules</a>
-                                    <a href="{{ route('adminmanagevenues')}}" class="p-3">Manage Venues</a>
-                                    <a href="{{ route('adminmanagelecturers')}}" class="p-3">Manage Lecturers</a>
-                                    <a href="{{ route('adminmanageinvigs')}}" class="p-3">Manage Invigalators</a>
-                                    <a href="{{ route('adminmanagestudents')}}" class="p-3">Manage Students</a>
+                                    <x-admin-manage-mod-btn/>
+                                    <x-admin-manage-venue-btn/>
+                                    <x-admin-manage-lect-btn/>
+                                    <x-admin-manage-invigilator-btn/>
+                                    <x-admin-manage-students-btn/>
                                     @break
                                 @case('lecturer')
                                     <x-lect-manage-test-btn/>
