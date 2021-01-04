@@ -34,8 +34,8 @@ Route::get('/lecturer/managetests', [LecturerController::class, 'indextest'])->n
 Route::get('/lecturer/managetests/db', [TestController::class, 'getTestLecturer'])->name('ajaxTestLectGet');
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextestAdd'])->name('lectureraddTest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicktest');
-Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattend');
-Route::get('/lecturer/managemisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
+Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
+Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
 });
 //invig routes + Multi authenticate
 Route::middleware(['checkUsertype:invig'])->group(function(){

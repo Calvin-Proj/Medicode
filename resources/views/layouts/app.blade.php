@@ -38,9 +38,9 @@
                                     @break
                                 @case('lecturer')
                                     <x-lect-manage-test-btn/>
-                                    <a href="{{ route('lecturermanagesicktest')}}" class="p-3">Manage Sick Notes</a>
-                                    <a href="{{ route('lecturermanageattend')}}" class="p-3">View Attendants</a>
-                                    <a href="{{ route('lecturermanagemiscon')}}" class="p-3">View Misconduct</a>
+                                    <x-lect-view-miscon-btn/>
+                                    <a href="{{ route('lecturermanageattendants')}}" class="p-3">Manage Attendants</a>
+
 
                                     @break
                                 @case('invig')
