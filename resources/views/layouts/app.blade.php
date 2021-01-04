@@ -37,7 +37,7 @@
                                     <a href="{{ route('adminmanagestudents')}}" class="p-3">Manage Students</a>
                                     @break
                                 @case('lecturer')
-                                    <a href="{{ route('lecturermanagetest')}}" class="p-3">Manage Tests</a>
+                                    <x-lect-manage-test-btn/>
                                     <a href="{{ route('lecturermanagesicktest')}}" class="p-3">Manage Sick Notes</a>
                                     <a href="{{ route('lecturermanageattend')}}" class="p-3">View Attendants</a>
                                     <a href="{{ route('lecturermanagemiscon')}}" class="p-3">View Misconduct</a>
