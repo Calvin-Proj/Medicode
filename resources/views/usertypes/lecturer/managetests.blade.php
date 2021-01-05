@@ -65,7 +65,7 @@
                                                 <!-- Modal footer -->
                                                 <div class="modal-footer">
                                                 <button type="button" class="btn btn-success" id="SubmitCreateTestForm">Create</button>
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                <button type="button" class="bg-secondary rounded-sm text-white" @click="open = false">Close</button>
                                                 </div>
                                             </div>
                                         </div>
