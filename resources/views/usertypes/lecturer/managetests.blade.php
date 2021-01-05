@@ -49,8 +49,10 @@
                                                         <span class="w-14"></span>
                                                         <x-date-picker/>
                                                         </div>
-                                                            <div class="flex justify-start">
-                                                            <span class="w-36"></span>
+                                                            <div class="form-group flex justify-start p-2 text-white">
+                                                            <label for="test_time">Test Time:</label>
+                                                            <span class="w-8"></span>
+                                                            <span class="w-8"></span>
                                                             <x-time-picker/>
                                                             </div>
                                                                 <div class="form-group flex justify-start p-2 text-white">
@@ -58,15 +60,15 @@
                                                                 <span class="w-16"></span>
                                                                 Sick:
                                                                 <span class="w-2"></span>
-                                                                <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
+                                                                <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type">
                                                                 <span class="w-2"></span>
                                                                 Normal:
                                                                 <span class="w-2"></span>
-                                                                <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
+                                                                <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type">
                                                                 </div>
                                                                     <div class="form-group flex justify-start p-2 text-white">
                                                                     <label for="test_desc">Test Description: </label>
-                                                                    <span class="w-3"></span>
+                                                                    <span class="w-4"></span>
                                                                     <textarea class="form-control w-60 text-gray-600 resize-y" name="test_desc" id="test_desc">
                                                                     </textarea>
                                                                     </div>
