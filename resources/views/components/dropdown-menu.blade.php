@@ -18,7 +18,7 @@
     </svg>
   </div>
 
-  <div class="dropdown-content flex-auto justify-center rounded-lg p-4 shadow-xl bg-white hidden absolute">
+  <div class="z-10 dropdown-content flex-auto justify-center rounded-lg p-4 shadow-xl bg-white hidden absolute">
     <a href="#" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block">Account Settings</a>
     <form action="{{ route('logout') }}" method="post" class="flex min-width-max">
       @csrf
