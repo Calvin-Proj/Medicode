@@ -1,7 +1,7 @@
-<div class="p-2">
+<div class="font-bold mb-2 text-gray-700 block">
     Select Time
     <div class="flex-auto justify-center">
-      <select name="hours" class="bg-transparent appearance-none outline-none">
+      <select name="hours" class="appearance-none outline-none px-4">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -16,11 +16,13 @@
         <option value="12">12</option>
       </select>
       <span class="mr-3">:</span>
-      <select name="minutes" class="bg-transparent appearance-none outline-none mr-4">
+      <select name="minutes" class="bg-transparent appearance-none outline-none mr-4 px-4">
         <option value="0">00</option>
+        <option value="15">15</option>
         <option value="30">30</option>
+        <option value="45">45</option>
       </select>
-      <select name="ampm" class="bg-transparent appearance-none outline-none">
+      <select name="ampm" class="bg-transparent appearance-none outline-none px-4">
         <option value="am">AM</option>
         <option value="pm">PM</option>
       </select>

@@ -93,7 +93,7 @@
                                             <div
                                                 @click="getDateValue(date)"
                                                 x-text="date"
-                                                class="cursor-pointer text-center text-sm leading-none rounded-full leading-loose transition ease-in-out duration-100"
+                                                class="cursor-pointer text-center text-sm rounded-full leading-loose transition ease-in-out duration-100"
                                                 :class="{'bg-blue-500 text-white': isToday(date) == true, 'text-gray-700 hover:bg-blue-200': isToday(date) == false }"
                                             ></div>
                                         </div>
