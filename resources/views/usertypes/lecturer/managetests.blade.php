@@ -6,11 +6,72 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="">
+
+
                     <div class="card-test_date card-body flex justify-end p-2" x-data="{ open: false }">
-                        <button  class="btn btn-info btn-sm bg-secondary text-white px-4 py-2 focus:outline-none" @click="open = true">
+                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline" @click="open = true">
                             Create Test
                         </button>
-                    </div>
+                            <!-- Create Test Model -->
+                            <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" x-show="open"  >
+                                <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0" @click.away="open = false">
+                                    <div class="modal-content">
+                                        <!-- Model Header -->
+                                        <div class="p-2">
+                                            <div class="flex justify-end p-1">
+                                            <button type="button" class="close" data-dismiss="modal">
+                                            <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
+                                            </button>
+                                            </div>
+                                                <div class="flex justify-center">
+                                                <h4 class="">Test Create</h4>
+                                                </div>
+                                        </div>
+
+                                            <!-- Modal body -->
+                                            <div class="modal-body">
+                                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                                                    <strong>Success!</strong>Test was added successfully.
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    </div>
+                                                        <div class="form-group flex justify-start p-2">
+                                                        <label for="test_date">Test Date:</label>
+                                                        <span class="w-14"></span>
+                                                        <x-date-picker/>
+                                                        </div>
+                                                            <div class="flex justify-start">
+                                                            <span class="w-36"></span>
+                                                            <x-time-picker/>
+                                                            </div>
+                                                                <div class="form-group flex justify-start p-2">
+                                                                <label for="test_type">Test Type:</label>
+                                                                <span class="w-16"></span>
+                                                                <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
+                                                                </div>
+                                                                    <div class="form-group flex justify-start p-2">
+                                                                    <label for="test_desc">Test Description:</label>
+                                                                    <span class="w-4"></span>
+                                                                    <textarea class="form-control w-32" name="description" id="description">
+                                                                    </textarea>
+                                                                    </div>
+                                            </div>
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-success" id="SubmitCreateTestForm">Create</button>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                     <div class="table-responsive">
                         <table class="table table-bordered datatable">
                             <thead>
@@ -31,64 +92,7 @@
 </div>
 <!-- keeps modal close -->
 
-<!-- Create Test Model -->
-<div class="hidden" id="CreateTestModal">
-    <div class="bg-white rounded-sm">
-        <div class="modal-content">
-            <!-- Model Header -->
-            <div class="p-2">
-                <div class="flex justify-end p-1">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
-                    </button>
-                </div>
-                <div class="flex justify-center">
-                    <h4 class="">Test Create</h4>
-                </div>
-            </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Test was added successfully.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="form-group flex justify-start p-2">
-                    <label for="test_date">Test Date:</label>
-                    <span class="w-14"></span>
-                    <x-date-picker/>
-                </div>
-                <div class="flex justify-start">
-                <span class="w-36"></span>
-                <x-time-picker/>
-                </div>
-                <div class="form-group flex justify-start p-2">
-                    <label for="test_type">Test Type:</label>
-                    <span class="w-16"></span>
-                    <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
-                </div>
-                <div class="form-group flex justify-start p-2">
-                    <label for="test_desc">Test Description:</label>
-                    <span class="w-4"></span>
-                    <textarea class="form-control w-32" name="description" id="description">
-                    </textarea>
-                </div>
-            </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitCreateTestForm">Create</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Edit Test Modal -->
 <div class="modal hidden" id="EditTestModal">
