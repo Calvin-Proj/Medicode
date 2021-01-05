@@ -182,6 +182,7 @@
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
+                {data: 'test_time', name: 'test_time'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
             ]
         });
@@ -201,6 +202,7 @@
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
+                    test_time: $('#test_time').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -262,6 +264,7 @@
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
+                    test_time: $('#test_time').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
