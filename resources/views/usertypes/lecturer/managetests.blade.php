@@ -30,15 +30,22 @@
     </div>
 </div>
 
-<!-- Create Test Modal -->
+<!-- Create Test Model -->
 <div class="hidden" id="CreateTestModal">
     <div class="bg-white rounded-sm">
         <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-test_date">Test Create</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <!-- Model Header -->
+            <div class="p-2">
+                <div class="flex justify-end p-1">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
+                    </button>
+                </div>
+                <div class="flex justify-center">
+                    <h4 class="">Test Create</h4>
+                </div>
             </div>
+
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
@@ -52,17 +59,24 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="form-group">
-                    <label for="test_date">test Date:</label>
-                    <input type="text" class="form-control" name="test_date" id="test_date">
+                <div class="form-group flex justify-start p-2">
+                    <label for="test_date">Test Date:</label>
+                    <span class="w-14"></span>
+                    <x-date-picker/>
                 </div>
-                <div class="form-group">
+                <div class="flex justify-start">
+                <span class="w-36"></span>
+                <x-time-picker/>
+                </div>
+                <div class="form-group flex justify-start p-2">
                     <label for="test_type">Test Type:</label>
-                    <input type="checkbox" class="form-control" name="test_type" id="Edittest_type">
+                    <span class="w-16"></span>
+                    <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
                 </div>
-                <div class="form-group">
-                    <label for="test_desc">test_desc:</label>
-                    <textarea class="form-control" name="description" id="description">
+                <div class="form-group flex justify-start p-2">
+                    <label for="test_desc">Test Description:</label>
+                    <span class="w-4"></span>
+                    <textarea class="form-control w-32" name="description" id="description">
                     </textarea>
                 </div>
             </div>
