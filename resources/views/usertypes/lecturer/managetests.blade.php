@@ -14,15 +14,15 @@
                         </button>
                             <!-- Create Test Model -->
                             <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" x-show="open"  >
-                                <div class="h-auto mx-2 text-left bg-secondary rounded shadow-xl md:max-w-xl border-2 border-primary z-10" @click.away="open = false">
+                                <div class="h-auto mx-2 text-left bg-secondary rounded-sm shadow-xl md:max-w-xl border-2 border-none z-10" @click.away="open = false">
                                     <div class="modal-content">
                                         <!-- Model Header -->
                                         <div class="">
                                             <div class="flex flex-wrap justify-center bg-primary content-start">
-                                                <img class="w-36" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
+                                                <img class="w-36 rounded-sm" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
                                             </div>
                                             <div class="flex justify-end p-1">
-                                                <button type="button" class="close" data-dismiss="modal">
+                                                <button type="button" @click="open = false">
                                                  <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
                                                  </button>
                                             </div>
@@ -65,9 +65,9 @@
                                                                 <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
                                                                 </div>
                                                                     <div class="form-group flex justify-start p-2 text-white">
-                                                                    <label for="test_desc">Test Description:</label>
+                                                                    <label for="test_desc">Test Description: </label>
                                                                     <span class="w-3"></span>
-                                                                    <textarea class="form-control w-60 text-gray-600" name="description" id="description">
+                                                                    <textarea class="form-control w-60 text-gray-600 resize-y" name="test_desc" id="test_desc">
                                                                     </textarea>
                                                                     </div>
                                             </div>
