@@ -13,7 +13,7 @@
             <div class="container mx-auto px-2">
                 <div class="mb-2 w-30">
 
-                    <label for="datepicker" class="font-bold mb-1 text-gray-700 block">Select Date</label>
+                    <label for="datepicker" class="mb-1 text-white block">Select Date</label>
                     <div class="relative">
                         <input type="hidden" name="date" x-ref="date">
                         <input
