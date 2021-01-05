@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="">
-                    <div class="card-test_date card-body flex justify-end p-2">
-                        <button class="btn btn-info btn-sm bg-secondary text-white px-4 py-2 focus:outline-none" type="button"  data-toggle="modal" data-target="#CreateTestModal">
+                    <div class="card-test_date card-body flex justify-end p-2" x-data="{ open: false }">
+                        <button  class="btn btn-info btn-sm bg-secondary text-white px-4 py-2 focus:outline-none" @click="open = true">
                             Create Test
                         </button>
                     </div>
@@ -29,6 +29,7 @@
         </div>
     </div>
 </div>
+<!-- keeps modal close -->
 
 <!-- Create Test Model -->
 <div class="hidden" id="CreateTestModal">
