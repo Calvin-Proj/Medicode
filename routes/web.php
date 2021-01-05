@@ -30,8 +30,6 @@ Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->na
 });
 //lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
-Route::get('/lecturer/managetests', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
-Route::get('/lecturer/managetests/db', [TestController::class, 'getTestLecturer'])->name('ajaxTestLectGet');
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextestAdd'])->name('lectureraddTest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicktest');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
@@ -48,5 +46,10 @@ Route::middleware(['checkUsertype:stud'])->group(function(){
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
 });
+
+// Resource Route for article.
+Route::resource('tests', TestController::class);
+// Route for get articles for yajra post request.
+Route::get('get-tests', [TestController::class, 'getTests'])->name('get-tests');
 
 require __DIR__.'/auth.php';

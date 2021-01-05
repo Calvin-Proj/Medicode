@@ -14,11 +14,33 @@ class Test extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'testid',
-        'test_date',
-        'test_type',
-        'test_desc',
-    ];
+    protected $table = 'tests';
+    protected $guarded = array();
 
+    public function getData()
+    {
+        return static::orderBy('created_at','desc')->get();
+    }
+
+    public function storeData($input)
+    {
+    	return static::create($input);
+    }
+
+    public function findData($id)
+    {
+        return static::find($id);
+    }
+
+    public function updateData($id, $input)
+    {
+        return static::find($id)->update($input);
+    }
+
+    public function deleteData($id)
+    {
+        return static::find($id)->delete();
+    }
 }
+
+
