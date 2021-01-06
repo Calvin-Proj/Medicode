@@ -47,13 +47,13 @@
                                                         <div class="form-group flex justify-start p-2 text-white">
                                                         <label for="test_date">Test Date:</label>
                                                         <span class="w-14"></span>
-                                                        <x-date-picker/>
+                                                        <input type="date" class="text-primary" name="test_date" id="test_date">
                                                         </div>
                                                             <div class="form-group flex justify-start p-2 text-white">
                                                             <label for="test_time">Test Time:</label>
                                                             <span class="w-8"></span>
                                                             <span class="w-8"></span>
-                                                            <x-time-picker/>
+                                                            <input type="time" class="text-primary" name="test_time" id="test_time">
                                                             </div>
                                                                 <div class="form-group flex justify-start p-2 text-white">
                                                                 <label for="test_type">Test Type:</label>
