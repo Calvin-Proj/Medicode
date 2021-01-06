@@ -76,11 +76,11 @@
                         <span class="w-16"></span>
                         Sick:
                         <span class="w-2"></span>
-                        <input type="radio" value="0" class="form-control h-4 w-4 name="test_type" id="test_type">
+                        <input type="radio" value="false" class="form-control h-4 w-4 name="test_type" id="test_type">
                         <span class="w-2"></span>
                         Normal:
                         <span class="w-2"></span>
-                        <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type">
+                        <input type="radio" value="true" class="form-control h-4 w-4" name="test_type" id="test_type">
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="test_desc">Test Description: </label>
@@ -139,11 +139,11 @@
                     <span class="w-16"></span>
                     Sick:
                     <span class="w-2"></span>
-                    <input type="radio" value="0" class="form-control h-4 w-4 name="test_type" id="test_type">
+                    <input type="radio" value="false" class="form-control h-4 w-4" name="test_type" id="test_type">
                     <span class="w-2"></span>
                     Normal:
                     <span class="w-2"></span>
-                    <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type">
+                    <input type="radio" value="true" class="form-control h-4 w-4" name="test_type" id="test_type">
                 </div>
                 <div class="form-group flex justify-start p-2 text-white">
                     <label for="test_desc">Test Description: </label>
@@ -329,14 +329,15 @@
                             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
                         });
                     } else
-                    {   $('.alert-danger').hide();
+                    {
+                        $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
                         setTimeout(function()
                         {
                         $('.alert-success').hide();
                         $('#EditTestModal').hide();
-                        }, 1000);
+                        }, 2000);
                     }
                 }
             });

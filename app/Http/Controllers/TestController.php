@@ -70,25 +70,28 @@ class TestController extends Controller
         $test = new Test;
         $data = $test->findData($id);
 
-        $html = '<div class="text-gray-600" value="'.$data->test_date.'>
-                <div class="form-group flex justify-start p-2 text-white">
-                    <label for="test_date">Test Date:</label>
-                    <span class="w-14"></span>
-                    <input type="date" class="text-primary" name="test_date" id="test_date value="'.$data->test_time.'">
-                </div>
-                <div class="form-group flex justify-start p-2 text-white" >
+        $html =
+                '<div class="form-group flex justify-start p-2 text-white">
                     <label for="test_time">Test Time:</label>
-                    <span class="w-8"></span>
-                    <span class="w-8"></span>
-                    <input type="time" class="text-primary" name="test_time" id="test_time value="'.$data->test_time.'">
+                    <span class="w-7"></span>
+                    <span class="w-7"></span>
+                    <input type="time" class="text-primary" name="test_time" id="test_time" value="'.$data->test_time.'">
                 </div>
-                <div class="form-group">
+                    <div class="form-group flex justify-start p-2 text-white">
                     <label for="test_type">Test Type:</label>
-                    <input type="checkbox" class="form-control" name="test_type" id="Edittest_type" value="'.$data->test_type.'">
+                    <span class="w-16"></span>
+                    Sick:
+                    <span class="w-2"></span>
+                    <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type" value="'.$data->test_type.'">
+                    <span class="w-2"></span>
+                    Normal:
+                    <span class="w-2"></span>
+                    <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type" value="'.$data->test_type.'">
                 </div>
-                <div class="form-group">
-                    <label for="test_desc">Test Description:</label>
-                    <textarea class="form-control" name="test_desc" id="editTest_desc">'.$data->test_desc.'
+                <div class="form-group flex justify-start p-2 text-white">
+                    <label for="test_desc">Test Description: </label>
+                    <span class="w-3"></span>
+                    <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc" value="'.$data->test_desc.'">
                     </textarea>
                 </div>';
 
