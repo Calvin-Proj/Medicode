@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTestTbl extends Migration
+class AddTestTimeToTests extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTestTbl extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
-            $table->id();
-            $table->date('test_date');
-            $table->boolean('test_type');
-            $table->text('test_desc');
-            $table->timestamps();
+        Schema::table('tests', function (Blueprint $table) {
+            $table->time('test_time');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateTestTbl extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tests');
+        Schema::table('tests', function (Blueprint $table) {
+            $table->time('test_time');
+        });
     }
 }

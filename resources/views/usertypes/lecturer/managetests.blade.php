@@ -14,17 +14,20 @@
                         </button>
                             <!-- Create Test Model -->
                             <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" x-show="open"  >
-                                <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0" @click.away="open = false">
+                                <div class="h-auto mx-2 text-left bg-secondary rounded-sm shadow-xl md:max-w-xl border-2 border-none z-10" @click.away="open = false">
                                     <div class="modal-content">
                                         <!-- Model Header -->
-                                        <div class="p-2">
-                                            <div class="flex justify-end p-1">
-                                            <button type="button" class="close" data-dismiss="modal">
-                                            <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
-                                            </button>
+                                        <div class="">
+                                            <div class="flex flex-wrap justify-center bg-primary content-start">
+                                                <img class="w-36 rounded-sm" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
                                             </div>
-                                                <div class="flex justify-center">
-                                                <h4 class="">Test Create</h4>
+                                            <div class="flex justify-end p-1">
+                                                <button type="button" @click="open = false">
+                                                 <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
+                                                 </button>
+                                            </div>
+                                                <div class="flex justify-center text-xl text-white">
+                                                    <h4 class="">Fill In Details</h4>
                                                 </div>
                                         </div>
 
@@ -41,38 +44,47 @@
                                                     <span aria-hidden="true">&times;</span>
                                                     </button>
                                                     </div>
-                                                        <div class="form-group flex justify-start p-2">
+                                                        <div class="form-group flex justify-start p-2 text-white">
                                                         <label for="test_date">Test Date:</label>
                                                         <span class="w-14"></span>
-                                                        <x-date-picker/>
+                                                        <input type="date" class="text-primary" name="test_date" id="test_date">
                                                         </div>
-                                                            <div class="flex justify-start">
-                                                            <span class="w-36"></span>
-                                                            <x-time-picker/>
+                                                            <div class="form-group flex justify-start p-2 text-white">
+                                                            <label for="test_time">Test Time:</label>
+                                                            <span class="w-8"></span>
+                                                            <span class="w-8"></span>
+                                                            <input type="time" class="text-primary" name="test_time" id="test_time">
                                                             </div>
-                                                                <div class="form-group flex justify-start p-2">
+                                                                <div class="form-group flex justify-start p-2 text-white">
                                                                 <label for="test_type">Test Type:</label>
                                                                 <span class="w-16"></span>
-                                                                <input type="checkbox" class="form-control h-6 w-6" name="test_type" id="Edittest_type">
+                                                                Sick:
+                                                                <span class="w-2"></span>
+                                                                <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type">
+                                                                <span class="w-2"></span>
+                                                                Normal:
+                                                                <span class="w-2"></span>
+                                                                <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type">
                                                                 </div>
-                                                                    <div class="form-group flex justify-start p-2">
-                                                                    <label for="test_desc">Test Description:</label>
+                                                                    <div class="form-group flex justify-start p-2 text-white">
+                                                                    <label for="test_desc">Test Description: </label>
                                                                     <span class="w-4"></span>
-                                                                    <textarea class="form-control w-32" name="description" id="description">
+                                                                    <textarea class="form-control w-60 text-gray-600 resize-y" name="test_desc" id="test_desc">
                                                                     </textarea>
                                                                     </div>
                                             </div>
                                                 <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                <button type="button" class="btn btn-success" id="SubmitCreateTestForm">Create</button>
-                                                <button type="button" class="bg-secondary rounded-sm text-white" @click="open = false">Close</button>
+                                                <div class="modal-footer flex flex-wrap justify-end p-4">
+                                                <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1" id="SubmitCreateTestForm">Create</button>
+                                                <span class="w-2"></span>
+                                                <button type="button" class="bg-primary rounded-lg text-white p-1" @click="open = false">Close</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive z-0">
                         <table class="table table-bordered datatable">
                             <thead>
                                 <tr>
@@ -172,6 +184,7 @@
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
+                {data: 'test_time', name: 'test_time'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
             ]
         });
@@ -191,6 +204,7 @@
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
+                    test_time: $('#test_time').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -252,6 +266,7 @@
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
+                    test_time: $('#test_time').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
