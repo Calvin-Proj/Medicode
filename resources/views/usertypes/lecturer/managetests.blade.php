@@ -34,7 +34,7 @@
     </div>
 </div>
 <!-- keeps modal close -->
-<div class="create_container" id="" style="display:none">
+<div id="CreateTestModal" style="display:none">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
         <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
             <div>
@@ -107,9 +107,9 @@
 
 
 <!-- Edit Test Modal -->
-<div class="edit_hidden" style="display:none">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div style="display:none" id="EditTestModal">
+    <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+        <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Test Edit</h4>
@@ -139,9 +139,9 @@
 </div>
 
 <!-- Delete Test Modal -->
-<div class="delete_hidden" style="display:none">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div style="display:none" id="DeleteTestModal">
+    <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+        <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Test Delete</h4>
@@ -168,15 +168,16 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // init datatable.
-        var dataTable = $('.datatable').DataTable({
-            processing: true,
-            serverSide: true,
-            autoWidth: false,
-            pageLength: 5,
-            // scrollX: true,
-            "order": [[ 0, "desc" ]],
-            ajax: '{{ route('get-tests') }}',
-            columns: [
+        var dataTable = $('.datatable').DataTable(
+        {
+        processing: true,
+        serverSide: true,
+        autoWidth: false,
+        pageLength: 5,
+        // scrollX: true,
+        "order": [[ 0, "desc" ]],
+        ajax: '{{ route('get-tests') }}',
+        columns: [
                 {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_type', name: 'test_type'},
@@ -184,59 +185,90 @@
                 {data: 'test_time', name: 'test_time'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
             ]
-        });
+    });
 
-        // Create test Ajax request.
-        $('#SubmitCreateTestForm').click(function(e) {
-            e.preventDefault();
-            $.ajaxSetup({
-                headers: {
+    // Create test Ajax request.
+    $('#SubmitCreateTestForm').click(function(e)
+    {
+        e.preventDefault();
+        $.ajaxSetup(
+            {
+            headers:
+                {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $.ajax({
-                url: "{{ route('tests.store') }}",
-                method: 'post',
-                data: {
+        $.ajax(
+            {
+            url: "{{ route('tests.store') }}",
+            method: 'post',
+            data: {
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
                     test_time: $('#test_time').val(),
                 },
-                success: function(result) {
-                    if(result.errors) {
-                        $('.alert-danger').html('');
-                        $.each(result.errors, function(key, value) {
-                            $('.alert-danger').show();
+            success: function(result)
+            {
+                if(result.errors)
+                {
+                    $('.alert-danger').html('');
+                    $.each(result.errors, function(key, value)
+                        {
+                        $('.alert-danger').show();
                             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
                         });
-                    } else {
+                } else
+                {
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setTimeout(function(){
-                            $('.alert-success').hide();
-                            $('#CreateTestModal').modal('hide');
-                        }, 200);
-                    }
+                            setTimeout(function()
+                            {
+                                $('.alert-success').hide();
+                                $('#CreateTestModal').hide();
+                            }, 1000);
                 }
-            });
+            }
         });
+    });
 
-        // Get single test in EditModel
-        $('.modelClose').on('click', function(){
-            $('#EditTestModal').hide();
+    //buttons for create
+    $(document).ready(function()
+    {
+        $("#show_create").click(function ()
+        {
+            $( "#CreateTestModal" ).show();
         });
-        var id;
-        $('body').on('click', '#getEditTestData', function(e) {
+        $("#hide_create").click(function ()
+        {
+            $( "#CreateTestModal" ).hide();
+        });
+        $("#hide_create1").click(function ()
+        {
+            $("#CreateTestModal").hide();
+        });
+    });
+
+
+    // Get single test in EditModel
+    $('.modelClose').on('click', function()
+    {
+        $('#EditTestModal').hide();
+    });
+    var id;
+        $('body').on('click', '#getEditTestData', function(e)
+        {
             // e.preventDefault();
             $('.alert-danger').html('');
             $('.alert-danger').hide();
             id = $(this).data('id');
-            $.ajax({
+            $.ajax(
+                {
                 url: "tests/"+id+"/edit",
                 method: 'GET',
-                success: function(result) {
+                success: function(result)
+                {
                     console.log(result);
                     $('#EditTestModalBody').html(result.html);
                     $('#EditTestModal').show();
@@ -277,7 +309,7 @@
                         {
                         $('.alert-success').hide();
                         $('#EditTestModal').hide();
-                        }, 200);
+                        }, 1000);
                     }
                 }
             });
@@ -306,23 +338,12 @@
                     {
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                    }, 200);
+                    }, 1000);
                 }
             });
         });
     });
 </script>
-<script>
-    $(document).ready(function() {
-     $("#show_create").click(function () {
-       $( ".create_container" ).show(0);
-     });
-     $("#hide_create").click(function () {
-       $( ".create_container" ).hide(0);
-     });
-     $("#hide_create1").click(function () {
-       $( ".create_container" ).hide(0);
-     });
-   });
- </script>
+
+
 @endsection
