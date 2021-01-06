@@ -70,37 +70,18 @@ class TestController extends Controller
         $test = new Test;
         $data = $test->findData($id);
 
-        $html = '<div class="form-group">
+        $html = '<div class="text-gray-600" value="'.$data->test_date.'>
+                <div class="form-group flex justify-start p-2 text-white">
                     <label for="test_date">Test Date:</label>
-                    <input type="text" class="form-control" name="test_date" id="Edittest_date" value="'.$data->test_date.'">
+                    <span class="w-14"></span>
+                    <input type="date" class="text-primary" name="test_date" id="test_date value="'.$data->test_time.'">
                 </div>
-                <div class="text-gray-600" value="'.$data->test_time.'>
-                <select name="hours" class="outline-none border-none px-7 appearance-none">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
-                :
-                <select name="minutes" class="outline-none border-none px-6 appearance-none">
-                  <option value="0">00</option>
-                  <option value="15">15</option>
-                  <option value="30">30</option>
-                  <option value="45">45</option>
-                </select>
-                <select name="ampm" class="outline-none border-none px-6 appearance-none ">
-                  <option value="am">AM</option>
-                  <option value="pm">PM</option>
-                </select>
-              </div>
+                <div class="form-group flex justify-start p-2 text-white" >
+                    <label for="test_time">Test Time:</label>
+                    <span class="w-8"></span>
+                    <span class="w-8"></span>
+                    <input type="time" class="text-primary" name="test_time" id="test_time value="'.$data->test_time.'">
+                </div>
                 <div class="form-group">
                     <label for="test_type">Test Type:</label>
                     <input type="checkbox" class="form-control" name="test_type" id="Edittest_type" value="'.$data->test_type.'">

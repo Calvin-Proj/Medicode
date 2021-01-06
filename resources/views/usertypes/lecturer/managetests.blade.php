@@ -92,6 +92,7 @@
                                     <th>Test Date</th>
                                     <th>Test Type</th>
                                     <th>Test Description</th>
+                                    <th>Test Time</th>
                                     <th class="text-center px-20">Action</th>
                                 </tr>
                             </thead>
