@@ -6,15 +6,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div>
-                    <div>
+                    <div class="mt-6">
                         <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline">
                             Create Test
                         </button>
                         <!-- modal div -->
-
                         <!-- Create Test Model -->
-                        <div class="absolute hidden top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" >
-                            <div>
+                        <div class="absolute top-0 left-0 hidden items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+                            <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0" @click.away="open = false">
                                 <div>
                                     <!-- Model Header -->
                                     <div>
