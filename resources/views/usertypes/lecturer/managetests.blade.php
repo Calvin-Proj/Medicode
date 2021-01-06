@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container bg-white rounded-sm">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div>
                     <div class="mt-6">
-                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline">
+                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline" id="show_create" name="show_create">
                             Create Test
                         </button>
                         <!-- modal div -->
                         <!-- Create Test Model -->
-                        <div class="absolute top-0 left-0 hidden items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-                            <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0" @click.away="open = false">
+                        <div class="create_container flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+                            <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
                                 <div>
                                     <!-- Model Header -->
                                     <div>
@@ -21,7 +22,7 @@
                                             <img>
                                         </div>
                                         <div>
-                                            <button type="button">
+                                            <button type="button" id="hide_create1" name="hide_create1">
                                             <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
                                             </button>
                                         </div>
@@ -75,7 +76,7 @@
                                     <div class="modal-footer flex flex-wrap justify-end p-4">
                                         <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1" id="SubmitCreateTestForm">Create</button>
                                         <span class="w-2"></span>
-                                        <button type="button" class="bg-primary rounded-lg text-white p-1">Close</button>
+                                        <button type="button" class="bg-primary rounded-lg text-white p-1" id="hide_create" name="hide_create">Close</button>
                                     </div>
                                 </div>
                             </div>
@@ -310,4 +311,17 @@
         });
     });
 </script>
+<script>
+    $(document).ready(function() {
+     $("#show_create").click(function () {
+       $( ".create_container" ).show(0);
+     });
+     $("#hide_create").click(function () {
+       $( ".create_container" ).hide(0);
+     });
+     $("#hide_create1").click(function () {
+       $( ".create_container" ).hide(0);
+     });
+   });
+ </script>
 @endsection
