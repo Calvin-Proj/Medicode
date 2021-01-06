@@ -8,7 +8,7 @@
             <div class="card">
                 <div>
                     <div class="mt-6">
-                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline" id="show_create" name="show_create">
+                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline font-semibold" id="show_create" name="show_create">
                             Create Test
                         </button>
                         <!-- modal div -->
@@ -36,17 +36,17 @@
 <!-- keeps modal close -->
 <div id="CreateTestModal" style="display:none">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-        <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
+        <div class="h-auto p-4 mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-4 lg:p-4 md:mx-0 border-primary border-2">
             <div>
                 <!-- Model Header -->
                 <div>
-                    <div>
-                        <img>
-                    </div>
-                    <div>
+                    <div class="relative">
                         <button type="button" id="hide_create1" name="hide_create1">
-                        <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
+                        <svg class="absolute top-0 right-0 w-5 h-5 text-white bg-secondary rounded-sm hover:text-highlight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
                         </button>
+                    </div>
+                    <div class="flex flex-wrap justify-center">
+                        <img class="object-contain py-2 w-60" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
                     </div>
                     <div class="flex justify-center text-xl text-white">
                         <h4 class="">Fill In Details</h4>
@@ -72,8 +72,8 @@
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="test_time">Test Time:</label>
-                        <span class="w-8"></span>
-                        <span class="w-8"></span>
+                        <span class="w-7"></span>
+                        <span class="w-7"></span>
                         <input type="time" class="text-primary" name="test_time" id="test_time">
                     </div>
                         <div class="form-group flex justify-start p-2 text-white">
@@ -81,7 +81,7 @@
                         <span class="w-16"></span>
                         Sick:
                         <span class="w-2"></span>
-                        <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type">
+                        <input type="radio" value="0" class="form-control h-4 w-4 name="test_type" id="test_type">
                         <span class="w-2"></span>
                         Normal:
                         <span class="w-2"></span>
@@ -89,16 +89,16 @@
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="test_desc">Test Description: </label>
-                        <span class="w-4"></span>
-                        <textarea class="form-control w-60 text-gray-600 resize-y" name="test_desc" id="test_desc">
+                        <span class="w-3"></span>
+                        <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc">
                         </textarea>
                     </div>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer flex flex-wrap justify-end p-4">
-                    <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1" id="SubmitCreateTestForm">Create</button>
+                    <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black" id="SubmitCreateTestForm">Create</button>
                     <span class="w-2"></span>
-                    <button type="button" class="bg-primary rounded-lg text-white p-1" id="hide_create" name="hide_create">Close</button>
+                    <button type="button" class="bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black" id="hide_create" name="hide_create">Close</button>
                 </div>
             </div>
         </div>
@@ -109,11 +109,11 @@
 <!-- Edit Test Modal -->
 <div style="display:none" id="EditTestModal">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-        <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
+        <div class="h-auto mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-1 lg:p-2 md:mx-0 text-white border-primary border-2">
             <!-- Modal Header -->
-            <div class="modal-header">
+            <div class=" relative modal-header flex justify-center text-xl">
                 <h4 class="modal-title">Test Edit</h4>
-                <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
+                <button type="button" class="close modelClose absolute top-0 right-0  text-white bg-secondary rounded-sm hover:text-highlight" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
@@ -131,8 +131,8 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitEditTestForm">Update</button>
-                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" id="SubmitEditTestForm">Update</button>
+                <button type="button" class="btn btn-danger modelClose bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -141,20 +141,23 @@
 <!-- Delete Test Modal -->
 <div style="display:none" id="DeleteTestModal">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-        <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
+        <div class="h-auto mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-1 lg:p-2 md:mx-0 text-white border-primary border-2">
             <!-- Modal Header -->
-            <div class="modal-header">
+            <div class="relative">
+                <button type="button" class="close absolute top-0 right-0 w-5 h-5 text-white bg-secondary rounded-sm hover:text-highlight" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-header flex justify-center text-xl">
                 <h4 class="modal-title">Test Delete</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
-            <div class="modal-body">
-                <h4>Are you sure want to delete this Test?</h4>
+            <div class="modal-body p-2">
+                <h4>Are you sure want to delete this test?</h4>
             </div>
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="SubmitDeleteTestForm">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            <div class="modal-footer p-2 modal-footer flex flex-wrap justify-center">
+                <button type="button" class="btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" id="SubmitDeleteTestForm">Yes</button>
+                <span class="w-2"></span>
+                <button type="button" class="btn btn-default bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>
