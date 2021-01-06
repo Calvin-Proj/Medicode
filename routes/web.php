@@ -34,6 +34,10 @@ Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextestAd
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicktest');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
 Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
+
+//routes for lecturer editing account
+Route::get('/lecturer/edit{user}', [LecturerController::class, 'edit'])->name('editAccountL');
+Route::post('/lecturer/edit{user}', [LecturerController::class, 'update'])->name('editAccountL');
 });
 //invig routes + Multi authenticate
 Route::middleware(['checkUsertype:invig'])->group(function(){
@@ -46,6 +50,8 @@ Route::middleware(['checkUsertype:stud'])->group(function(){
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
 });
+
+
 
 // Resource Route for article.
 Route::resource('tests', TestController::class);
