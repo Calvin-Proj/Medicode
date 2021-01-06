@@ -213,11 +213,10 @@
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
+                        setTimeout(function(){
                             $('.alert-success').hide();
                             $('#CreateTestModal').modal('hide');
-                            location.reload();
-                        }, 2000);
+                        }, 200);
                     }
                 }
             });
@@ -236,9 +235,6 @@
             $.ajax({
                 url: "tests/"+id+"/edit",
                 method: 'GET',
-                // data: {
-                //     id: id,
-                // },
                 success: function(result) {
                     console.log(result);
                     $('#EditTestModalBody').html(result.html);
@@ -258,27 +254,29 @@
             $.ajax({
                 url: "tests/"+id,
                 method: 'PUT',
-                data: {
+                data:{
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
                     test_time: $('#test_time').val(),
-                },
+                    },
                 success: function(result) {
-                    if(result.errors) {
+                    if(result.errors)
+                    {
                         $('.alert-danger').html('');
                         $.each(result.errors, function(key, value) {
                             $('.alert-danger').show();
                             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
                         });
-                    } else {
-                        $('.alert-danger').hide();
+                    } else
+                    {   $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
-                            $('.alert-success').hide();
-                            $('#EditTestModal').hide();
-                        }, 2000);
+                        setTimeout(function()
+                        {
+                        $('.alert-success').hide();
+                        $('#EditTestModal').hide();
+                        }, 200);
                     }
                 }
             });
@@ -297,14 +295,17 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $.ajax({
+            $.ajax(
+                {
                 url: "tests/"+id,
                 method: 'DELETE',
-                success: function(result) {
-                    setInterval(function(){
+                success: function(result)
+                {
+                    setTimeout(function()
+                    {
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                    }, 4000);
+                    }, 200);
                 }
             });
         });
