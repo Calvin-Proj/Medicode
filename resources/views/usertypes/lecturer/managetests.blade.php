@@ -308,7 +308,7 @@
                     setInterval(function(){
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                    }, 1000);
+                    }, 4000);
                 }
             });
         });
