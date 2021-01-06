@@ -34,7 +34,7 @@
     </div>
 </div>
 <!-- keeps modal close -->
-<div class="create_container" style="display:none">
+<div class="create_container" id="" style="display:none">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
         <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl md:max-w-xl md:p-6 lg:p-8 md:mx-0">
             <div>
@@ -107,7 +107,7 @@
 
 
 <!-- Edit Test Modal -->
-<div class="modal hidden" id="EditTestModal">
+<div class="edit_hidden" style="display:none">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
@@ -139,7 +139,7 @@
 </div>
 
 <!-- Delete Test Modal -->
-<div class="modal hidden" id="DeleteTestModal">
+<div class="delete_hidden" style="display:none">
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
