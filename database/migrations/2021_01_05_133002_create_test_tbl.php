@@ -16,7 +16,7 @@ class CreateTestTbl extends Migration
         Schema::create('tests', function (Blueprint $table) {
             $table->id();
             $table->date('test_date');
-            $table->boolean('test_type');
+            $table->enum('test_type',['Standard Test', 'Sick Test']);
             $table->text('test_desc');
             $table->timestamps();
         });

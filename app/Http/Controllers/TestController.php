@@ -82,8 +82,8 @@ class TestController extends Controller
                 <div>
                     <label for="test_type">Test Type:</label>
                     <select name="test_type1" id="test_type1" value="'.$data->test_type.'">
-                        <option value="0">Normal Test</option>
-                        <option value="1">Sick Test</option>
+                        <option value="Standard Test">Standard Test</option>
+                        <option value="Sick Test">Sick Test</option>
                     </select>
                 </div>
                 <div>
