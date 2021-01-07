@@ -37,8 +37,22 @@
 
   <div class="dropdown-content flex-auto justify-center rounded-lg p-4 shadow-xl bg-white hidden absolute w-48 right-4">
 
-    <a href="/lecturer/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block">Account Settings</a>
-
+    
+    @switch(auth()->user()->usertype)
+    @case('admin') 
+    <a href="/admin/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center">Account Settings</a>            
+        @break
+    @case('lecturer')
+    <a href="/lecturer/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center">Account Settings</a>
+        @break
+    @case('invig')
+    <a href="/invig/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center">Account Settings</a>          
+        @break
+    @case('student')
+    <a href="/student/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center">Account Settings</a>
+        @break
+    @default
+@endswitch
 
     <form action="{{ route('logout') }}" method="post" class="flex min-width-max">
       @csrf
