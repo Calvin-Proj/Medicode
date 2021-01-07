@@ -229,7 +229,7 @@
                             {
                                 $('.alert-success').hide();
                                 $('#CreateTestModal').hide();
-                            }, 1000);
+                            }, 500);
                 }
             }
         });
@@ -306,10 +306,10 @@
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
+                        setTimeout(function(){
                             $('.alert-success').hide();
                             $('#EditTestModal').hide();
-                        }, 2000);
+                        }, 500);
                     }
                 }
             });
@@ -338,7 +338,7 @@
                     {
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                    }, 1000);
+                    }, 500);
                 }
             });
         });
