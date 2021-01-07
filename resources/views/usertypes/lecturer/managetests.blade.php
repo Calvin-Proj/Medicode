@@ -1,163 +1,187 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container bg-white rounded-sm">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="">
-
-
-                    <div class="card-test_date card-body flex justify-end p-2" x-data="{ open: false }">
-                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline" @click="open = true">
+                <div>
+                    <div class="mt-6">
+                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline font-semibold" id="show_create" name="show_create">
                             Create Test
                         </button>
-                            <!-- Create Test Model -->
-                            <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" x-show="open"  >
-                                <div class="h-auto mx-2 text-left bg-secondary rounded-sm shadow-xl md:max-w-xl border-2 border-none z-10" @click.away="open = false">
-                                    <div class="modal-content">
-                                        <!-- Model Header -->
-                                        <div class="">
-                                            <div class="flex flex-wrap justify-center bg-primary content-start">
-                                                <img class="w-36 rounded-sm" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
-                                            </div>
-                                            <div class="flex justify-end p-1">
-                                                <button type="button" @click="open = false">
-                                                 <svg class="w-5 h-5 text-white bg-secondary rounded-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
-                                                 </button>
-                                            </div>
-                                                <div class="flex justify-center text-xl text-white">
-                                                    <h4 class="">Fill In Details</h4>
-                                                </div>
-                                        </div>
-
-                                            <!-- Modal body -->
-                                            <div class="modal-body">
-                                                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                                </div>
-                                                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                                                    <strong>Success!</strong>Test was added successfully.
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                    </div>
-                                                        <div class="form-group flex justify-start p-2 text-white">
-                                                        <label for="test_date">Test Date:</label>
-                                                        <span class="w-14"></span>
-                                                        <input type="date" class="text-primary" name="test_date" id="test_date">
-                                                        </div>
-                                                            <div class="form-group flex justify-start p-2 text-white">
-                                                            <label for="test_time">Test Time:</label>
-                                                            <span class="w-8"></span>
-                                                            <span class="w-8"></span>
-                                                            <input type="time" class="text-primary" name="test_time" id="test_time">
-                                                            </div>
-                                                                <div class="form-group flex justify-start p-2 text-white">
-                                                                <label for="test_type">Test Type:</label>
-                                                                <span class="w-16"></span>
-                                                                Sick:
-                                                                <span class="w-2"></span>
-                                                                <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type">
-                                                                <span class="w-2"></span>
-                                                                Normal:
-                                                                <span class="w-2"></span>
-                                                                <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type">
-                                                                </div>
-                                                                    <div class="form-group flex justify-start p-2 text-white">
-                                                                    <label for="test_desc">Test Description: </label>
-                                                                    <span class="w-4"></span>
-                                                                    <textarea class="form-control w-60 text-gray-600 resize-y" name="test_desc" id="test_desc">
-                                                                    </textarea>
-                                                                    </div>
-                                            </div>
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer flex flex-wrap justify-end p-4">
-                                                <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1" id="SubmitCreateTestForm">Create</button>
-                                                <span class="w-2"></span>
-                                                <button type="button" class="bg-primary rounded-lg text-white p-1" @click="open = false">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    <div class="table-responsive z-0">
-                        <table class="table table-bordered datatable">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Test Date</th>
-                                    <th>Test Type</th>
-                                    <th>Test Description</th>
-                                    <th class="text-center px-20">Action</th>
-                                </tr>
-                            </thead>
-                        </table>
+                        <!-- modal div -->
+                        <!-- Create Test Model -->
                     </div>
                 </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered datatable">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Test Date</th>
+                            <th>Test Type</th>
+                            <th>Test Description</th>
+                            <th>Test Time</th>
+                            <th class="text-center px-20">Action</th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     </div>
 </div>
 <!-- keeps modal close -->
-
+<div id="CreateTestModal" style="display:none">
+    <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+        <div class="h-auto p-4 mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-4 lg:p-4 md:mx-0 border-primary border-2">
+            <div>
+                <!-- Model Header -->
+                <div class="modal-header">
+                    <div class="relative">
+                        <button type="button" id="hide_create1" name="hide_create1">
+                        <svg class="absolute top-0 right-0 w-5 h-5 text-white bg-secondary rounded-sm hover:text-highlight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap justify-center">
+                        <img class="object-contain py-2 w-60" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
+                    </div>
+                    <div class="flex justify-center text-xl text-white">
+                        <h4 class="">Fill In Details</h4>
+                    </div>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                        <strong>Success!</strong>Test was added successfully.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                        <label for="test_date">Test Date:</label>
+                        <span class="w-14"></span>
+                        <input type="date" class="text-primary" name="test_date" id="test_date">
+                    </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                        <label for="test_time">Test Time:</label>
+                        <span class="w-7"></span>
+                        <span class="w-7"></span>
+                        <input type="time" class="text-primary" name="test_time" id="test_time">
+                    </div>
+                        <div class="form-group flex justify-start p-2 text-white">
+                        <label for="test_type">Test Type:</label>
+                        <span class="w-16"></span>
+                        Sick:
+                        <span class="w-2"></span>
+                        <input type="radio" value="false" class="form-control h-4 w-4 name="test_type" id="test_type">
+                        <span class="w-2"></span>
+                        Normal:
+                        <span class="w-2"></span>
+                        <input type="radio" value="true" class="form-control h-4 w-4" name="test_type" id="test_type">
+                    </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                        <label for="test_desc">Test Description: </label>
+                        <span class="w-3"></span>
+                        <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc">
+                        </textarea>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer flex flex-wrap justify-end p-4">
+                    <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black" id="SubmitCreateTestForm">Create</button>
+                    <span class="w-2"></span>
+                    <button type="button" class="bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black" id="hide_create" name="hide_create">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Edit Test Modal -->
-<div class="modal hidden" id="EditTestModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div style="display:none" id="EditTestModal">
+    <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+        <div class="h-auto mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-1 lg:p-2 md:mx-0 text-white border-primary border-2">
             <!-- Modal Header -->
-            <div class="modal-header">
+            <div class="relative">
+                <button type="button" class="close modelClose absolute top-0 right-0  text-white bg-secondary rounded-sm hover:text-highlight" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="flex flex-wrap justify-center">
+                <img class="object-contain py-2 w-60" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
+            </div>
+            <div class="modal-header flex justify-center text-xl">
                 <h4 class="modal-title">Test Edit</h4>
-                <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Test was added successfully.
+                    <strong>Success!</strong>Test was edited successfully.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div id="EditTestModalBody">
-
+                <div class="form-group flex justify-start p-2 text-white">
+                    <label for="test_date">Test Date:</label>
+                    <span class="w-14"></span>
+                    <input type="date" class="text-primary" name="test_date" id="test_date">
+                </div>
+                <div class="form-group flex justify-start p-2 text-white">
+                    <label for="test_time">Test Time:</label>
+                    <span class="w-7"></span>
+                    <span class="w-7"></span>
+                    <input type="time" class="text-primary" name="test_time" id="test_time">
+                </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                    <label for="test_type">Test Type:</label>
+                    <span class="w-16"></span>
+                    Sick:
+                    <span class="w-2"></span>
+                    <input type="radio" value="false" class="form-control h-4 w-4" name="test_type" id="test_type">
+                    <span class="w-2"></span>
+                    Normal:
+                    <span class="w-2"></span>
+                    <input type="radio" value="true" class="form-control h-4 w-4" name="test_type" id="test_type">
+                </div>
+                <div class="form-group flex justify-start p-2 text-white">
+                    <label for="test_desc">Test Description: </label>
+                    <span class="w-3"></span>
+                    <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc">
+                    </textarea>
                 </div>
             </div>
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitEditTestForm">Update</button>
-                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
+            <div class="modal-footer flex flex-wrap justify-end p-4">
+                <button type="button" class="btn btn-success btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" id="SubmitEditTestForm">Update</button>
+                <span class="w-2"></span>
+                <button type="button" class="btn btn-danger modelClose bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 
 <!-- Delete Test Modal -->
-<div class="modal hidden" id="DeleteTestModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
+<div style="display:none" id="DeleteTestModal">
+    <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
+        <div class="h-auto mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-1 lg:p-2 md:mx-0 text-white border-primary border-2">
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Test Delete</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="relative">
+                <button type="button" class="close absolute top-0 right-0 w-5 h-5 text-white bg-secondary rounded-sm hover:text-highlight" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-header flex justify-center text-xl">
+                <h4 class="modal-title">Confirmation</h4>
             </div>
             <!-- Modal body -->
-            <div class="modal-body">
-                <h4>Are you sure want to delete this Test?</h4>
+            <div class="modal-body p-2">
+                <h4>Are you sure want to delete this test?</h4>
             </div>
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="SubmitDeleteTestForm">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            <div class="modal-footer p-2 modal-footer flex flex-wrap justify-center">
+                <button type="button" class="btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" id="SubmitDeleteTestForm">Yes</button>
+                <span class="w-2"></span>
+                <button type="button" class="btn btn-default bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>
@@ -171,15 +195,16 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // init datatable.
-        var dataTable = $('.datatable').DataTable({
-            processing: true,
-            serverSide: true,
-            autoWidth: false,
-            pageLength: 5,
-            // scrollX: true,
-            "order": [[ 0, "desc" ]],
-            ajax: '{{ route('get-tests') }}',
-            columns: [
+        var dataTable = $('.datatable').DataTable(
+        {
+        processing: true,
+        serverSide: true,
+        autoWidth: false,
+        pageLength: 5,
+        // scrollX: true,
+        "order": [[ 0, "desc" ]],
+        ajax: '{{ route('get-tests') }}',
+        columns: [
                 {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_type', name: 'test_type'},
@@ -187,63 +212,90 @@
                 {data: 'test_time', name: 'test_time'},
                 {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
             ]
-        });
+    });
 
-        // Create test Ajax request.
-        $('#SubmitCreateTestForm').click(function(e) {
-            e.preventDefault();
-            $.ajaxSetup({
-                headers: {
+    // Create test Ajax request.
+    $('#SubmitCreateTestForm').click(function(e)
+    {
+        e.preventDefault();
+        $.ajaxSetup(
+            {
+            headers:
+                {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $.ajax({
-                url: "{{ route('tests.store') }}",
-                method: 'post',
-                data: {
+        $.ajax(
+            {
+            url: "{{ route('tests.store') }}",
+            method: 'post',
+            data: {
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
                     test_time: $('#test_time').val(),
                 },
-                success: function(result) {
-                    if(result.errors) {
-                        $('.alert-danger').html('');
-                        $.each(result.errors, function(key, value) {
-                            $('.alert-danger').show();
+            success: function(result)
+            {
+                if(result.errors)
+                {
+                    $('.alert-danger').html('');
+                    $.each(result.errors, function(key, value)
+                        {
+                        $('.alert-danger').show();
                             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
                         });
-                    } else {
+                } else
+                {
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
-                            $('.alert-success').hide();
-                            $('#CreateTestModal').modal('hide');
-                            location.reload();
-                        }, 2000);
-                    }
+                            setTimeout(function()
+                            {
+                                $('.alert-success').hide();
+                                $('#CreateTestModal').hide();
+                            }, 1000);
                 }
-            });
+            }
         });
+    });
 
-        // Get single test in EditModel
-        $('.modelClose').on('click', function(){
-            $('#EditTestModal').hide();
+    //buttons for create
+    $(document).ready(function()
+    {
+        $("#show_create").click(function ()
+        {
+            $( "#CreateTestModal" ).show();
         });
-        var id;
-        $('body').on('click', '#getEditTestData', function(e) {
+        $("#hide_create").click(function ()
+        {
+            $( "#CreateTestModal" ).hide();
+        });
+        $("#hide_create1").click(function ()
+        {
+            $("#CreateTestModal").hide();
+        });
+    });
+
+
+    // Get single test in EditModel
+    $('.modelClose').on('click', function()
+    {
+        $('#EditTestModal').hide();
+    });
+    var id;
+        $('body').on('click', '#getEditTestData', function(e)
+        {
             // e.preventDefault();
             $('.alert-danger').html('');
             $('.alert-danger').hide();
             id = $(this).data('id');
-            $.ajax({
+            $.ajax(
+                {
                 url: "tests/"+id+"/edit",
                 method: 'GET',
-                // data: {
-                //     id: id,
-                // },
-                success: function(result) {
+                success: function(result)
+                {
                     console.log(result);
                     $('#EditTestModalBody').html(result.html);
                     $('#EditTestModal').show();
@@ -262,26 +314,29 @@
             $.ajax({
                 url: "tests/"+id,
                 method: 'PUT',
-                data: {
+                data:{
                     test_date: $('#test_date').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
                     test_time: $('#test_time').val(),
-                },
+                    },
                 success: function(result) {
-                    if(result.errors) {
+                    if(result.errors)
+                    {
                         $('.alert-danger').html('');
                         $.each(result.errors, function(key, value) {
                             $('.alert-danger').show();
                             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
                         });
-                    } else {
+                    } else
+                    {
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
-                            $('.alert-success').hide();
-                            $('#EditTestModal').hide();
+                        setTimeout(function()
+                        {
+                        $('.alert-success').hide();
+                        $('#EditTestModal').hide();
                         }, 2000);
                     }
                 }
@@ -301,17 +356,22 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $.ajax({
+            $.ajax(
+                {
                 url: "tests/"+id,
                 method: 'DELETE',
-                success: function(result) {
-                    setInterval(function(){
+                success: function(result)
+                {
+                    setTimeout(function()
+                    {
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                    }, 4000);
+                    }, 1000);
                 }
             });
         });
     });
 </script>
+
+
 @endsection

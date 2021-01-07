@@ -72,7 +72,7 @@ table.dataTable thead tr th {
     border-color: #d2d6dc !important;
     border-radius: 0.1rem;
     background: #103A5C;
-    overflow: visible;
+    overflow: auto;
     margin-bottom: 0
 }
 
