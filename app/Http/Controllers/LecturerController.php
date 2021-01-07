@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Rules\MatchPassword;
+use Illuminate\Support\Facades\Hash;
 
 class LecturerController extends Controller
 {
@@ -17,8 +19,6 @@ class LecturerController extends Controller
     {
         return view('usertypes.lecturer.managetests');
     }
-
-
     public function indexsicknotes()
     {
         return view('usertypes.lecturer.managesicknotes');
@@ -43,27 +43,44 @@ class LecturerController extends Controller
     {
        $this->validate(request(), 
        [
-           'name' => 'required|min:3|string',
+          'name' => 'required|min:3|string',
           'email' => 'required|email',
-          'password' => 'required|min:6'
-       ]);
+          'currentPassword' => ['required', new MatchPassword]
+        ]);
 
        $data = request()->all();
-       $user = User::find($userid);
-
+       $user = User::find($userid);  
        $user->name= $data['name'];
        $user->email= $data['email'];
-       $user->password= $data['password'];
 
-       $user->save();
+      if($data["newPassword"]=='')
+        { 
+           
+        }
+        else 
+        {   
+           
+        $this->validate(request(), 
+         [  
+            'newPassword' => 'min:6',
+            'confirmPassword' => ['same:newPassword']
+         ]);
 
-       dd($user);
-
+         $user->password= Hash::make($data['newPassword']);
+            }
+  
+        $user->save();
+ 
+       dd($user->password);
        //return redirect('/');
 
-       
-
-
-
     }
-}
+
+
+
+     // dd( Hash::check($data['currentPassword'], auth()->user()->password));
+    //  if(!Hash::check($data['currentPassword'], $user->password)){
+    //       dd('Return error with current passowrd is not match.');
+    //     }else{
+     //       dd('Write here your update password code');
+          }      //   }
