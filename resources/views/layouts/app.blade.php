@@ -74,6 +74,15 @@
                 @endauth
             </ul>
         </nav>
+
+        <div class="container">
+         @if(session()->has('updated'))
+          <div class="alert alert-success">
+            {{session()->get('updated')}}
+          </div>
+          @endif
+        </div>
+
         <main class="px-4 py-2 flex justify-center min-w-full">
             @yield('content')
         </main>
