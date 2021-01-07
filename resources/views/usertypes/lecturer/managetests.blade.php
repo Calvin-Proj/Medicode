@@ -76,7 +76,7 @@
                         <span class="w-16"></span>
                         Sick:
                         <span class="w-2"></span>
-                        <input type="radio" value="0" class="form-control h-4 w-4 name="test_type" id="test_type">
+                        <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type">
                         <span class="w-2"></span>
                         Normal:
                         <span class="w-2"></span>
@@ -102,61 +102,35 @@
 
 
 <!-- Edit Test Modal -->
-<div style="display:none" id="EditTestModal">
+<div id="EditTestModal" style="display:none">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-        <div class="h-auto mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-1 lg:p-2 md:mx-0 text-white border-primary border-2">
+        <div class="h-auto p-4 mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-4 lg:p-4 md:mx-0 border-primary border-2">
             <!-- Modal Header -->
-            <div class="relative">
-                <button type="button" class="close modelClose absolute top-0 right-0  text-white bg-secondary rounded-sm hover:text-highlight" data-dismiss="modal">&times;</button>
-            </div>
-            <div class="flex flex-wrap justify-center">
-                <img class="object-contain py-2 w-60" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
-            </div>
-            <div class="modal-header flex justify-center text-xl">
+            <div class="modal-header">
                 <h4 class="modal-title">Test Edit</h4>
+                <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Test was edited successfully.
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="form-group flex justify-start p-2 text-white">
-                    <label for="test_date">Test Date:</label>
-                    <span class="w-14"></span>
-                    <input type="date" class="text-primary" name="test_date" id="test_date">
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                    <strong>Success!</strong>Test was added successfully.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="form-group flex justify-start p-2 text-white">
-                    <label for="test_time">Test Time:</label>
-                    <span class="w-7"></span>
-                    <span class="w-7"></span>
-                    <input type="time" class="text-primary" name="test_time" id="test_time">
-                </div>
-                    <div class="form-group flex justify-start p-2 text-white">
-                    <label for="test_type">Test Type:</label>
-                    <span class="w-16"></span>
-                    Sick:
-                    <span class="w-2"></span>
-                    <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type">
-                    <span class="w-2"></span>
-                    Normal:
-                    <span class="w-2"></span>
-                    <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type">
-                </div>
-                <div class="form-group flex justify-start p-2 text-white">
-                    <label for="test_desc">Test Description: </label>
-                    <span class="w-3"></span>
-                    <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc">
-                    </textarea>
+                <div id="EditTestModalBody">
+
                 </div>
             </div>
             <!-- Modal footer -->
-            <div class="modal-footer flex flex-wrap justify-end p-4">
-                <button type="button" class="btn btn-success btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" id="SubmitEditTestForm">Update</button>
-                <span class="w-2"></span>
-                <button type="button" class="btn btn-danger modelClose bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" data-dismiss="modal">Close</button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="SubmitEditTestForm">Update</button>
+                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -174,6 +148,7 @@
                 <h4 class="modal-title">Confirmation</h4>
             </div>
             <!-- Modal body -->
+
             <div class="modal-body p-2">
                 <h4>Are you sure want to delete this test?</h4>
             </div>
@@ -278,24 +253,23 @@
     });
 
 
-    // Get single test in EditModel
-    $('.modelClose').on('click', function()
-    {
-        $('#EditTestModal').hide();
-    });
-    var id;
-        $('body').on('click', '#getEditTestData', function(e)
-        {
+     // Get single article in EditModel
+     $('.modelClose').on('click', function(){
+            $('#EditTestModal').hide();
+        });
+        var id;
+        $('body').on('click', '#getEditTestData', function(e) {
             // e.preventDefault();
             $('.alert-danger').html('');
             $('.alert-danger').hide();
             id = $(this).data('id');
-            $.ajax(
-                {
+            $.ajax({
                 url: "tests/"+id+"/edit",
                 method: 'GET',
-                success: function(result)
-                {
+                // data: {
+                //     id: id,
+                // },
+                success: function(result) {
                     console.log(result);
                     $('#EditTestModalBody').html(result.html);
                     $('#EditTestModal').show();
@@ -303,7 +277,7 @@
             });
         });
 
-        // Update test Ajax request.
+        // Update article Ajax request.
         $('#SubmitEditTestForm').click(function(e) {
             e.preventDefault();
             $.ajaxSetup({
@@ -314,29 +288,27 @@
             $.ajax({
                 url: "tests/"+id,
                 method: 'PUT',
-                data:{
-                    test_date: $('#test_date').val(),
-                    test_type: $('#test_type').val(),
-                    test_desc: $('#test_desc').val(),
-                    test_time: $('#test_time').val(),
-                    },
+                data: {
+                    test_date: $('#test_date1').val(),
+                    test_time: $('#test_time1').val(),
+                    test_type: $('#test_type1').val(),
+                    test_desc: $('#test_desc1').val(),
+
+                },
                 success: function(result) {
-                    if(result.errors)
-                    {
+                    if(result.errors) {
                         $('.alert-danger').html('');
                         $.each(result.errors, function(key, value) {
                             $('.alert-danger').show();
                             $('.alert-danger').append('<strong><li>'+value+'</li></strong>');
                         });
-                    } else
-                    {
+                    } else {
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setTimeout(function()
-                        {
-                        $('.alert-success').hide();
-                        $('#EditTestModal').hide();
+                        setInterval(function(){
+                            $('.alert-success').hide();
+                            $('#EditTestModal').hide();
                         }, 2000);
                     }
                 }

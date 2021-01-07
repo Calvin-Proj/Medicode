@@ -45,9 +45,10 @@ class TestController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'test_date' => 'required',
+            'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
-            'test_time' => 'required',
+
         ]);
 
         if ($validator->fails()) {
@@ -59,7 +60,7 @@ class TestController extends Controller
         return response()->json(['success'=>'Test added successfully']);
     }
 
-    /**
+     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Test  $test
@@ -70,28 +71,24 @@ class TestController extends Controller
         $test = new Test;
         $data = $test->findData($id);
 
-        $html =
-                '<div class="form-group flex justify-start p-2 text-white">
+        $html = '<div>
+                    <label for="test_date">Test Date:</label>
+                    <input type="date" name="test_date1" id="test_date1" value="'.$data->test_date.'">
+                </div>
+                <div>
                     <label for="test_time">Test Time:</label>
-                    <span class="w-7"></span>
-                    <span class="w-7"></span>
-                    <input type="time" class="text-primary" name="test_time" id="test_time" value="'.$data->test_time.'">
+                    <input type="time" name="test_time1" id="test_time1" value="'.$data->test_time.'">
                 </div>
-                    <div class="form-group flex justify-start p-2 text-white">
+                <div>
                     <label for="test_type">Test Type:</label>
-                    <span class="w-16"></span>
-                    Sick:
-                    <span class="w-2"></span>
-                    <input type="radio" value="0" class="form-control h-4 w-4" name="test_type" id="test_type" value="'.$data->test_type.'">
-                    <span class="w-2"></span>
-                    Normal:
-                    <span class="w-2"></span>
-                    <input type="radio" value="1" class="form-control h-4 w-4" name="test_type" id="test_type" value="'.$data->test_type.'">
+                    <select name="test_type1" id="test_type1" value="'.$data->test_type.'">
+                        <option value="0">Normal Test</option>
+                        <option value="1">Sick Test</option>
+                    </select>
                 </div>
-                <div class="form-group flex justify-start p-2 text-white">
-                    <label for="test_desc">Test Description: </label>
-                    <span class="w-3"></span>
-                    <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc" value="'.$data->test_desc.'">
+                <div>
+                    <label for="test_desc">Test Description:</label>
+                    <textarea name="test_desc1" id="test_desc1">'.$data->test_desc.'
                     </textarea>
                 </div>';
 
