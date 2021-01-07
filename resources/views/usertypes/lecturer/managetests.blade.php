@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div class="container bg-white rounded-sm">
+<div class="container bg-white rounded-lg">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div>
-                    <div class="mt-6">
-                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline font-semibold" id="show_create" name="show_create">
+                    <div class="mt-2 mx-2">
+                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline font-semibold hover:bg-highlight hover:text-black focus:bg-highlight focus:text-black" id="show_create" name="show_create">
                             Create Test
                         </button>
                         <!-- modal div -->
@@ -36,15 +36,10 @@
 <!-- keeps modal close -->
 <div id="CreateTestModal" style="display:none">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-        <div class="h-auto p-4 mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-4 lg:p-4 md:mx-0 border-primary border-2">
+        <div class="h-auto p-4 text-left bg-secondary rounded-lg shadow-xl md:p-4 lg:p-4 border-primary border-2">
             <div>
                 <!-- Model Header -->
                 <div class="modal-header">
-                    <div class="relative">
-                        <button type="button" id="hide_create1" name="hide_create1">
-                        <svg class="absolute top-0 right-0 w-5 h-5 text-white bg-secondary rounded-sm hover:text-highlight" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.3 4.3a1 1 0 011.4 0L10 8.58l4.3-4.3a1 1 0 111.4 1.42L11.42 10l4.3 4.3a1 1 0 01-1.42 1.4L10 11.42l-4.3 4.3a1 1 0 01-1.4-1.42L8.58 10l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
-                        </button>
-                    </div>
                     <div class="flex flex-wrap justify-center">
                         <img class="object-contain py-2 w-60" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
                     </div>
@@ -104,21 +99,18 @@
 <!-- Edit Test Modal -->
 <div id="EditTestModal" style="display:none">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
-        <div class="h-auto p-4 mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-4 lg:p-4 md:mx-0 border-primary border-2">
+        <div class="h-auto p-4 text-left bg-secondary rounded-lg shadow-xl md:p-4 lg:p-4 border-primary border-2">
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Test Edit</h4>
-                <button type="button" class="close modelClose" data-dismiss="modal">&times;</button>
+            <div class="flex flex-wrap justify-center">
+                <img class="object-contain py-2 w-60" src="{{ asset('img/nmu-logo.png') }}" alt="tag">
+            </div>
+            <div class="modal-header flex justify-center text-xl text-white p-2">
+                <h4 class="modal-title">Edit Test Details</h4>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                    <strong>Success!</strong>Test was added successfully.
+                    <strong>Success!</strong>Test was edited successfully.
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -128,9 +120,10 @@
                 </div>
             </div>
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="SubmitEditTestForm">Update</button>
-                <button type="button" class="btn btn-danger modelClose" data-dismiss="modal">Close</button>
+            <div class="modal-footer relative flex flex-wrap justify-end p-4">
+                <button type="button" class="btn btn-success text-white hover:bg-highlight hover:text-black bg-primary rounded-lg p-1" id="SubmitEditTestForm">Update</button>
+                <div class="w-2"></div>
+                <button type="button" class="btn btn-danger modelClose text-white hover:bg-highlight hover:text-black bg-primary rounded-lg p-1" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -141,9 +134,6 @@
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
         <div class="h-auto mx-2 text-left bg-secondary rounded-lg shadow-xl md:max-w-xl md:p-1 lg:p-2 md:mx-0 text-white border-primary border-2">
             <!-- Modal Header -->
-            <div class="relative">
-                <button type="button" class="close absolute top-0 right-0 w-5 h-5 text-white bg-secondary rounded-sm hover:text-highlight" data-dismiss="modal">&times;</button>
-            </div>
             <div class="modal-header flex justify-center text-xl">
                 <h4 class="modal-title">Confirmation</h4>
             </div>

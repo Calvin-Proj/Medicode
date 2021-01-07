@@ -71,24 +71,28 @@ class TestController extends Controller
         $test = new Test;
         $data = $test->findData($id);
 
-        $html = '<div>
+        $html = '<div class="flex text-white p-2">
                     <label for="test_date">Test Date:</label>
-                    <input type="date" name="test_date1" id="test_date1" value="'.$data->test_date.'">
+                    <span class="w-14"></span>
+                    <input type="date" name="test_date1" id="test_date1" value="'.$data->test_date.'" class="text-gray-600 w-38">
                 </div>
-                <div>
+                <div class="flex text-white p-2">
                     <label for="test_time">Test Time:</label>
-                    <input type="time" name="test_time1" id="test_time1" value="'.$data->test_time.'">
+                    <span class="w-14"></span>
+                    <input type="time" name="test_time1" id="test_time1" value="'.$data->test_time.'" class="text-gray-600">
                 </div>
-                <div>
+                <div class="flex text-white p-2">
                     <label for="test_type">Test Type:</label>
-                    <select name="test_type1" id="test_type1" value="'.$data->test_type.'">
+                    <span class="w-14"></span>
+                    <select name="test_type1" id="test_type1" value="'.$data->test_type.'" class="text-gray-600 w-32">
                         <option value="Standard Test">Standard Test</option>
                         <option value="Sick Test">Sick Test</option>
                     </select>
                 </div>
-                <div>
+                <div class="flex text-white p-2">
                     <label for="test_desc">Test Description:</label>
-                    <textarea name="test_desc1" id="test_desc1">'.$data->test_desc.'
+                    <span class="w-2"></span>
+                    <textarea name="test_desc1" id="test_desc1"'.$data->test_desc.'" class="text-gray-600 w-48">
                     </textarea>
                 </div>';
 
