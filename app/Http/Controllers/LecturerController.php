@@ -70,9 +70,11 @@ class LecturerController extends Controller
             }
   
         $user->save();
+
+        session()->flash('updated', 'Account successfully updated ');
  
-       dd($user->password);
-       //return redirect('/');
+      // dd($user->password);
+       return redirect('/');
 
     }
 
