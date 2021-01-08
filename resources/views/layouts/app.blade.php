@@ -74,14 +74,11 @@
                 @endauth
             </ul>
         </nav>
-
-        <div class="container">
+ <!--banner to confirm update-->      
          @if(session()->has('updated'))
-          <div class="alert alert-success">
-            {{session()->get('updated')}}
-          </div>
+          <x-updated-account-alert/>
           @endif
-        </div>
+        
 
         <main class="px-4 py-2 flex justify-center min-w-full">
             @yield('content')

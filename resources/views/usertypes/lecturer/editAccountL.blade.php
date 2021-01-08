@@ -44,7 +44,7 @@
                 <!--old Password -->
                 <div class="mt-4">
                     <label for="Password" class="text-black">Current Password</label>
-                    <input type="text" value="" name="currentPassword" id="currentPassword" size="50" class="block mt-1 w-full border-gray-400"  >        
+                    <input type="text" value="HelNat77" name="currentPassword" id="currentPassword" size="50" class="block mt-1 w-full border-gray-400"  >        
                 </div>
     
                  <!--change password checkbox -->
@@ -53,8 +53,8 @@
 
                 <!-- Confirm Password -->
     
-                <div class="flex items-center mt-4">
-                    <x-button class="rounded-none hover:bg-yellow">
+                <div class="flex items-center mt-4 hover:bg-yellow">
+                    <x-button class="rounded-none ">
                         {{ __('Update') }}
                     </x-button>
                 </div>
