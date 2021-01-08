@@ -6,14 +6,14 @@
 
      <div class="mt-4">
         <label for="NewPassword" id="NP" style="display:none" class="text-black">New Password</label>
-        <input value="" id="NPbx" name="newPassword" size="50" style="display:none" class="block mt-1 w-full border-gray-400" type="text" >        
+        <input value="" id="NPbx" name="newPassword" size="50" style="display:none" class="block mt-1 w-full border-gray-400" type="password" >
     </div>
 <!--Confirm Password -->
 <div class="mt-4">
     <label for="CPassword" id="NP1" style="display:none" class="text-black">Confirm Password</label>
-    <input value="" id="NPbx1" name="confirmPassword" size="50" style="display:none" class="block mt-1 w-full border-gray-400" type="text" >        
+    <input value="" id="NPbx1" name="confirmPassword" size="50" style="display:none" class="block mt-1 w-full border-gray-400" type="password" >
 </div>
-    
+
 
      <script>
         function ChangePassword() {
@@ -33,7 +33,7 @@
             label1.style.display = "block";
             inputbox1.style.display = "block";
           } else {
-              
+
              label.style.display = "none";
              inputbox.style.display = "none";
 
