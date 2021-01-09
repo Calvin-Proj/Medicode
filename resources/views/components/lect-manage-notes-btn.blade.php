@@ -1,12 +1,12 @@
-<form action="{{ route('invigschedules') }}" method="get" >
+<form action="{{ route('lecturermanagesicknotes') }}" method="get" >
     <button type="submit" class="inline-flex h-full py-4 px-3  hover:bg-highlight hover:text-black focus:outline-none focus:text-highlight">
         <div class="flex items-center">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"/>
             </svg>
             <span class="w-2">
         </span>
-        Invigilations Schedule
+        Manage Sick Notes
         </div>
     </button>
 </form>

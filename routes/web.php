@@ -38,7 +38,7 @@ Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 //lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextestAdd'])->name('lectureraddTest');
-Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicktest');
+Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
 Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
 //routes for lecturer editing account

@@ -44,8 +44,10 @@
                                     @break
                                 @case('lecturer')
                                             <x-lect-manage-test-btn/>
+                                            <x-lect-manage-notes-btn/>
                                             <x-lect-view-miscon-btn/>
-                                            <a href="{{ route('lecturermanageattendants')}}" class="p-3">Manage Attendants</a>
+                                            <x-lect-view-attend-btn/>
+
 
 
                                     @break
@@ -74,11 +76,11 @@
                 @endauth
             </ul>
         </nav>
- <!--banner to confirm update-->      
+ <!--banner to confirm update-->
          @if(session()->has('updated'))
           <x-updated-account-alert/>
           @endif
-        
+
 
         <main class="px-4 py-2 flex justify-center min-w-full">
             @yield('content')
