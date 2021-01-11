@@ -2,6 +2,6 @@
 
 @section('content')
 <div class="flex justify-center bg-white shadow overflow-hidden sm:rounded-sm ">
-    Manage student
+    Manage Student
 </div>
 @endsection

@@ -8,6 +8,7 @@ use App\Http\Controllers\InvigController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\AccountEdit;
+use App\Http\Controllers\StudentTestSched;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,7 @@ Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('
 Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
 Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
-
+//routes for admin editing account
 Route::get('/admin/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 });
@@ -37,7 +38,11 @@ Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 
 //lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
-Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextestAdd'])->name('lectureraddTest');
+// Resource Route for test.
+Route::resource('tests', TestController::class);
+// Route for get tests for yajra post request.
+Route::get('get-tests', [TestController::class, 'getTests'])->name('get-tests');
+Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
 Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
@@ -53,7 +58,7 @@ Route::middleware(['checkUsertype:invig'])->group(function(){
 Route::get('/invig/schedule', [InvigController::class, 'indexinvigschedule'])->name('invigschedules');
 Route::get('/invig/submisconduct', [InvigController::class, 'indexinvigmiscon'])->name('invigmisconduct');
 Route::get('/invig/subhours', [InvigController::class, 'indexinvighours'])->name('invighours');
-//routes for lecturer editing account
+//routes for invigilator editing account
 Route::get('/invig/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/invig/edit{user}', [AccountEdit::class, 'update']);
 });
@@ -62,19 +67,15 @@ Route::post('/invig/edit{user}', [AccountEdit::class, 'update']);
 
 //student routes + Multi authenticate
 Route::middleware(['checkUsertype:stud'])->group(function(){
+Route::resource('tests', StudentTestSched::class);
+Route::get('get-tests', [StudentTestSched::class, 'getTests'])->name('get-tests');
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
-
+//routes for student editing account
 Route::get('/student/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/student/edit{user}', [AccountEdit::class, 'update']);
 });
 ////////////////////////////////////
 
-
-
-// Resource Route for article.
-Route::resource('tests', TestController::class);
-// Route for get articles for yajra post request.
-Route::get('get-tests', [TestController::class, 'getTests'])->name('get-tests');
 
 require __DIR__.'/auth.php';

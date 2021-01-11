@@ -1,4 +1,4 @@
-<form action="{{ route('adminmanageinvigs') }}" method="get" >
+<form action="{{ route('adminmanagestudents') }}" method="get" >
     <button type="submit" class="inline-flex h-full py-4 px-3  hover:bg-highlight hover:text-black focus:outline-none focus:text-highlight">
         <div class="flex items-center">
             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
