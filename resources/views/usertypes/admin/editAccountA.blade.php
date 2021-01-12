@@ -48,7 +48,7 @@
                 <!--old Password -->
                 <div class="mt-4">
                     <label for="Password" class="text-black px-2 font-semibold">Current Password</label>
-                    <input type="password" value="" name="currentPassword" id="currentPassword" size="50" class="block mt-1 w-full border-gray-400"  >
+                    <input type="password" value="HelNat77" name="currentPassword" id="currentPassword" size="50" class="block mt-1 w-full border-gray-400"  >
                 </div>
 
                  <!--change password checkbox -->

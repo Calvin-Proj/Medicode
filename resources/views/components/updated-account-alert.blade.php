@@ -27,7 +27,7 @@
 
 </head>
 <body>
-<div class="alert-banner w-full fixed top-0 mt-14 z-0">
+<div class="alert-banner items-center w-full fixed top-0 mt-14 z-0 ">
     <input type="checkbox" class="hidden" id="banneralert">
       
     <label class="close cursor-pointer flex items-center justify-between w-full p-2 bg-green-500 shadow text-white" title="close" for="banneralert">
