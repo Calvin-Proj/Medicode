@@ -20,10 +20,13 @@ use App\Http\Controllers\StudentTestSched;
 |
 */
 //Main route for Dashboard
-Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 //admin routes + Multi authenticate
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::middleware(['checkUsertype:admin'])->group(function(){
+
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
 Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
@@ -42,6 +45,7 @@ Route::middleware(['checkUsertype:lect'])->group(function(){
 Route::resource('tests', TestController::class);
 // Route for get tests for yajra post request.
 Route::get('get-tests', [TestController::class, 'getTests'])->name('get-tests');
+
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
