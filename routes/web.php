@@ -9,6 +9,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\AccountEdit;
 use App\Http\Controllers\StudentTestSched;
+use App\Models\User;
+use App\Models\Module;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,22 @@ use App\Http\Controllers\StudentTestSched;
 
 //admin routes + Multi authenticate
 Route::get('/', [HomeController::class, 'index'])->name('home');
+//one to one relationship test
+Route::get('/read{id}', function($id)
+{
+  return User::find($id)->module->module_code;
+});
+
+//many to many relationship test
+Route::get('/read/many{id}', function($id)
+{
+  $user= User::find($id);
+
+  foreach ($user->modules as $module) {
+     return $module->module_code;
+  }
+});
+
 
 Route::middleware(['checkUsertype:admin'])->group(function(){
 

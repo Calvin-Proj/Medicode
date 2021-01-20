@@ -166,7 +166,19 @@
                         </div>
                     </div>
                     <!--/table Card-->
+                   
                 </div>
+                 <!--progress bar-->
+                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                  
+                    <div class="bg-white rounded-lg shadow-xl p-5 ">
+                                                
+                        <x-progress-bar/>
+                       
+                    </div>
+                    
+                </div>
+                
 
             </div>
         </div>
@@ -175,10 +187,7 @@
 
 
 
-    <script>
-
-      
-    </script>
+   
 
 
 </body>
