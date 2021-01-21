@@ -38,7 +38,7 @@ Route::get('/read/many{id}', function($id)
   $user= User::find($id);
 
   foreach ($user->modules as $module) {
-     return $module->module_code;
+     echo $module->module_code;
   }
 });
 

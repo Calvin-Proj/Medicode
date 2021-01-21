@@ -13,7 +13,7 @@
     <div class="flex items-center">
        @switch(auth()->user()->usertype)
     @case('admin')
-    <img class="block h-8 w-8" src="https://www.iconfinder.com/icons/2549769/businessman_male_man_professional_icon" alt="avatar">
+    <img class="block h-8 w-8" src="https://magic.facetofacegames.com/wp-content/uploads/batmanIcon.jpg" alt="avatar">
         @break
     @case('lecturer')
     <img class="block h-8 w-8" src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man4-512.png" alt="avatar">
@@ -40,16 +40,16 @@
 
     @switch(auth()->user()->usertype)
     @case('admin')
-    <a href="/admin/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Account Settings</a>
+    <a href="/admin/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Edit Account</a>
         @break
     @case('lecturer')
-    <a href="/lecturer/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Account Settings</a>
+    <a href="/lecturer/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Edit Account</a>
         @break
     @case('invig')
-    <a href="/invig/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Account Settings</a>
+    <a href="/invig/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Edit Account</a>
         @break
     @case('student')
-    <a href="/student/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Account Settings</a>
+    <a href="/student/edit{{auth()->user()->id}}" class="hover:bg-secondary hover:text-white text-black p-2 py-2 block text-center rounded-lg">Edit Account</a>
         @break
     @default
 @endswitch
