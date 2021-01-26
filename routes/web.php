@@ -35,17 +35,10 @@ Route::get('/read{id}', function($id)
 });
 
 //many to many relationship test
-Route::get('/read/many{id}', function($id)
-{
+Route::get('/read/many',[HomeController::class, 'read']);
 
 
-      $module= Module::find($id);
 
-      foreach ($module->users as $user) {
-          echo $user->name;
-      }
-
-});
 
 Route::get('/onetomany', function()
 {
