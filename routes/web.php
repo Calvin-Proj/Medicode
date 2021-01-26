@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Campus;
+use App\Models\Building;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
@@ -35,11 +37,26 @@ Route::get('/read{id}', function($id)
 //many to many relationship test
 Route::get('/read/many{id}', function($id)
 {
-  $user= User::find($id);
 
-  foreach ($user->modules as $module) {
-     echo $module->module_code;
-  }
+
+      $module= Module::find($id);
+
+      foreach ($module->users as $user) {
+          echo $user->name;
+      }
+
+});
+
+Route::get('/onetomany', function()
+{
+
+
+    $campus = Campus::find(1);
+
+    foreach ($campus->buildings as $building) {
+        echo $building->building_name;
+    }
+
 });
 
 

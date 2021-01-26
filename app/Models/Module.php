@@ -19,16 +19,19 @@ class Module extends Model
      /**
      * Indicates if the model's ID is auto-incrementing.
      *
-     * 
+     *
      */
     //public $incrementing = false;@var bool
 
     /**
      * The data type of the auto-incrementing ID.
      *
-     * 
+     *
      */
    // protected $keyType = 'string';@var string
 
-    
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
 }
