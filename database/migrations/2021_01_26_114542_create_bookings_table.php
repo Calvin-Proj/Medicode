@@ -15,6 +15,8 @@ class CreateBookingsTable extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->integer("sick_notes_id"); //foreign
+            $table->integer("test_id"); //foreign
             $table->timestamps();
         });
     }

@@ -17,6 +17,11 @@ class CreateModulesTable extends Migration
             $table->id();
             $table->string("module_code");
             $table->string("module_name");
+            $table->integer("module_year");
+            $table->integer("qualification_id"); //foreign
+            $table->integer("user_id"); //lecturer //foreign
+            $table->timestamps();
+
 
         });
     }

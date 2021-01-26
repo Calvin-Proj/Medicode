@@ -14,10 +14,13 @@ class CreateQualificationsTable extends Migration
     public function up()
     {
         Schema::create('qualifications', function (Blueprint $table) {
-            $table->id("qualification_code");
+            $table->id();
+            $table->integer("qualification_code");
             $table->string("qualification_name");
-          
-           
+            $table->integer("no_of_years");
+            $table->timestamps();
+
+
         });
     }
 

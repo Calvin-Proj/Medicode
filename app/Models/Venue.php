@@ -9,5 +9,18 @@ class Venue extends Model
 {
     use HasFactory;
 
+    public function tests()
+    {
+
+        return $this->hasOne('App\Models\Test');
+
+    }
+
+    public function buildings()
+    {
+
+        return $this->belongsTo('App\Models\Building');
+
+    }
 
 }

@@ -39,7 +39,7 @@ return array(
     'App\\Models\\Booking' => $baseDir . '/app/Models/Booking.php',
     'App\\Models\\Building' => $baseDir . '/app/Models/Building.php',
     'App\\Models\\Campus' => $baseDir . '/app/Models/Campus.php',
-    'App\\Models\\Log_Misconduct' => $baseDir . '/app/Models/Log_Misconduct.php',
+    'App\\Models\\Misconduct' => $baseDir . '/app/Models/Misconduct.php',
     'App\\Models\\Module' => $baseDir . '/app/Models/Module.php',
     'App\\Models\\Qualification' => $baseDir . '/app/Models/Qualification.php',
     'App\\Models\\Sick_Note' => $baseDir . '/app/Models/Sick_Note.php',

@@ -41,6 +41,34 @@ class Test extends Model
     {
         return static::find($id)->delete();
     }
+
+    public function bookings()
+    {
+
+        return $this->hasMany('App\Models\Booking');
+
+    }
+
+    public function attendances()
+    {
+
+        return $this->hasOne('App\Models\Attendance');
+
+    }
+
+    public function venues()
+    {
+
+        return $this->hasOne('App\Models\Venue');
+
+    }
+
+    public function modules()
+    {
+
+        return $this->belongsTo('App\Models\Module');
+
+    }
 }
 
 

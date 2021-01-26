@@ -14,10 +14,12 @@ class CreateVenuesTable extends Migration
     public function up()
     {
         Schema::create('venues', function (Blueprint $table) {
-            $table->id("venue_no");
+            $table->id();
             $table->integer("no_of_seats");
             $table->string("venue_name");
-            
+            $table->integer("building_id"); //foreign
+            $table->timestamps();
+
         });
     }
 

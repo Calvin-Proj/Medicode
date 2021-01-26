@@ -34,4 +34,16 @@ class Module extends Model
     {
         return $this->belongsToMany('App\Models\User');
     }
+
+    public function tests()
+    {
+
+        return $this->hasMany('App\Models\Test');
+
+    }
+
+    public function qualifications()
+    {
+        return $this->belongsToMany('App\Models\Qualification');
+    }
 }

@@ -15,4 +15,11 @@ class Building extends Model
         return $this->belongsTo('App\Models\Campus');
 
     }
+
+    public function venues()
+    {
+
+        return $this->hasMany('App\Models\Venue');
+
+    }
 }

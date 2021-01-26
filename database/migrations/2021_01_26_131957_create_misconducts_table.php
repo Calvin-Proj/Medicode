@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLogMisconductsTable extends Migration
+class CreateMisconductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,10 @@ class CreateLogMisconductsTable extends Migration
     public function up()
     {
         Schema::create('misconducts', function (Blueprint $table) {
-            $table->id("log_id");
-            $table->text("misconduct_desc");
+            $table->id();
+            $table->integer("attendance_id"); //foreign
+            $table->integer("user_id"); //student //foreign
+            $table->text("misconduct_desc", 255);
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateLogMisconductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('log__misconducts');
+        Schema::dropIfExists('misconducts');
     }
 }

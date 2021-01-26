@@ -670,7 +670,7 @@ class ComposerStaticInit9e024d3754e67bfeaa76153da355ba66
         'App\\Models\\Booking' => __DIR__ . '/../..' . '/app/Models/Booking.php',
         'App\\Models\\Building' => __DIR__ . '/../..' . '/app/Models/Building.php',
         'App\\Models\\Campus' => __DIR__ . '/../..' . '/app/Models/Campus.php',
-        'App\\Models\\Log_Misconduct' => __DIR__ . '/../..' . '/app/Models/Log_Misconduct.php',
+        'App\\Models\\Misconduct' => __DIR__ . '/../..' . '/app/Models/Misconduct.php',
         'App\\Models\\Module' => __DIR__ . '/../..' . '/app/Models/Module.php',
         'App\\Models\\Qualification' => __DIR__ . '/../..' . '/app/Models/Qualification.php',
         'App\\Models\\Sick_Note' => __DIR__ . '/../..' . '/app/Models/Sick_Note.php',

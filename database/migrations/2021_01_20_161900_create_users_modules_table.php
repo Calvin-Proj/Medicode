@@ -15,8 +15,8 @@ class CreateUsersModulesTable extends Migration
     {
         Schema::create('module_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('module_id');
+            $table->integer('user_id'); //foreign
+            $table->integer('module_id'); //foreign
             $table->timestamps();
         });
     }
