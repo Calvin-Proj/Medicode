@@ -22,4 +22,11 @@ class Booking extends Model
         return $this->belongsTo('App\Models\Sicktest_note');
 
     }
+
+    public function users()
+    {
+
+        return $this->belongsTo('App\Models\User');
+
+    }
 }
