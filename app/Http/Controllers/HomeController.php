@@ -20,12 +20,30 @@ class HomeController extends Controller
 
             return view('usertypes.admin.homeAdmin') ;
         }
-        elseif (auth()->user()->usertype=='lecturer') {
 
-            return view('usertypes.lecturer.homeLect') ;
+
+
+
+
+        elseif (auth()->user()->usertype=='lecturer') {
+            // gets the modules the user takes
+            $id= auth()->user()->id;
+
+            $user=User::find($id)->modules()->get();
+            $count_Module=count($user);
+
+            return view('usertypes.lecturer.homeLect')->with('count_Module',$count_Module);
 
         }
+
+
+
+
+
+
+
         elseif (auth()->user()->usertype=='student') {
+
             $id= auth()->user()->id;
 
             $user=User::find($id)->modules()->get();
@@ -33,6 +51,12 @@ class HomeController extends Controller
 
             return view('usertypes.student.homeStud')->with('count_Module',$count_Module);
         }
+
+
+
+
+
+
         elseif (auth()->user()->usertype=='invig') {
             return view('usertypes.invig.homeInvig');
         }

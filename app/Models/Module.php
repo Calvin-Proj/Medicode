@@ -46,4 +46,6 @@ class Module extends Model
     {
         return $this->belongsToMany('App\Models\Qualification');
     }
+
+
 }
