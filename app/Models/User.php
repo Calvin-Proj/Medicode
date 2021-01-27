@@ -70,4 +70,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Sick_Note');
 
     }
+
+    public function bookings()
+    {
+
+        return $this->hasMany('App\Models\Booking');
+
+    }
 }
