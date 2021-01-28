@@ -68,10 +68,21 @@
                             </li>
                     </li>
                 </ul>
+            <!--tooltips navbar connection-->
             @switch(auth()->user()->usertype)
                 @case('admin')
-                    <x-admin-help-btn/>
-                @break
+                        <x-admin-help-btn/>
+                    @break
+                @case('lecturer')
+                        <x-lect-help-btn/>
+                     @break
+                @case('invig')
+                        <x-invig-help-btn/>
+                    @break
+                @case('student')
+                        <x-stud-help-btn/>
+                    @break
+                @default
             @endswitch
             <ul class= "flex items-center">
                 @auth

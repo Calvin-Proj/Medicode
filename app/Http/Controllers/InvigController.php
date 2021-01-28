@@ -25,4 +25,8 @@ class InvigController extends Controller
     {
         return view('usertypes.invig.subhours');
     }
+    public function indexhelp()
+    {
+        return view('usertypes.invig.invighelp');
+    }
 }

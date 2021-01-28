@@ -74,7 +74,7 @@ Route::middleware(['checkUsertype:lect'])->group(function(){
 Route::resource('tests', TestController::class);
 // Route for get tests for yajra post request.
 Route::get('get-tests', [TestController::class, 'getTests'])->name('get-tests');
-
+Route::get('/lecturer/help', [LecturerController::class, 'indexhelp'])->name('lecturerhelp');
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
@@ -88,6 +88,7 @@ Route::post('/lecturer/edit{user}', [AccountEdit::class, 'update']);
 
 //invig routes + Multi authenticate
 Route::middleware(['checkUsertype:invig'])->group(function(){
+Route::get('/invig/help', [InvigController::class, 'indexhelp'])->name('invighelp');
 Route::get('/invig/schedule', [InvigController::class, 'indexinvigschedule'])->name('invigschedules');
 Route::get('/invig/submisconduct', [InvigController::class, 'indexinvigmiscon'])->name('invigmisconduct');
 Route::get('/invig/subhours', [InvigController::class, 'indexinvighours'])->name('invighours');
@@ -102,6 +103,7 @@ Route::post('/invig/edit{user}', [AccountEdit::class, 'update']);
 Route::middleware(['checkUsertype:stud'])->group(function(){
 Route::resource('tests', StudentTestSched::class);
 Route::get('get-tests', [StudentTestSched::class, 'getTests'])->name('get-tests');
+Route::get('/student/help', [StudentController::class, 'indexhelp'])->name('studenthelp');
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
 //routes for student editing account

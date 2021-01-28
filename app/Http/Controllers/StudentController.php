@@ -41,4 +41,8 @@ class StudentController extends Controller
 
         return view('usertypes.student.testsched');
     }
+    public function indexhelp()
+    {
+        return view('usertypes.student.studenthelp');
+    }
 }
