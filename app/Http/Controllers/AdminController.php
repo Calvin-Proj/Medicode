@@ -33,4 +33,8 @@ class AdminController extends Controller
     {
         return view('usertypes.admin.managestudent');
     }
+    public function indexhelp()
+    {
+        return view('usertypes.admin.adminhelp');
+    }
 }

@@ -55,6 +55,7 @@ Route::get('/onetomany', function()
 
 Route::middleware(['checkUsertype:admin'])->group(function(){
 
+Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
 Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');

@@ -68,6 +68,11 @@
                             </li>
                     </li>
                 </ul>
+            @switch(auth()->user()->usertype)
+                @case('admin')
+                    <x-admin-help-btn/>
+                @break
+            @endswitch
             <ul class= "flex items-center">
                 @auth
                     <li>
