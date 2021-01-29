@@ -38,12 +38,8 @@ Route::get('/read{id}', function($id)
 Route::get('/read/many',[HomeController::class, 'read']);
 
 
-
-
 Route::get('/onetomany', function()
 {
-
-
     $campus = Campus::find(1);
 
     foreach ($campus->buildings as $building) {

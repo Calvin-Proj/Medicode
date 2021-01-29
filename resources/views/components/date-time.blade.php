@@ -18,7 +18,7 @@
     </div>
 </div>
 <script>
-    setInterval(displayclock,100)
+    setInterval(displayclock,1000)
     function displayclock(){
         var time = new Date();
         var hrs = time.getHours();
@@ -56,6 +56,5 @@
 
         document.getElementById("clock").innerHTML = hrs +':' + min + ':' + sec + ' ' +en ;
         document.getElementById("date").innerHTML =  (("0"+time.getDate()).slice(-2))+"/"+ (("0"+(time.getMonth()+1)).slice(-2)) +"/"+ (time.getFullYear())
-
     }
 </script>
