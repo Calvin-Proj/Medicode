@@ -16,14 +16,14 @@ class Attendance extends Model
 
     }
 
-    public function tests()
+    public function test()
     {
 
         return $this->belongsTo('App\Models\Test');
 
     }
 
-    public function User()
+    public function user()
     {
 
         return $this->belongsTo('App\Models\User'); //invigilator

@@ -6,7 +6,7 @@
             </svg>
             <span class="w-2">
         </span>
-        Invigilations Schedule
+        Invigilation Schedule
         </div>
     </button>
 </form>

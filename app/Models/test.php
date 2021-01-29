@@ -63,10 +63,16 @@ class Test extends Model
 
     }
 
-    public function modules()
+    public function module()
     {
 
         return $this->belongsTo('App\Models\Module');
+
+    }
+    public function users()
+    {
+
+        return $this->belongsToMany('App\Models\User');
 
     }
 }

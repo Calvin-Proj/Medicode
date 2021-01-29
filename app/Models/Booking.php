@@ -9,7 +9,7 @@ class Booking extends Model
 {
     use HasFactory;
 
-    public function tests()
+    public function test()
     {
 
         return $this->belongsTo('App\Models\Test');
@@ -23,7 +23,7 @@ class Booking extends Model
 
     }
 
-    public function users()
+    public function user()
     {
 
         return $this->belongsTo('App\Models\User');
