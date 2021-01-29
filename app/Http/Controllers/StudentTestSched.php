@@ -25,7 +25,7 @@ class StudentTestSched extends Controller
      */
     public function getTests(Request $request, Test $test)
     {
-        $data = $test->getData();
+        $data = $test->getStudData();
         return \DataTables::of($data)
             ->make(true);
     }

@@ -168,7 +168,7 @@
         pageLength: 5,
         // scrollX: true,
         "order": [[ 0, "desc" ]],
-        ajax: '{{ route('get-tests') }}',
+        ajax: '{{ route('get-lecttests') }}',
         columns: [
                 {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
@@ -192,7 +192,7 @@
             });
         $.ajax(
             {
-            url: "{{ route('tests.store') }}",
+            url: "{{ route('lecttests.store') }}",
             method: 'post',
             data: {
                     test_date: $('#test_date').val(),
@@ -243,8 +243,8 @@
     });
 
 
-     // Get single article in EditModel
-     $('.modelClose').on('click', function(){
+    // Get single test in EditModel
+    $('.modelClose').on('click', function(){
             $('#EditTestModal').hide();
         });
         var id;
@@ -267,7 +267,7 @@
             });
         });
 
-        // Update article Ajax request.
+        // Update test Ajax request.
         $('#SubmitEditTestForm').click(function(e) {
             e.preventDefault();
             $.ajaxSetup({
@@ -279,11 +279,8 @@
                 url: "tests/"+id,
                 method: 'PUT',
                 data: {
-                    test_date: $('#test_date1').val(),
-                    test_time: $('#test_time1').val(),
-                    test_type: $('#test_type1').val(),
-                    test_desc: $('#test_desc1').val(),
-
+                    title: $('#editTitle').val(),
+                    description: $('#editDescription').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -296,10 +293,10 @@
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setTimeout(function(){
+                        setInterval(function(){
                             $('.alert-success').hide();
                             $('#EditTestModal').hide();
-                        }, 500);
+                        }, 2000);
                     }
                 }
             });
@@ -318,17 +315,16 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            $.ajax(
-                {
+            $.ajax({
                 url: "tests/"+id,
                 method: 'DELETE',
-                success: function(result)
-                {
-                    setTimeout(function()
-                    {
+                success: function(result) {
+                    setInterval(function(){
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                    }, 500);
+                        setTimeout(location.reload(), 10000);
+                    }, 1000);
+
                 }
             });
         });

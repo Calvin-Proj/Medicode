@@ -25,7 +25,7 @@ class TestController extends Controller
      */
     public function getTests(Request $request, Test $test)
     {
-        $data = $test->getStudData();
+        $data = $test->getData();
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
                 return '<button type="button" class="btn btn-success btn-sm" id="getEditTestData" data-id="'.$data->id.'">Edit</button>

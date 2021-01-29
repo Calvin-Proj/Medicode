@@ -19,6 +19,11 @@ class Test extends Model
 
     public function getData()
     {
+        return static::orderBy('created_at','desc')->get();
+    }
+
+    public function getStudData()
+    {
         $currentDate = date("Y-m-d");
         return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
     }
