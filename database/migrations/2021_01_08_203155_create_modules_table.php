@@ -17,9 +17,7 @@ class CreateModulesTable extends Migration
             $table->id();
             $table->string("module_code")->unqiue();
             $table->string("module_name")->unique();
-            $table->integer("module_year");
-            $table->integer("qualification_id"); //foreign
-            $table->integer("user_id"); //lecturer //foreign
+            $table->integer("module_year"); 
             $table->timestamps();
 
 

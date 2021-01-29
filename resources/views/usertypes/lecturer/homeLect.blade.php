@@ -91,7 +91,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-white">modules</h5>
-                                <h3 class="font-bold text-3xl text-white">3 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-white">{{$count_Module}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -135,21 +135,13 @@
                                 </thead>
 
                                 <tbody>
+                                    
                                     <tr>
                                         <td>Obi Wan Kenobi</td>
                                         <td>Light</td>
                                         <td>Jedi</td>
                                     </tr>
-                                    <tr>
-                                        <td>Greedo</td>
-                                        <td>South</td>
-                                        <td>Scumbag</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Darth Vader</td>
-                                        <td>Dark</td>
-                                        <td>Sith</td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
 
@@ -171,28 +163,20 @@
                              <table class="w-full p-5 text-gray-700">
                                  <thead>
                                  <tr>
-                                     <th class="text-left text-blue-900">Name</th>
-                                     <th class="text-left text-blue-900">Side</th>
-                                     <th class="text-left text-blue-900">Role</th>
+                                     <th class="text-left text-blue-900">Module Code</th>
+                                     <th class="text-left text-blue-900">Module Name</th>
+                                     <th class="text-left text-blue-900">Year</th>
                                  </tr>
                                  </thead>
 
                                  <tbody>
+                                     @foreach ($modules as $module)
                                  <tr>
-                                     <td>Obi Wan Kenobi</td>
-                                     <td>Light</td>
-                                     <td>Jedi</td>
+                                     <td>{{$module->module_code}}</td>
+                                     <td>{{$module->module_name}}</td>
+                                     <td>{{$module->module_year}}</td>
                                  </tr>
-                                 <tr>
-                                     <td>Greedo</td>
-                                     <td>South</td>
-                                     <td>Scumbag</td>
-                                 </tr>
-                                 <tr>
-                                     <td>Darth Vader</td>
-                                     <td>Dark</td>
-                                     <td>Sith</td>
-                                 </tr>
+                                     @endforeach
                                  </tbody>
                              </table>
 

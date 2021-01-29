@@ -37,7 +37,8 @@
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function()
+    {
         // init datatable.
         var dataTable = $('.datatable').DataTable(
         {

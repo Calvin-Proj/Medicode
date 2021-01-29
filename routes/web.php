@@ -39,11 +39,8 @@ Route::get('/read/many',[HomeController::class, 'read']);
 
 
 
-
 Route::get('/onetomany', function()
 {
-
-
     $campus = Campus::find(1);
 
     foreach ($campus->buildings as $building) {
@@ -71,9 +68,10 @@ Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 //lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
 // Resource Route for test.
-Route::resource('tests', TestController::class);
+Route::resource('lecttests', TestController::class);
 // Route for get tests for yajra post request.
-Route::get('get-tests', [TestController::class, 'getTests'])->name('get-tests');
+Route::get('get-lecttests', [TestController::class, 'getTests'])->name('get-lecttests');
+//
 Route::get('/lecturer/help', [LecturerController::class, 'indexhelp'])->name('lecturerhelp');
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
@@ -101,8 +99,10 @@ Route::post('/invig/edit{user}', [AccountEdit::class, 'update']);
 
 //student routes + Multi authenticate
 Route::middleware(['checkUsertype:stud'])->group(function(){
+    //Datatable
 Route::resource('tests', StudentTestSched::class);
 Route::get('get-tests', [StudentTestSched::class, 'getTests'])->name('get-tests');
+    //
 Route::get('/student/help', [StudentController::class, 'indexhelp'])->name('studenthelp');
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
