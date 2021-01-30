@@ -83,9 +83,9 @@
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer flex flex-wrap justify-end p-4">
-                    <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black" id="SubmitCreateTestForm">Create</button>
+                    <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black focus:outline-none" id="SubmitCreateTestForm">Create</button>
                     <span class="w-2"></span>
-                    <button type="button" class="bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black" id="hide_create" name="hide_create">Close</button>
+                    <button type="button" class="bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black focus:outline-none" id="hide_create" name="hide_create">Close</button>
                 </div>
             </div>
         </div>
@@ -118,9 +118,9 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer relative flex flex-wrap justify-end p-4">
-                <button type="button" class="btn btn-success text-white hover:bg-highlight hover:text-black bg-primary rounded-lg p-1" id="SubmitEditTestForm">Update</button>
+                <button type="button" class="btn btn-success text-white hover:bg-highlight hover:text-black bg-primary rounded-lg p-1 focus:outline-none" id="SubmitEditTestForm">Update</button>
                 <div class="w-2"></div>
-                <button type="button" class="btn btn-danger modelClose text-white hover:bg-highlight hover:text-black bg-primary rounded-lg p-1" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger modelClose text-white hover:bg-highlight hover:text-black bg-primary rounded-lg p-1 focus:outline-none" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -141,9 +141,9 @@
             </div>
             <!-- Modal footer -->
             <div class="modal-footer p-2 modal-footer flex flex-wrap justify-center">
-                <button type="button" class="btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" id="SubmitDeleteTestForm">Yes</button>
+                <button type="button" class="btn btn-danger bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black focus:outline-none" id="SubmitDeleteTestForm">Yes</button>
                 <span class="w-2"></span>
-                <button type="button" class="btn btn-default bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-default bg-primary rounded-lg px-5 text-lg hover:bg-highlight hover:text-black focus:outline-none" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>
