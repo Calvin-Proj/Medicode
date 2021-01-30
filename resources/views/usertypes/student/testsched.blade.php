@@ -31,7 +31,7 @@
     </div>
 </div>
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-    <div class="relative w-auto mx-auto max-w-7xl h-screen py-16">
+    <div class="relative mx-auto max-w-7xl h-screen w-full py-16">
       <!--content-->
       <div class="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none w-full h-full">
         <!--header-->
@@ -46,15 +46,9 @@
           </button>
         </div>
         <!--body-->
-        <div class="relative p-6 flex-auto">
-          <p class="my-4 text-gray-600 text-lg leading-relaxed">
-            I always felt like I could do anything. That’s the main
-            thing people are controlled by! Thoughts- their perception
-            of themselves! They're slowed down by their perception of
-            themselves. If you're taught you can’t do anything, you
-            won’t do anything. I was taught I could do everything.
-          </p>
-        </div>
+        <section class="p-6 flex-auto w-full h-1/2">
+            <div id='map' style='width: 50%; height: 100%;'></div>
+        </section>
         <!--footer-->
         <div class="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
           <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
@@ -106,7 +100,12 @@
       document.getElementById(modalID + "-backdrop").classList.toggle("flex");
     }
   </script>
-
-
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsdmluOTgiLCJhIjoiY2tqdHl4cGRhMng3cjMwbWpnNjk5cnd1eCJ9.sjVSnQMH_VC1vrLHQY4f5g';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+    });
+</script>
 
 @endsection
