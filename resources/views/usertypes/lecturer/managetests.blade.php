@@ -69,13 +69,10 @@
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="test_type">Test Type:</label>
                         <span class="w-16"></span>
-                        Standard:
-                        <span class="w-2"></span>
-                        <input type="radio" value="Standard Test" class="form-control h-4 w-4" name="test_type" id="test_type">
-                        <span class="w-2"></span>
-                        Sick:
-                        <span class="w-2"></span>
-                        <input type="radio" value="Sick Test" class="form-control h-4 w-4" name="test_type" id="test_type">
+                        <select name="test_type" id="test_type" class="text-gray-600 w-32">
+                            <option value="Standard Test">Standard Test</option>
+                            <option value="Sick Test">Sick Test</option>
+                        </select>
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="test_desc">Test Description: </label>
