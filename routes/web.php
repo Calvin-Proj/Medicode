@@ -28,6 +28,7 @@ use App\Models\Module;
 
 //Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/landingpage', [HomeController::class, 'indexlanding'])->name('landingpage');
 //one to one relationship test
 Route::get('/read{id}', function($id)
 {
