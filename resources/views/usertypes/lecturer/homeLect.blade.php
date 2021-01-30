@@ -125,27 +125,30 @@
                             <h5 class="font-bold uppercase text-black">Students</h5>
                         </div>
                         <div class="p-5">
-                            <table class="w-full p-5 text-gray-700">
+                            <table class="w-full p-5 text-gray-700 table-auto" >
                                 <thead>
                                     <tr>
                                         <th class="text-left text-blue-900">Name</th>
-                                        <th class="text-left text-blue-900">Side</th>
-                                        <th class="text-left text-blue-900">Role</th>
+                                        <th class="text-left text-blue-900">Email</th>
+                                        
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    
+                                    @foreach ($lect_studs as $lect_stud) 
+                                    @if ($lect_stud->usertype == 'student') 
+                             
                                     <tr>
-                                        <td>Obi Wan Kenobi</td>
-                                        <td>Light</td>
-                                        <td>Jedi</td>
+                                        <td>{{$lect_stud->name}}</td>
+                                        <td>{{$lect_stud->email}}</td>
+                                        
                                     </tr>
-                                    
+                                    @endif
+                                    @endforeach
                                 </tbody>
                             </table>
 
-                            <p class="py-2"><a href="#">See More issues...</a></p>
+                            
 
                         </div>
                      </div>
@@ -180,7 +183,7 @@
                                  </tbody>
                              </table>
 
-                             <p class="py-2"><a href="#">See More issues...</a></p>
+                             
 
                          </div>
                      </div>
