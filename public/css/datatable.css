@@ -52,7 +52,8 @@ table.dataTable thead tr th:not(.text-center) {
 }
 
 table.dataTable thead tr th {
-    background-color: #edf2f7;
+    background-color: #103A5C;
+    color: #ffffff;
     border-bottom-width: 2px;
     border-top-width: 1px;
     border-color: #ffffff;
@@ -62,7 +63,7 @@ table.dataTable thead tr th {
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.next:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button.previous:not(.disabled), .dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled), button.dt-button {
     transition-duration: 150ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, transform;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #ffffff !important;
@@ -71,7 +72,7 @@ table.dataTable thead tr th {
     align-items: center;
     display: inline-flex;
     border-width: 0px !important;
-    border-color: #d2d6dc !important;
+    border-color: #FFCC01 !important;
     border-radius: 0.1rem;
     background: #103A5C;
     overflow: auto;
@@ -89,14 +90,16 @@ table.dataTable thead tr th {
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:not(.disabled) {
     background: #103A5C !important;
+    border-width: 0px !important;
     color: #ffffff !important;
     outline: 0
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
     background-color: #103A5C !important;
+    border-width: 0px !important;
     color: #FFCC01 !important;
-    border-color: #8da2fb !important;
+    border-color: #ffffff !important;
     outline: 0
 }
 
@@ -105,10 +108,13 @@ table.dataTable thead tr th {
     border-radius: .25rem;
     width: 9ex;
     background-color: #ffffff;
-    outline: none
+    outline: 0
 }
 
 .dataTables_length {
     padding-top: 1.25rem;
+    outline: 0
 }
+
+
 

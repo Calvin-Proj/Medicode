@@ -22,8 +22,6 @@
     <!--Button Extension Datatables CSS-->
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 
-
-
     <title>NMU Test Schedular</title>
     </head>
     <body class="bg-primary">

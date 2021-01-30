@@ -29,6 +29,7 @@ use App\Models\Module;
 //Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/landingpage', [HomeController::class, 'indexlanding'])->name('landingpage');
+
 //one to one relationship test
 Route::get('/read{id}', function($id)
 {
@@ -113,6 +114,5 @@ Route::get('/student/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/student/edit{user}', [AccountEdit::class, 'update']);
 });
 ////////////////////////////////////
-
 //idk what this does but nice
 require __DIR__.'/auth.php';
