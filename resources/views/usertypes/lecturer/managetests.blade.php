@@ -318,7 +318,7 @@
                 url: "/lecttests/"+id,
                 method: 'DELETE',
                 success: function(result) {
-                    setTimeout(function(){
+                    setInterval(function(){
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
                         location.reload();

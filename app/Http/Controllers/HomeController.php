@@ -16,7 +16,7 @@ class HomeController extends Controller
 
     public function index()
     {
-       
+
         $data=auth()->user()->usertype;
         switch ($data) {
 
@@ -35,40 +35,40 @@ class HomeController extends Controller
                 $modules=User::find($id)->modules()->get();
                 $count_Module=count($modules);
 
-               
+
                 // $stud_modCodes_arr= array();
                 // $i=0;
                 // foreach ( $modules as  $module) {
                 //     $stud_modCodes_arr[$i]= $module->module_code;
                 //     $i=$i+1;
                 // }
-                   
-               
+
+
                 $lect_studs=User::has('modules')->get();
             //     foreach ($lect_studs as $lect_stud) {
             //        if ($lect_stud->usertype == 'student') {
             //         dd($lect_stud);
-            //        }  
+            //        }
             //    }
                 //dd($stud_modCodes_arr);
                 // $lect_studs=User::whereHas('modules',function($q,$stud_modCodes_arr){
                 //     $q->whereIn('module_code',[$stud_modCodes_arr]);
                 // })->get();
-                // foreach ($lect_studs as $lect_stud) {         
+                // foreach ($lect_studs as $lect_stud) {
                 //     echo($lect_stud->name);
                 // }
-                
-                
-       
 
-                return view('usertypes.lecturer.homeLect',compact('count_Module','modules','lect_studs')); 
 
-            
+
+
+                return view('usertypes.lecturer.homeLect',compact('count_Module','modules','lect_studs'));
+
+
                 break;
 
-    
 
-            
+
+
 
 
 
@@ -77,7 +77,7 @@ class HomeController extends Controller
 
                 $user=User::find($id)->modules()->get();
                 $count_Module=count($user);
-    
+
                 return view('usertypes.student.homeStud')->with('count_Module',$count_Module);
                 break;
 
@@ -92,7 +92,7 @@ class HomeController extends Controller
                 break;
 
             default:
-               
+
                 break;
         }
 
@@ -103,5 +103,9 @@ class HomeController extends Controller
     {
 
 
+    }
+    public function indexlanding()
+    {
+        return view('landingpage.landingpage');
     }
 }
