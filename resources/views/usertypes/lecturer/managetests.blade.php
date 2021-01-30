@@ -276,8 +276,10 @@
                 url: "/lecttests/"+id,
                 method: 'PUT',
                 data: {
-                    title: $('#editTitle').val(),
-                    description: $('#editDescription').val(),
+                    test_date: $('#test_date1').val(),
+                    test_time: $('#test_time1').val(),
+                    test_type: $('#test_type1').val(),
+                    test_desc: $('#test_desc1').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -290,7 +292,7 @@
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
+                        setTimeout(function(){
                             $('.alert-success').hide();
                             $('#EditTestModal').hide();
                         }, 400);
