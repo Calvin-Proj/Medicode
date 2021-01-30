@@ -25,10 +25,6 @@ class HomeController extends Controller
                 break;
 
 
-
-
-
-
             case 'lecturer':
                 $id= auth()->user()->id;
 
@@ -66,12 +62,6 @@ class HomeController extends Controller
 
                 break;
 
-
-
-
-
-
-
             case 'student':
                 $id= auth()->user()->id;
 
@@ -80,12 +70,6 @@ class HomeController extends Controller
 
                 return view('usertypes.student.homeStud')->with('count_Module',$count_Module);
                 break;
-
-
-
-
-
-
 
             case 'invig':
                 return view('usertypes.invig.homeInvig');
