@@ -290,7 +290,7 @@
                         $('.alert-danger').hide();
                         $('.alert-success').show();
                         $('.datatable').DataTable().ajax.reload();
-                        setInterval(function(){
+                        setTimeout(function(){
                             $('.alert-success').hide();
                             $('#EditTestModal').hide();
                         }, 400);
@@ -316,7 +316,7 @@
                 url: "/lecttests/"+id,
                 method: 'DELETE',
                 success: function(result) {
-                    setTimeout(function(){
+                    setInterval(function(){
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
                         location.reload();

@@ -22,7 +22,7 @@
 <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5 rounded-lg">
 
     <div class="flex flex-wrap">
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/2 xl:w-1/2 p-6">
             <!--Metric Card Revenue-->
             <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5">
                 <div class="flex flex-row items-center">
@@ -39,9 +39,9 @@
             </div>
             <!--/Metric Card-->
         </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/2 xl:w-1/2 p-6">
             <!--Metric Card Revenue-->
-            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
+            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded-full p-5 bg-yellow-400"><svg class="h-10 w-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg>

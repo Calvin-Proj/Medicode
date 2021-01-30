@@ -19,10 +19,10 @@
 
 
 
-<div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5 rounded-lg">
+<div class="main-content flex-1 bg-gray-200 mt-12 md:mt-2 pb-24 md:pb-5 rounded-lg content-evenly">
 
     <div class="flex flex-wrap">
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/2 xl:w-1/2 p-6">
             <!--Metric Card Revenue-->
             <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
                 <div class="flex flex-row items-center">
@@ -37,7 +37,7 @@
             </div>
             <!--/Metric Card-->
         </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/2 xl:w-1/2 p-6">
             <!--Metric Card Revenue-->
             <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
                 <div class="flex flex-row items-center">
@@ -52,22 +52,7 @@
             </div>
             <!--/Metric Card-->
         </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-            <!--Metric Card Revenue-->
-            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
-                <div class="flex flex-row items-center">
-                    <div class="flex-shrink pr-4">
-                        <div class="rounded-full p-5 bg-yellow-400"><svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm5 2a2 2 0 11-4 0 2 2 0 014 0zm-4 7a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zm10 10v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg></i></div>
-                    </div>
-                    <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold text-white text-xl bg-primary p-1">View Misconduct</h5>
-                        <h2 class="text-l text-white italic p-2">This button allows the Lecturer to view misconducted pleased by students for her specific tests. The lecturer handles it externally. <span class="text-white-500"></span></h2>
-                    </div>
-                </div>
-            </div>
-            <!--/Metric Card-->
-        </div>
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/2 xl:w-1/2 p-6">
             <!--Metric Card Revenue-->
             <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
                 <div class="flex flex-row items-center">
@@ -78,6 +63,21 @@
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold text-white text-xl bg-primary p-1">View Attendance</h5>
                         <h2 class="text-l text-white italic p-2">This button allows the Lecturer to view attendance for each of her tests. If the student missed it, he/she is flagged. <span class="text-white-500"></span></h2>
+                    </div>
+                </div>
+            </div>
+            <!--/Metric Card-->
+        </div>
+        <div class="w-full md:w-1/2 xl:w-1/2 p-6">
+            <!--Metric Card Revenue-->
+            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
+                <div class="flex flex-row items-center">
+                    <div class="flex-shrink pr-4">
+                        <div class="rounded-full p-5 bg-yellow-400"><svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zm5 2a2 2 0 11-4 0 2 2 0 014 0zm-4 7a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zm10 10v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg></i></div>
+                    </div>
+                    <div class="flex-1 text-right md:text-center">
+                        <h5 class="font-bold text-white text-xl bg-primary p-1">View Misconduct</h5>
+                        <h2 class="text-l text-white italic p-2">This button allows the Lecturer to view misconducted pleased by students for her specific tests. The lecturer handles it externally. <span class="text-white-500"></span></h2>
                     </div>
                 </div>
             </div>

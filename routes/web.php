@@ -26,7 +26,7 @@ use App\Models\Module;
 //Main route for Dashboard
 
 
-//admin routes + Multi authenticate
+//Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 //one to one relationship test
 Route::get('/read{id}', function($id)
@@ -49,68 +49,69 @@ Route::get('/onetomany', function()
 
 });
 
-
+//Admin routes + Multi authenticate
 Route::middleware(['checkUsertype:admin'])->group(function(){
-
+//Admin Navbar
 Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
 Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
 Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
-//routes for admin editing account
+//Routes for admin editing account
 Route::get('/admin/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 });
 //////////////////////////////////
 
 
-//lecturer routes + Multi authenticate
+//Lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
-// Resource Route for test.
+//Resource Route for test.
 Route::resource('lecttests', TestController::class);
-// Route for get tests for yajra post request.
+//Route for get tests for yajra post request.
 Route::get('get-lecttests', [TestController::class, 'getTests'])->name('get-lecttests');
-//
+//Lecturer Navbar
 Route::get('/lecturer/help', [LecturerController::class, 'indexhelp'])->name('lecturerhelp');
 Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
 Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
-//routes for lecturer editing account
+//Routes for lecturer editing account
 Route::get('/lecturer/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/lecturer/edit{user}', [AccountEdit::class, 'update']);
 });
 /////////////////////////////////////
 
 
-//invig routes + Multi authenticate
+//Invig routes + Multi authenticate
 Route::middleware(['checkUsertype:invig'])->group(function(){
+//Invig Navbar
 Route::get('/invig/help', [InvigController::class, 'indexhelp'])->name('invighelp');
 Route::get('/invig/schedule', [InvigController::class, 'indexinvigschedule'])->name('invigschedules');
 Route::get('/invig/submisconduct', [InvigController::class, 'indexinvigmiscon'])->name('invigmisconduct');
 Route::get('/invig/subhours', [InvigController::class, 'indexinvighours'])->name('invighours');
-//routes for invigilator editing account
+//Routes for invigilator editing account
 Route::get('/invig/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/invig/edit{user}', [AccountEdit::class, 'update']);
 });
 /////////////////////////////////
 
 
-//student routes + Multi authenticate
+//Student routes + Multi authenticate
 Route::middleware(['checkUsertype:stud'])->group(function(){
-    //Datatable
+//Datatable for Student
 Route::resource('tests', StudentTestSched::class);
 Route::get('get-tests', [StudentTestSched::class, 'getTests'])->name('get-tests');
-    //
+//Student Navbar
 Route::get('/student/help', [StudentController::class, 'indexhelp'])->name('studenthelp');
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
 Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
-//routes for student editing account
+//Routes for student editing account
 Route::get('/student/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/student/edit{user}', [AccountEdit::class, 'update']);
 });
 ////////////////////////////////////
 
-
+//idk what this does but nice
 require __DIR__.'/auth.php';

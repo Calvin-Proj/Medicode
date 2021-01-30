@@ -24,7 +24,7 @@
     <div class="flex flex-wrap">
         <div class="w-full md:w-1/2 xl:w-1/3 p-6">
             <!--Metric Card Revenue-->
-            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
+            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded-full p-5 bg-yellow-400"><svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
@@ -40,7 +40,7 @@
         </div>
         <div class="w-full md:w-1/2 xl:w-1/3 p-6">
             <!--Metric Card Revenue-->
-            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
+            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded-full p-5 bg-yellow-400"><svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
@@ -56,7 +56,7 @@
         </div>
         <div class="w-full md:w-1/2 xl:w-1/3 p-6">
             <!--Metric Card Revenue-->
-            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5 ">
+            <div class="bg-secondary border-b-4 border-yellow-400 rounded-lg shadow-xl p-5">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded-full p-5 bg-yellow-400"><svg class="w-10 h-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
