@@ -8,7 +8,7 @@
             <div class="card">
                 <div>
                     <div class="mt-2 mx-2">
-                        <button class="px-4 py-2 text-white bg-blue-500 rounded select-none no-outline focus:shadow-outline font-semibold hover:bg-highlight hover:text-black focus:bg-highlight focus:text-black" id="show_create" name="show_create">
+                        <button class="px-6 py-2 text-white bg-secondary rounded-sm hover:bg-highlight hover:text-primary focus:outline-none" id="show_create" name="show_create">
                             Create Test
                         </button>
                         <!-- modal div -->
@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive px-2">
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
@@ -172,7 +172,7 @@
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
-                {data: 'Actions', name: 'Actions',orderable:false,serachable:false,sClass:'text-center'},
+                {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
 
@@ -276,8 +276,10 @@
                 url: "/lecttests/"+id,
                 method: 'PUT',
                 data: {
-                    title: $('#editTitle').val(),
-                    description: $('#editDescription').val(),
+                    test_date: $('#test_date1').val(),
+                    test_time: $('#test_time1').val(),
+                    test_type: $('#test_type1').val(),
+                    test_desc: $('#test_desc1').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
