@@ -1,18 +1,19 @@
 <?php
 
+use App\Models\User;
 use App\Models\Campus;
+use App\Models\Module;
 use App\Models\Building;
+use App\Http\Controllers\AccountEdit;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LecturerController;
-use App\Http\Controllers\InvigController;
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
-use App\Http\Controllers\AccountEdit;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvigController;
 use App\Http\Controllers\StudentTestSched;
-use App\Models\User;
-use App\Models\Module;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LecturerController;
+use App\Http\Controllers\LandingpageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,7 @@ use App\Models\Module;
 
 //Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/landingpage', [HomeController::class, 'indexlanding'])->name('landingpage');
+Route::get('/landingpage', [LandingpageController::class, 'indexlanding'])->name('landingpage');
 //one to one relationship test
 Route::get('/read{id}', function($id)
 {

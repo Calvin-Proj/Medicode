@@ -104,8 +104,4 @@ class HomeController extends Controller
 
 
     }
-    public function indexlanding()
-    {
-        return view('landingpage.landingpage');
-    }
 }
