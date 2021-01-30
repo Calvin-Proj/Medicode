@@ -27,6 +27,10 @@ class StudentTestSched extends Controller
     {
         $data = $test->getStudData();
         return \DataTables::of($data)
+            ->addColumn('Actions', function($data) {
+            return '<button class="px-4 py-2 text-white bg-secondary rounded-sm hover:bg-highlight hover:text-primary focus:outline-none" id="btnshow_view" name="btnshow_view">View</button>';
+            })
+            ->rawColumns(['Actions'])
             ->make(true);
     }
 
@@ -54,4 +58,5 @@ class StudentTestSched extends Controller
 
         return response()->json(['success'=>'Test added successfully']);
     }
+
 }

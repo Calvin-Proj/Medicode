@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive px-2">
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
@@ -22,6 +22,7 @@
                             <th>Test Type</th>
                             <th>Test Description</th>
                             <th>Test Time</th>
+                            <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -29,7 +30,7 @@
         </div>
     </div>
 </div>
-<!-- keeps modal close -->
+
 @endsection
 
 @section('script')
@@ -55,6 +56,7 @@
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
+                {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
     });

@@ -28,8 +28,8 @@ class TestController extends Controller
         $data = $test->getData();
         return \DataTables::of($data)
             ->addColumn('Actions', function($data) {
-                return '<button type="button" class="btn btn-success btn-sm" id="getEditTestData" data-id="'.$data->id.'">Edit</button>
-                    <button type="button" data-id="'.$data->id.'" data-toggle="modal" data-target="#DeleteTestModal" class="btn btn-danger btn-sm" id="getDeleteId">Delete</button>';
+                return '<button class="btn btn-success btn-sm px-2 py-1 text-white bg-secondary rounded-sm hover:bg-highlight hover:text-primary focus:outline-none" id="getEditTestData" data-id="'.$data->id.'">Edit</button>
+                    <button data-id="'.$data->id.'" data-toggle="modal" data-target="#DeleteTestModal" class="btn btn-danger btn-sm px-2 py-1 text-white bg-secondary rounded-sm hover:bg-highlight hover:text-primary focus:outline-none" id="getDeleteId">Delete</button>';
             })
             ->rawColumns(['Actions'])
             ->make(true);
