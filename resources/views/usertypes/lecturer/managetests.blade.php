@@ -254,7 +254,7 @@
             $('.alert-danger').hide();
             id = $(this).data('id');
             $.ajax({
-                url: "tests/"+id+"/edit",
+                url: "/lecttests/"+id+"/edit",
                 method: 'GET',
                 // data: {
                 //     id: id,
@@ -276,7 +276,7 @@
                 }
             });
             $.ajax({
-                url: "tests/"+id,
+                url: "/lecttests/"+id,
                 method: 'PUT',
                 data: {
                     title: $('#editTitle').val(),
@@ -296,7 +296,7 @@
                         setInterval(function(){
                             $('.alert-success').hide();
                             $('#EditTestModal').hide();
-                        }, 2000);
+                        }, 400);
                     }
                 }
             });
@@ -316,14 +316,14 @@
                 }
             });
             $.ajax({
-                url: "tests/"+id,
+                url: "/lecttests/"+id,
                 method: 'DELETE',
                 success: function(result) {
-                    setInterval(function(){
+                    setTimeout(function(){
                         $('.datatable').DataTable().ajax.reload();
                         $('#DeleteTestModal').hide();
-                        setTimeout(location.reload(), 10000);
-                    }, 1000);
+                        location.reload();
+                    }, 400);
 
                 }
             });
