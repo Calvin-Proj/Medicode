@@ -47,7 +47,7 @@
 
             <div class="flex items-center mt-10">
                 <x-button class="">
-                    {{ __('Register') }}
+                    {{ __('Sign Up') }}
                 </x-button>
             </div>
         </form>
