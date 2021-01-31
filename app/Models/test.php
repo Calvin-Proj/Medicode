@@ -36,6 +36,13 @@ class Test extends Model
         return static::where('test_type','Sick Test')->where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
     }
 
+    public function getInvigTestData()
+    {
+        //needs data from module relation venue info
+        $currentDate = date("Y-m-d");
+        return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
+    }
+
     public function storeData($input)
     {
     	return static::create($input);

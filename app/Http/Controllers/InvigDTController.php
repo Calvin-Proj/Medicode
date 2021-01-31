@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Test;
 use Illuminate\Http\Request;
 
 class InvigDTController extends Controller
@@ -12,6 +13,12 @@ class InvigDTController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getInvigsTest(Request $request, Test $test)
+    {
+        $data = $test->getInvigTestData();
+        return \DataTables::of($data)->make(true);
+    }
+
 
     public function getInvigs(Request $request, User $invig)
     {

@@ -120,7 +120,10 @@ Route::post('/lecturer/edit{user}', [AccountEdit::class, 'update']);
 Route::middleware(['checkUsertype:invig'])->group(function(){
 //Invig Navbar
 Route::get('/invig/help', [InvigController::class, 'indexhelp'])->name('invighelp');
+//Resource Route for invig tests
 Route::get('/invig/schedule', [InvigController::class, 'indexinvigschedule'])->name('invigschedules');
+Route::get('get-invigschedtest', [InvigDTController::class, 'getInvigsTest'])->name('get-invigschedtest');
+/////////////////////////////
 Route::get('/invig/submisconduct', [InvigController::class, 'indexinvigmiscon'])->name('invigmisconduct');
 Route::get('/invig/subhours', [InvigController::class, 'indexinvighours'])->name('invighours');
 //Routes for invigilator editing account
