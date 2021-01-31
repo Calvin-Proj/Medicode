@@ -21,6 +21,7 @@ use App\Http\Controllers\InvigDTController;
 use App\Http\Controllers\StudentDTController;
 use App\Http\Controllers\SickNoteController;
 use App\Http\Controllers\MisconductController;
+use App\Http\Controllers\AttendanceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -98,11 +99,15 @@ Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsickno
 //Resource Route for misconduct. NB need help
 Route::get('get-lectmis', [MisconductController::class, 'getMisconduct'])->name('get-lectmis');
 Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
+//Resource Route for attendance. NB need help
+Route::get('get-lectatt', [AttendanceController::class, 'getAttendance'])->name('get-lectatt');
+Route::get('/lecturer/viewattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Lecturer Navbar
 Route::get('/lecturer/help', [LecturerController::class, 'indexhelp'])->name('lecturerhelp');
 
-Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
+
 
 //Routes for lecturer editing account
 Route::get('/lecturer/edit{user}', [AccountEdit::class, 'edit']);

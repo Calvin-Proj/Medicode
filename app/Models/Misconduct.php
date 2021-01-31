@@ -9,7 +9,7 @@ class Misconduct extends Model
 {
     use HasFactory;
 
-    protected $table = 'sick_notes';
+    protected $table = 'misconduct';
     protected $guarded = array();
 
     public function getData()

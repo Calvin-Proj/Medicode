@@ -9,6 +9,14 @@ class Attendance extends Model
 {
     use HasFactory;
 
+    protected $table = 'attendance';
+    protected $guarded = array();
+
+    public function getData()
+    {
+        return static::orderBy('created_at','desc')->get();
+    }
+
     public function misconducts()
     {
 
