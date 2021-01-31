@@ -31,7 +31,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Lecturers</h5>
-                        <h3 class="font-bold text-3xl text-white">10 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$users_lect}}<span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Students</h5>
-                        <h3 class="font-bold text-3xl text-white">322 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$users_stud}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Invigulators</h5>
-                        <h3 class="font-bold text-3xl text-white">1 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$users_invig}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Venues</h5>
-                        <h3 class="font-bold text-3xl text-white">6 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_Venues}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">modules</h5>
-                        <h3 class="font-bold text-3xl text-white">3 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_Modules}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Tests</h5>
-                        <h3 class="font-bold text-3xl text-white">0 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_Tests}}  <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -122,7 +122,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Sick Tests</h5>
-                        <h3 class="font-bold text-3xl text-white">0 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_sTests}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Tests Completed</h5>
-                        <h3 class="font-bold text-3xl text-white">0 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_CompletedT}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -152,7 +152,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Sick Tests Completed</h5>
-                        <h3 class="font-bold text-3xl text-white">0 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_CompletedS}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
