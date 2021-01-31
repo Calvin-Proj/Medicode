@@ -16,6 +16,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\VenueController;
+use App\Http\Controllers\LecturerDTController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,12 +59,13 @@ Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name
 Route::resource('advenues', VenueController::class);
 Route::get('get-advenues', [VenueController::class, 'getVenues'])->name('get-advenues');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
-//
-
+//Resource Route for lecturers.
+Route::resource('adlect', LecturerDTController::class);
+Route::get('get-adlect', [LecturerDTController::class, 'getLecturers'])->name('get-adlect');
+Route::get('/admin/adminmanagelecturers', [LecturerDTController::class, 'index'])->name('adminmanagelecturers');
 
 Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
 
-Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
 Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
 //Routes for admin editing account
