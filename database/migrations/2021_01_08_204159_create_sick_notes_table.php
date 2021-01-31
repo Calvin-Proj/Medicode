@@ -13,7 +13,7 @@ class CreateSickNotesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sick__notes', function (Blueprint $table) {
+        Schema::create('sick_notes', function (Blueprint $table) {
             $table->id();
             $table->string('sick_note_path'); //attachment
             $table->integer("user_id"); //student //foreign

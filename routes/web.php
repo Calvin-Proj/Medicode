@@ -19,6 +19,8 @@ use App\Http\Controllers\VenueController;
 use App\Http\Controllers\LecturerDTController;
 use App\Http\Controllers\InvigDTController;
 use App\Http\Controllers\StudentDTController;
+use App\Http\Controllers\SickNoteController;
+use App\Http\Controllers\MisconductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,7 +55,7 @@ Route::get('/onetomany', function()
 //Admin routes + Multi authenticate
 Route::middleware(['checkUsertype:admin'])->group(function(){
 
-//Resource Route for test.
+//Resource Route for test.///////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('admods', ModuleController::class);
 Route::get('get-admods', [ModuleController::class, 'getModules'])->name('get-admods');
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
@@ -73,11 +75,8 @@ Route::get('/admin/adminmanageinvigs', [AdminController::class, 'indexinvig'])->
 Route::resource('adstud', StudentDTController::class);
 Route::get('get-adstud', [StudentDTController::class, 'getStudents'])->name('get-adstud');
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
-
-
-
 //Routes for admin editing account
 Route::get('/admin/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
@@ -88,16 +87,23 @@ Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 //Lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
 
-//Resource Route for test.
+//Resource Route for test./////////////////////////////////////////////////////////////////////////////////////////////////
 Route::resource('lecttests', TestController::class);
 Route::get('get-lecttests', [TestController::class, 'getTests'])->name('get-lecttests');
 Route::get('/lecturer/managetests', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
-//
+//Resource Route for sick notes. NB need help
+Route::resource('lectsick', SickNoteController::class);
+Route::get('get-lectsick', [SickNoteController::class, 'getSickNotes'])->name('get-lectsick');
+Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
+//Resource Route for misconduct. NB need help
+Route::get('get-lectmis', [MisconductController::class, 'getMisconduct'])->name('get-lectmis');
+Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
+
 //Lecturer Navbar
 Route::get('/lecturer/help', [LecturerController::class, 'indexhelp'])->name('lecturerhelp');
-Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
+
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
-Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
+
 //Routes for lecturer editing account
 Route::get('/lecturer/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/lecturer/edit{user}', [AccountEdit::class, 'update']);

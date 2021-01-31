@@ -183,7 +183,7 @@
                 }
             });
             $.ajax({
-                url: "/adstu/"+id,
+                url: "/adstud/"+id,
                 method: 'DELETE',
                 success: function(result) {
                     setInterval(function(){

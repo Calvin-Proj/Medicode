@@ -9,6 +9,14 @@ class Misconduct extends Model
 {
     use HasFactory;
 
+    protected $table = 'sick_notes';
+    protected $guarded = array();
+
+    public function getData()
+    {
+        return static::orderBy('created_at','desc')->get();
+    }
+
     public function attendance()
     {
 
