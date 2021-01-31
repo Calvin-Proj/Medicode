@@ -47,7 +47,7 @@ class LecturerDTController extends Controller
         return response()->json(['html'=>$html]);
     }
 
-    public function lectUpdate(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $validator = \Validator::make($request->all(), [
             'name' => 'required',

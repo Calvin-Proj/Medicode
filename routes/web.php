@@ -17,6 +17,7 @@ use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\LecturerDTController;
+use App\Http\Controllers\InvigDTController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,10 +64,14 @@ Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('
 Route::resource('adlect', LecturerDTController::class);
 Route::get('get-adlect', [LecturerDTController::class, 'getLecturers'])->name('get-adlect');
 Route::get('/admin/adminmanagelecturers', [LecturerDTController::class, 'index'])->name('adminmanagelecturers');
+//Resource Route for Invigs.
+Route::resource('advig', InvigDTController::class);
+Route::get('get-advig', [InvigDTController::class, 'getInvigs'])->name('get-advig');
+Route::get('/admin/adminmanageinvigs', [InvigDTController::class, 'index'])->name('adminmanageinvigs');
 
 Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
 
-Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
+
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
 //Routes for admin editing account
 Route::get('/admin/edit{user}', [AccountEdit::class, 'edit']);

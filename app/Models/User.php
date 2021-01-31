@@ -51,6 +51,11 @@ class User extends Authenticatable
         return static::where('usertype','lecturer')->orderBy('created_at','desc')->get();
     }
 
+    public function getInvigData()
+    {
+        return static::where('usertype','invig')->orderBy('created_at','desc')->get();
+    }
+
     public function findData($id)
     {
         return static::find($id);
