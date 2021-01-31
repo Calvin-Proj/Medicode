@@ -30,6 +30,9 @@
         </div>
     </div>
 </div>
+
+<!--modal-->
+<!--modal-->
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
     <div class="relative mx-auto max-w-7xl h-screen w-full py-16">
       <!--content-->
@@ -37,7 +40,7 @@
         <!--header-->
         <div class="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
           <h3 class="text-3xl font-semibold">
-            Modal Title
+            Test
           </h3>
           <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
             <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -46,9 +49,14 @@
           </button>
         </div>
         <!--body-->
-        <section class="p-6 flex-auto w-full h-1/2">
-            <div id='map' style='width: 50%; height: 100%;'></div>
-        </section>
+            <div class="p-6 flex flex-row h-full w-full row-auto flex-wrap items-center align-text-top">
+                <div id='map' style='width: 50%; height: 100%;'></div>
+                <div class="flex flex-col align-text-top w-1/2 h-full">
+                    <div class="px-4 text-xl font-semibold h-1/2 p-3">Test Details:</div>
+                    <div class="px-4 text-xl font-semibold h-1/2 p-3">Seating Plan:</div>
+                </div>
+            </div>
+
         <!--footer-->
         <div class="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
           <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
@@ -62,6 +70,8 @@
     </div>
   </div>
 <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+<!--modal-->
+<!--modal-->
 @endsection
 
 @section('script')
@@ -106,6 +116,13 @@
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
     });
+
+    map.addControl(
+    new MapboxDirections({
+    accessToken: mapboxgl.accessToken
+    }),
+    'top-left'
+    );
 </script>
 
 @endsection
