@@ -24,12 +24,14 @@ class Test extends Model
 
     public function getStudData()
     {
+        //needs data from module relation lecturer name venue info
         $currentDate = date("Y-m-d");
         return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
     }
 
     public function getSickStudData()
     {
+        //needs data from module relation venue info
         $currentDate = date("Y-m-d");
         return static::where('test_type','Sick Test')->where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
     }

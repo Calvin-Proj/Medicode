@@ -30,7 +30,7 @@
                         <div class="rounded-full p-5 bg-yellow-400"><i class="fas fa-pencil-alt fa-3x fa-inverse"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-white">tests booked</h5>
+                        <h5 class="font-bold uppercase text-white">Something</h5>
                         <h3 class="font-bold text-3xl text-white">10 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
                         <thead>
                         <tr>
                             <th class="text-left text-blue-900">Module Code</th>
-                            <th class="text-left text-blue-900">Name</th>
+                            <th class="text-left text-blue-900">Time</th>
                             <th class="text-left text-blue-900">Date</th>
                         </tr>
                         </thead>

@@ -123,6 +123,17 @@
     }),
     'top-left'
     );
+
+        function resizeWin() {
+            window.screen.resizeTo(1919, 1079);
+            window.screen.focus();
+        }
+        setTimeout(function(){
+            function resizeWin() {
+                window.screen.resizeTo(1919, 1079);
+                window.screen.focus();
+            }
+        }, 200);
 </script>
 
 @endsection

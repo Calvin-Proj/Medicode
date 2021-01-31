@@ -10,6 +10,40 @@ class Module extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $table = 'modules';
+    protected $guarded = array();
+
+    public function getData()
+    {
+        return static::orderBy('created_at','desc')->get();
+    }
+
+    public function storeData($input)
+    {
+    	return static::create($input);
+    }
+
+    public function findData($id)
+    {
+        return static::find($id);
+    }
+
+    public function updateData($id, $input)
+    {
+        return static::find($id)->update($input);
+    }
+
+    public function deleteData($id)
+    {
+        return static::find($id)->delete();
+    }
+
+
+    /**
      * The primary key associated with the table.
      *
      *
