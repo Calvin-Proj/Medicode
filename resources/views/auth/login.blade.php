@@ -53,7 +53,7 @@
                     @endif
                 <!--to register page-->
                     <a class="flex px-8 underline text-sm text-white hover:text-gray-200" href="{{ route('register') }}">
-                        {{__('Register Account') }}
+                        {{__('Sign Up') }}
                     </a>
             </div>
         </form>

@@ -72,8 +72,8 @@ class HomeController extends Controller
             case 'lecturer':
                 $id= auth()->user()->id;
 
-                $modules=User::find($id)->modules()->get();
-                $count_Module=count($modules);
+                $module=User::find($id)->modules()->first();
+               
 
 
                 // $stud_modCodes_arr= array();
@@ -84,7 +84,11 @@ class HomeController extends Controller
                 // }
 
 
-                $lect_studs=User::has('modules')->get();
+                $lect_studs=User::has('modules')->where('usertype','student')->get();
+                $lect_studs_count = count($lect_studs);
+
+               //$tests=Test::find($module->module_name);
+              
             //     foreach ($lect_studs as $lect_stud) {
             //        if ($lect_stud->usertype == 'student') {
             //         dd($lect_stud);
@@ -101,7 +105,7 @@ class HomeController extends Controller
 
 
 
-                return view('usertypes.lecturer.homeLect',compact('count_Module','modules','lect_studs'));
+                return view('usertypes.lecturer.homeLect',compact('module','lect_studs','lect_studs_count'));
 
 
                 break;

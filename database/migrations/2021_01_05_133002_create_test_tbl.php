@@ -18,6 +18,13 @@ class CreateTestTbl extends Migration
             $table->date('test_date');
             $table->enum('test_type',['Standard Test', 'Sick Test']);
             $table->text('test_desc');
+            $table->integer('module_id');
+            $table->integer('venue_id');
+            $table->integer('attendance_id');
+
+            
+
+
             $table->timestamps();
         });
     }

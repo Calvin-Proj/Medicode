@@ -31,7 +31,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Lecturers</h5>
-                        <h3 class="font-bold text-3xl text-white">{{$users_lect}}<span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$users_lect}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                         <div class="rounded-full p-5 bg-yellow-400"><i class="fa fa-user  fa-3x fa-inverse"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-white">Invigulators</h5>
+                        <h5 class="font-bold uppercase text-white">Invigilators</h5>
                         <h3 class="font-bold text-3xl text-white">{{$users_invig}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>

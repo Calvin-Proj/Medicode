@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="module_name">Module Name:</label>
-                        <span class="w-7"></span>
+                        <span class="w-6"></span>
                         <span class="w-7"></span>
                         <input type="text" class="text-primary" name="module_name" id="module_name">
                     </div>
