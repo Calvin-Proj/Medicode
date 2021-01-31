@@ -15,6 +15,10 @@ use App\Http\Controllers\StudentTestSched;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\VenueController;
+use App\Http\Controllers\LecturerDTController;
+use App\Http\Controllers\InvigDTController;
+use App\Http\Controllers\StudentDTController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,12 +57,27 @@ Route::middleware(['checkUsertype:admin'])->group(function(){
 Route::resource('admods', ModuleController::class);
 Route::get('get-admods', [ModuleController::class, 'getModules'])->name('get-admods');
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
-//
-Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
+//Resource Route for venues.
+Route::resource('advenues', VenueController::class);
+Route::get('get-advenues', [VenueController::class, 'getVenues'])->name('get-advenues');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
-Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
-Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
+//Resource Route for lecturers.
+Route::resource('adlect', LecturerDTController::class);
+Route::get('get-adlect', [LecturerDTController::class, 'getLecturers'])->name('get-adlect');
+Route::get('/admin/adminmanagelecturers', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
+//Resource Route for Invigs.
+Route::resource('adinvig', InvigDTController::class);
+Route::get('get-adinvig', [InvigDTController::class, 'getInvigs'])->name('get-adinvig');
+Route::get('/admin/adminmanageinvigs', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
+//Resource Route for Student.
+Route::resource('adstud', StudentDTController::class);
+Route::get('get-adstud', [StudentDTController::class, 'getStudents'])->name('get-adstud');
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
+
+Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
+
+
+
 //Routes for admin editing account
 Route::get('/admin/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);

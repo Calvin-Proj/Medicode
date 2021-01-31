@@ -297,7 +297,7 @@
 
         // Delete module Ajax request.
         var deleteID;
-        $('body').on('click', '#getModuleId', function(){
+        $('body').on('click', '#getDeleteId', function(){
             deleteID = $(this).data('id');
         })
         $('#SubmitDeleteModuleForm').click(function(e) {

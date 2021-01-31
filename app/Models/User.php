@@ -43,6 +43,38 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $table = 'users';
+    protected $guarded = array();
+
+    public function getLectData()
+    {
+        return static::where('usertype','lecturer')->orderBy('created_at','desc')->get();
+    }
+
+    public function getInvigData()
+    {
+        return static::where('usertype','invig')->orderBy('created_at','desc')->get();
+    }
+    public function getStudentData()
+    {
+        return static::where('usertype','student')->orderBy('created_at','desc')->get();
+    }
+
+    public function findData($id)
+    {
+        return static::find($id);
+    }
+
+    public function updateData($id, $input)
+    {
+        return static::find($id)->update($input);
+    }
+
+    public function deleteData($id)
+    {
+        return static::find($id)->delete();
+    }
+
     public function module()
     {
 
