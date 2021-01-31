@@ -87,7 +87,7 @@ class HomeController extends Controller
                 $lect_studs=User::has('modules')->where('usertype','student')->get();
                 $lect_studs_count = count($lect_studs);
 
-               $tests=Test::find($module->module_name);
+               //$tests=Test::find($module->module_name);
               
             //     foreach ($lect_studs as $lect_stud) {
             //        if ($lect_stud->usertype == 'student') {
