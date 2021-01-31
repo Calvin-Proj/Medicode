@@ -30,6 +30,9 @@
         </div>
     </div>
 </div>
+
+<!--modal-->
+<!--modal-->
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
     <div class="relative mx-auto max-w-7xl h-screen w-full py-16">
       <!--content-->
@@ -67,6 +70,8 @@
     </div>
   </div>
 <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+<!--modal-->
+<!--modal-->
 @endsection
 
 @section('script')

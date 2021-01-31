@@ -105,6 +105,7 @@ Route::middleware(['checkUsertype:stud'])->group(function(){
 //Datatable for Student
 Route::resource('tests', StudentTestSched::class);
 Route::get('get-tests', [StudentTestSched::class, 'getTests'])->name('get-tests');
+Route::get('get-sicktests', [StudentTestSched::class, 'getSickTests'])->name('get-sicktests');
 //Student Navbar
 Route::get('/student/help', [StudentController::class, 'indexhelp'])->name('studenthelp');
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
