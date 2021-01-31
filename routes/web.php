@@ -15,6 +15,7 @@ use App\Http\Controllers\StudentTestSched;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LandingpageController;
+use App\Http\Controllers\VenueController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,9 +54,15 @@ Route::middleware(['checkUsertype:admin'])->group(function(){
 Route::resource('admods', ModuleController::class);
 Route::get('get-admods', [ModuleController::class, 'getModules'])->name('get-admods');
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
-//
-Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
+//Resource Route for venues.
+Route::resource('advenues', VenueController::class);
+Route::get('get-advenues', [VenueController::class, 'getVenues'])->name('get-advenues');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
+//
+
+
+Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
+
 Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
 Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
 Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
