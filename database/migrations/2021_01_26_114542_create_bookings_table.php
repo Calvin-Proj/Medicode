@@ -18,6 +18,7 @@ class CreateBookingsTable extends Migration
             $table->integer("sick_notes_id"); //foreign Nullable
             $table->integer("test_id"); //foreign
             $table->integer("user_id"); //foreign
+            $table->integer("sick_note_id")->nullable();
             $table->timestamps();
         });
     }

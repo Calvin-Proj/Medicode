@@ -652,6 +652,7 @@ class ComposerStaticInit9e024d3754e67bfeaa76153da355ba66
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InvigController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvigController.php',
+        'App\\Http\\Controllers\\LandingpageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingpageController.php',
         'App\\Http\\Controllers\\LecturerController' => __DIR__ . '/../..' . '/app/Http/Controllers/LecturerController.php',
         'App\\Http\\Controllers\\StudentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentController.php',
         'App\\Http\\Controllers\\StudentTestSched' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentTestSched.php',

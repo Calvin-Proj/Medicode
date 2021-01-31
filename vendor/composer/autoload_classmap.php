@@ -21,6 +21,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\InvigController' => $baseDir . '/app/Http/Controllers/InvigController.php',
+    'App\\Http\\Controllers\\LandingpageController' => $baseDir . '/app/Http/Controllers/LandingpageController.php',
     'App\\Http\\Controllers\\LecturerController' => $baseDir . '/app/Http/Controllers/LecturerController.php',
     'App\\Http\\Controllers\\StudentController' => $baseDir . '/app/Http/Controllers/StudentController.php',
     'App\\Http\\Controllers\\StudentTestSched' => $baseDir . '/app/Http/Controllers/StudentTestSched.php',
