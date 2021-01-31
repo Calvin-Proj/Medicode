@@ -8,6 +8,7 @@ use App\Http\Controllers\AccountEdit;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvigController;
 use App\Http\Controllers\StudentTestSched;
@@ -35,27 +36,25 @@ Route::get('/read{id}', function($id)
 {
   return User::find($id)->module->module_code;
 });
-
 //many to many relationship test
 Route::get('/read/many',[HomeController::class, 'read']);
-
-
-
 Route::get('/onetomany', function()
 {
     $campus = Campus::find(1);
-
     foreach ($campus->buildings as $building) {
         echo $building->building_name;
     }
-
 });
 
 //Admin routes + Multi authenticate
 Route::middleware(['checkUsertype:admin'])->group(function(){
-//Admin Navbar
-Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
+
+//Resource Route for test.
+Route::resource('admods', ModuleController::class);
+Route::get('get-admods', [ModuleController::class, 'getModules'])->name('get-admods');
 Route::get('/admin/managemodule', [AdminController::class, 'indexmodule'])->name('adminmanagemodules');
+//
+Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
 Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('adminmanagevenues');
 Route::get('/admin/managelecturer', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
 Route::get('/admin/manageinvig', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
@@ -69,13 +68,14 @@ Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);
 
 //Lecturer routes + Multi authenticate
 Route::middleware(['checkUsertype:lect'])->group(function(){
+
 //Resource Route for test.
 Route::resource('lecttests', TestController::class);
-//Route for get tests for yajra post request.
 Route::get('get-lecttests', [TestController::class, 'getTests'])->name('get-lecttests');
+Route::get('/lecturer/managetests', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
+//
 //Lecturer Navbar
 Route::get('/lecturer/help', [LecturerController::class, 'indexhelp'])->name('lecturerhelp');
-Route::get('/lecturer/managetests/add', [LecturerController::class, 'indextest'])->name('lecturermanagetest');
 Route::get('/lecturer/managesicknotes', [LecturerController::class, 'indexsicknotes'])->name('lecturermanagesicknotes');
 Route::get('/lecturer/manageattendants', [LecturerController::class, 'indexattend'])->name('lecturermanageattendants');
 Route::get('/lecturer/viewmisconduct', [LecturerController::class, 'indexmiscon'])->name('lecturermanagemiscon');
