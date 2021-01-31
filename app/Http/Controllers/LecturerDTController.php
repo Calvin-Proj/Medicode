@@ -12,10 +12,6 @@ class LecturerDTController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('usertypes.admin.managelecturer');
-    }
 
     public function getLecturers(Request $request, User $lecturer)
     {

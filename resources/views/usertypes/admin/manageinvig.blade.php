@@ -101,7 +101,7 @@
         pageLength: 5,
         // scrollX: true,
         "order": [[ 0, "desc" ]],
-        ajax: '{{ route('get-advig') }}',
+        ajax: '{{ route('get-adinvig') }}',
         columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
@@ -121,7 +121,7 @@
             $('.alert-danger').hide();
             id = $(this).data('id');
             $.ajax({
-                url: "/advig/"+id+"/edit",
+                url: "/adinvig/"+id+"/edit",
                 method: 'GET',
                 // data: {
                 //     id: id,
@@ -143,7 +143,7 @@
                 }
             });
             $.ajax({
-                url: "/advig/"+id,
+                url: "/adinvig/"+id,
                 method: 'PUT',
                 data: {
                     name: $('#invig_name1').val(),
@@ -183,7 +183,7 @@
                 }
             });
             $.ajax({
-                url: "/advig/"+id,
+                url: "/adinvig/"+id,
                 method: 'DELETE',
                 success: function(result) {
                     setInterval(function(){

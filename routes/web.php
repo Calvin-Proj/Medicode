@@ -18,6 +18,7 @@ use App\Http\Controllers\LandingpageController;
 use App\Http\Controllers\VenueController;
 use App\Http\Controllers\LecturerDTController;
 use App\Http\Controllers\InvigDTController;
+use App\Http\Controllers\StudentDTController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,16 +64,20 @@ Route::get('/admin/managevenue', [AdminController::class, 'indexvenue'])->name('
 //Resource Route for lecturers.
 Route::resource('adlect', LecturerDTController::class);
 Route::get('get-adlect', [LecturerDTController::class, 'getLecturers'])->name('get-adlect');
-Route::get('/admin/adminmanagelecturers', [LecturerDTController::class, 'index'])->name('adminmanagelecturers');
+Route::get('/admin/adminmanagelecturers', [AdminController::class, 'indexlecturer'])->name('adminmanagelecturers');
 //Resource Route for Invigs.
-Route::resource('advig', InvigDTController::class);
-Route::get('get-advig', [InvigDTController::class, 'getInvigs'])->name('get-advig');
-Route::get('/admin/adminmanageinvigs', [InvigDTController::class, 'index'])->name('adminmanageinvigs');
+Route::resource('adinvig', InvigDTController::class);
+Route::get('get-adinvig', [InvigDTController::class, 'getInvigs'])->name('get-adinvig');
+Route::get('/admin/adminmanageinvigs', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
+//Resource Route for Student.
+Route::resource('adstud', StudentDTController::class);
+Route::get('get-adstud', [StudentDTController::class, 'getStudents'])->name('get-adstud');
+Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
 
 Route::get('/admin/help', [AdminController::class, 'indexhelp'])->name('adminhelp');
 
 
-Route::get('/admin/managestudent', [AdminController::class, 'indexstudent'])->name('adminmanagestudents');
+
 //Routes for admin editing account
 Route::get('/admin/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/admin/edit{user}', [AccountEdit::class, 'update']);

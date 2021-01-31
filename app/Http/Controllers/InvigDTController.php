@@ -12,10 +12,6 @@ class InvigDTController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('usertypes.admin.manageinvig');
-    }
 
     public function getInvigs(Request $request, User $invig)
     {
