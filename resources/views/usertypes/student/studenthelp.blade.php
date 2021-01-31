@@ -33,7 +33,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold text-white text-xl  bg-primary p-1">View Test Schedule</h5>
-                        <h2 class="text-l text-white italic p-2">This button allows the Student to view tests available for him and view detailed information regarding the test. <span class="text-white-500"></span></h2>
+                        <h2 class="text-l text-white italic p-2">This button allows the Student to view tests available for him and view detailed information regarding the test. When clicking the view button, the Student will be able to see a map box, details of the test and his seating plan. <span class="text-white-500"></span></h2>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold text-white text-xl  bg-primary p-1">Book Sick Test</h5>
-                        <h2 class="text-l text-white italic p-2">This button allows the Student to view available sick tests and book them. He is required to attach a doctors note to the book, else he can't write it. <span class="text-white-500"></span></h2>
+                        <h2 class="text-l text-white italic p-2">This button allows the Student to view available sick tests and book them. He is required to attach a doctors note when making a booking, or else he won't be eligible to write. <span class="text-white-500"></span></h2>
                     </div>
                 </div>
             </div>
