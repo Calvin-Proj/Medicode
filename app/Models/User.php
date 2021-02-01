@@ -49,12 +49,11 @@ class User extends Authenticatable
 
     public function getLectData()
     {
-        $lect = DB::table('users')
-        ->join('modules', 'module_user.user_id', '=', 'users.id')
-        ->join('module_user', 'module_user.module_id', '=', 'modules.id')
-        ->select('users.*','modules.module_name')
-        ->where('users.usertype','lecturer')
-        ->get();
+        $lect = Module::with(array('users'=>function($query){
+            $query->select('id','name');
+        }))
+       ->where('module_name', 'ONT3660')
+       ->get();
         return $lect;
     }
 

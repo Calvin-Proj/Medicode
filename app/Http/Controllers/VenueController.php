@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venue;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VenueController extends Controller
 {
@@ -60,9 +61,11 @@ class VenueController extends Controller
                 </div>
                 <div class="form-group flex justify-start p-2 text-white">
                     <label for="building_id">Building Name:</label>
+                    <span class="w-9"></span>
+                    <span class="w-9"></span>
                     <select name="building_id1" id="building_id1" value="'.$data->building_id.'" class="text-gray-600 w-32">
-                        <option value="1">b1</option>
-                        <option value="2">b2</option>
+                        <option value="1">B1</option>
+                        <option value="2">B2</option>
                     </select>
                 </div>';
 
