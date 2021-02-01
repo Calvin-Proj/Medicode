@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Sick_Note extends Model
 {
@@ -14,7 +15,13 @@ class Sick_Note extends Model
 
     public function getData()
     {
-        return static::orderBy('created_at','desc')->get();
+
+        $sicknotes = DB::table('sick_notes')
+        ->join('users', 'users.id', '=', 'sick_notes.user_id')
+        ->join('tests', 'tests.id', '=', 'sick_notes.test_id')
+        ->select('sick_notes.*', 'users.email','tests.id')
+        ->get();
+        return $sicknotes;
     }
 
     public function storeData($input)
@@ -33,6 +40,13 @@ class Sick_Note extends Model
     {
 
         return $this->hasMany('App\Models\Booking');
+
+    }
+
+    public function test()
+    {
+
+        return $this->belongsTo('App\Models\Test');
 
     }
 }

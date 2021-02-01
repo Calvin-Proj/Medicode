@@ -21,10 +21,10 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Student No</th>
-                            <th>Name</th>
+                            <th>Sick Note</th>
+                            <th>Sick Note Name</th>
                             <th>Test ID</th>
-                            <th>Link</th>
+                            <th>User ID</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -111,10 +111,10 @@
         ajax: '{{ route('get-lectsick') }}',
         columns: [
                 {data: 'id', name: 'id'},
-                {data: 'sick_note_date', name: 'sick_note_date'},
-                {data: 'sick_note_type', name: 'sick_note_type'},
-                {data: 'sick_note_desc', name: 'sick_note_desc'},
-                {data: 'sick_note_time', name: 'sick_note_time'},
+                {data: 'sick_note', name: 'sick_note'},
+                {data: 'sick_note_name', name: 'sick_note_name'},
+                {data: 'test_id', name: 'test_id'},
+                {data: 'user_id', name: 'user_id'},
             ]
     });
 

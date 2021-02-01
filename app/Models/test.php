@@ -102,6 +102,12 @@ class Test extends Model
         return $this->belongsToMany('App\Models\User');
 
     }
+    public function sick_notes()
+    {
+
+        return $this->hasMany('App\Models\Sick_Note');
+
+    }
 }
 
 
