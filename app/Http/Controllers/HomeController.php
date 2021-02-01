@@ -87,6 +87,24 @@ class HomeController extends Controller
                 $lect_studs=User::has('modules')->where('usertype','student')->get();
                 $lect_studs_count = count($lect_studs);
 
+                $tests=Test::where('module_id', $module->id)
+                           ->where('test_type', 'Standard Test')->get();
+                
+                $tests_count = count($tests);
+
+
+                $currentDate = date("Y-m-d");
+                
+                $tests=Test::where('module_id', $module->id)
+                           ->where('test_type', 'Standard Test')
+                           ->where('test_date','<', $currentDate)  
+                         ->get();
+
+                       
+                $tests_count_completed=count($tests);
+               
+                
+
                //$tests=Test::find($module->module_name);
               
             //     foreach ($lect_studs as $lect_stud) {
@@ -101,9 +119,6 @@ class HomeController extends Controller
                 // foreach ($lect_studs as $lect_stud) {
                 //     echo($lect_stud->name);
                 // }
-
-
-
 
                 return view('usertypes.lecturer.homeLect',compact('module','lect_studs','lect_studs_count'));
 
