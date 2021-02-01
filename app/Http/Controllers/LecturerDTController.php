@@ -33,12 +33,13 @@ class LecturerDTController extends Controller
         $html = '<div class="flex text-white p-2">
                     <label for="lecturer_name">Lecturer Name:</label>
                     <span class="w-14"></span>
-                    <input type="text" name="lecturer_name1" id="lecturer_name1" value="'.$data->lecturer_name.'" class="text-gray-600 w-38">
+                    <input type="text" name="lecturer_name1" id="lecturer_name1" value="'.$data->name.'" class="text-gray-600 w-38">
                 </div>
                 <div class="flex text-white p-2">
                     <label for="lecturer_email">Lecturer Email:</label>
-                    <span class="w-14"></span>
-                    <input type="text" name="lecturer_email1" id="lecturer_email1" value="'.$data->lecturer_email.'" class="text-gray-600">
+                    <span class="w-8"></span>
+                    <span class="w-7"></span>
+                    <input type="text" name="lecturer_email1" id="lecturer_email1" value="'.$data->email.'" class="text-gray-600">
                 </div>';
         return response()->json(['html'=>$html]);
     }

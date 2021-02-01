@@ -60,8 +60,8 @@
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="venue_name">Venue Name:</label>
-                        <span class="w-7"></span>
-                        <span class="w-7"></span>
+                        <span class="w-11"></span>
+                        <span class="w-10"></span>
                         <input type="text" class="text-primary" name="venue_name" id="venue_name">
                     </div>
                 </div>
@@ -174,8 +174,8 @@
             url: "{{ route('advenues.store') }}",
             method: 'post',
             data: {
-                module_code: $('#no_of_seats').val(),
-                module_name: $('#venue_name').val(),
+                no_of_seats: $('#no_of_seats').val(),
+                venue_name: $('#venue_name').val(),
                 },
             success: function(result)
             {

@@ -76,12 +76,14 @@ class ModuleController extends Controller
                 </div>
                 <div class="flex text-white p-2">
                     <label for="module_name">Module Name:</label>
-                    <span class="w-14"></span>
+                    <span class="w-7"></span>
+                    <span class="w-6"></span>
                     <input type="text" name="module_name1" id="module_name1" value="'.$data->module_name.'" class="text-gray-600">
                 </div>
                 <div class="flex text-white p-2">
                     <label for="module_year">Module Year:</label>
-                    <span class="w-14"></span>
+                    <span class="w-8"></span>
+                    <span class="w-8"></span>
                     <select name="module_year1" id="module_year1" value="'.$data->module_year.'" class="text-gray-600 w-32">
                         <option value=1>1st Year</option>
                         <option value=2>2nd Year</option>

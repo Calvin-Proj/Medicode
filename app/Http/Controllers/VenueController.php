@@ -29,7 +29,7 @@ class VenueController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'no_of_seats' => 'required|numeric',
-            'venue_name' => 'required',
+            'venue_name' => 'required|unique',
         ]);
 
         if ($validator->fails()) {
@@ -38,7 +38,7 @@ class VenueController extends Controller
 
         $venue->storeData($request->all());
 
-        return response()->json(['success'=>'Module added successfully']);
+        return response()->json(['success'=>'Venue added successfully']);
     }
 
     public function edit($id)
@@ -53,7 +53,8 @@ class VenueController extends Controller
                 </div>
                 <div class="flex text-white p-2">
                     <label for="venue_name">Venue Name:</label>
-                    <span class="w-14"></span>
+                    <span class="w-11"></span>
+                    <span class="w-10"></span>
                     <input type="text" name="venue_name1" id="venue_name1" value="'.$data->venue_name.'" class="text-gray-600 w-38">
                 </div>';
 

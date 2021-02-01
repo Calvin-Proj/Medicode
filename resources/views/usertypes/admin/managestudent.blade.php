@@ -135,7 +135,7 @@
         });
 
         // Update student Ajax request.
-        $('#SubmitEditLectureForm').click(function(e) {
+        $('#SubmitEditStudentForm').click(function(e) {
             e.preventDefault();
             $.ajaxSetup({
                 headers: {

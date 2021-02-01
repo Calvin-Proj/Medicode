@@ -135,7 +135,7 @@
         });
 
         // Update lecturer Ajax request.
-        $('#SubmitEditLectureForm').click(function(e) {
+        $('#SubmitEditLecturerForm').click(function(e) {
             e.preventDefault();
             $.ajaxSetup({
                 headers: {

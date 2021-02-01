@@ -135,7 +135,7 @@
         });
 
         // Update invig Ajax request.
-        $('#SubmitEditLectureForm').click(function(e) {
+        $('#SubmitEditInvigForm').click(function(e) {
             e.preventDefault();
             $.ajaxSetup({
                 headers: {
