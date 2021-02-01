@@ -42,7 +42,7 @@ class Venue extends Model
         return static::find($id)->delete();
     }
 
-    public function tests()
+    public function test()
     {
 
         return $this->hasOne('App\Models\Test');

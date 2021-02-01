@@ -48,6 +48,7 @@ class TestController extends Controller
             'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
+            'venue_id' => 'required',
 
         ]);
 
@@ -110,9 +111,9 @@ class TestController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'test_date' => 'required',
+            'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
-            'test_time' => 'required',
         ]);
 
         if ($validator->fails()) {

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Test extends Model
 {
@@ -19,7 +20,11 @@ class Test extends Model
 
     public function getData()
     {
-        return static::orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->select('tests.*', 'venues.venue_name', 'modules.module_name')
+        ->get();
+        return $tests;
     }
 
     public function getStudData()
@@ -70,14 +75,14 @@ class Test extends Model
 
     }
 
-    public function attendances()
+    public function attendance()
     {
 
         return $this->hasOne('App\Models\Attendance');
 
     }
 
-    public function venues()
+    public function venue()
     {
 
         return $this->hasOne('App\Models\Venue');
