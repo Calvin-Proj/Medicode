@@ -22,8 +22,8 @@ class Test extends Model
     {
         $tests = DB::table('tests')
         ->join('venues', 'tests.venue_id', '=', 'venues.id')
-        ->join('modules', 'module_user.user_id', '=', 'user.id')
-        ->select('tests.*', 'venues.venue_name', 'modules.module_name')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
         ->get();
         return $tests;
     }
