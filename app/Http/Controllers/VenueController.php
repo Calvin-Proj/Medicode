@@ -28,8 +28,8 @@ class VenueController extends Controller
     public function store(Request $request, Venue $venue)
     {
         $validator = \Validator::make($request->all(), [
-            'no_of_seats' => 'required|numeric',
-            'venue_name' => 'required|unique',
+            'no_of_seats' => 'required',
+            'venue_name' => 'required',
         ]);
 
         if ($validator->fails()) {
