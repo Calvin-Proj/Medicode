@@ -38,7 +38,6 @@ class StudentController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-
         return view('usertypes.student.testsched');
     }
     public function indexhelp()

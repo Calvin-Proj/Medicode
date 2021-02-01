@@ -58,7 +58,6 @@
                                 @case('invig')
                                             <x-invig-schedule-btn/>
                                             <x-invig-submit-miscon-btn/>
-                                            <x-invig-submit-hours-btn/>
                                     @break
                                 @case('student')
                                             <x-stud-view-test-sched-btn/>
