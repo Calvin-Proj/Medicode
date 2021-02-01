@@ -45,7 +45,6 @@ Route::get('/read{id}', function($id)
 });
 //many to many relationship test
 Route::get('/read/many',[HomeController::class, 'read']);
-//one to many
 Route::get('/onetomany', function()
 {
     $campus = Campus::find(1);
