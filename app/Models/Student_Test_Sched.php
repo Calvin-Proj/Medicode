@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Student_Test_Sched extends Model
 {
@@ -19,7 +20,13 @@ class Student_Test_Sched extends Model
 
     public function getData()
     {
-        return static::orderBy('created_at','desc')->get();
+        $userID =auth()->user()->id;
+        $tests = DB::table('tests')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->select('tests.*', 'modules.module_name')
+        ->where('users.id', $userID)
+        ->get();
+        return $tests;
     }
 
     public function storeData($input)
