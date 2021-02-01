@@ -130,25 +130,25 @@
                                     <tr>
                                         <th class="text-left text-blue-900">Name</th>
                                         <th class="text-left text-blue-900">Email</th>
-                                        
+
                                     </tr>
                                 </thead>
 
                                 <tbody>
-                                    @foreach ($lect_studs as $lect_stud) 
-                                    @if ($lect_stud->usertype == 'student') 
-                             
+                                    @foreach ($lect_studs as $lect_stud)
+                                    @if ($lect_stud->usertype == 'student')
+
                                     <tr>
                                         <td>{{$lect_stud->name}}</td>
                                         <td>{{$lect_stud->email}}</td>
-                                        
+
                                     </tr>
                                     @endif
                                     @endforeach
                                 </tbody>
                             </table>
 
-                            
+
 
                         </div>
                      </div>
@@ -173,17 +173,15 @@
                                  </thead>
 
                                  <tbody>
-                                    
+
                                  <tr>
-                                     <td>{{$module->module_code}}</td>
-                                     <td>{{$module->module_name}}</td>
-                                     <td>{{$module->module_year}}</td>
+
                                  </tr>
-                                  
+
                                  </tbody>
                              </table>
 
-                             
+
 
                          </div>
                      </div>

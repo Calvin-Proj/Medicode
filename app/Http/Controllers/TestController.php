@@ -45,9 +45,9 @@ class TestController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'test_date' => 'required',
-            'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
+            'test_time' => 'required',
 
         ]);
 
