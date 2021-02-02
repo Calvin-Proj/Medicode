@@ -37,6 +37,7 @@ class Test extends Model
         ->join('modules', 'tests.module_id', '=', 'modules.id')
         ->join('module_user', 'modules.id', '=', 'module_user.user_id')
         ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->where('test_type','Standard Test')
         ->where('test_date','>=',$currentDate)
         ->orderBy('created_at','desc')
         ->get();

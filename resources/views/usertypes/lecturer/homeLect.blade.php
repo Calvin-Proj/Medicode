@@ -135,6 +135,7 @@
                                 </thead>
 
                                 <tbody>
+                                    
                                     @foreach ($lect_studs as $lect_stud)
                                     @if ($lect_stud->usertype == 'student')
 
@@ -175,9 +176,10 @@
                                  <tbody>
 
                                  <tr>
-                                    <td>module->module_code</td>
-                                    <td>module->module_name</td>
-                                    <td>module->module_year</td>
+                                    
+                                    <td>{{$module->module_code}}</td>
+                                    <td>{{$module->module_name}}</td>
+                                    <td>{{$module->module_year}}</td>
                                  </tr>
 
                                  </tbody>
