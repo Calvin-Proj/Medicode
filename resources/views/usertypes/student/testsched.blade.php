@@ -52,8 +52,7 @@
         </div>
         <!--body-->
             <div class="p-6 flex flex-row h-full w-full row-auto flex-wrap items-center align-text-top">
-                <div id="right-panel"></div>
-                <div id="map"></div>
+                <div id="map" class="w-1/2 h-20"></div>
                 <div class="flex flex-col align-text-top w-1/2 h-full">
                     <div class="px-4 text-xl font-semibold h-1/2 p-3">Test Details:</div>
                     <div class="px-4 text-xl font-semibold h-1/2 p-3">Seating Plan:</div>
@@ -80,8 +79,6 @@
 @section('script')
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzC02eDw7_1mg4qO6-h7SSL_W_pKmgfHs&callback=initMap"
-type="text/javascript"></script>
 
 <script type="text/javascript">
     $(document).ready(function()
@@ -117,45 +114,5 @@ type="text/javascript"></script>
       document.getElementById(modalID + "-backdrop").classList.toggle("flex");
     }
   </script>
-<script>
-    function initMap() {
-  const directionsRenderer = new google.maps.DirectionsRenderer();
-  const directionsService = new google.maps.DirectionsService();
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
-    center: { lat: 41.85, lng: -87.65 },
-  });
-  directionsRenderer.setMap(map);
-  directionsRenderer.setPanel(document.getElementById("right-panel"));
-  const control = document.getElementById("floating-panel");
-  control.style.display = "block";
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
-
-  const onChangeHandler = function () {
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
-  };
-  document.getElementById("start").addEventListener("change", onChangeHandler);
-  document.getElementById("end").addEventListener("change", onChangeHandler);
-}
-
-function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-  const start = document.getElementById("start").value;
-  const end = document.getElementById("end").value;
-  directionsService.route(
-    {
-      origin: start,
-      destination: end,
-      travelMode: google.maps.TravelMode.DRIVING,
-    },
-    (response, status) => {
-      if (status === "OK") {
-        directionsRenderer.setDirections(response);
-      } else {
-        window.alert("Directions request failed due to " + status);
-      }
-    }
-  );
-}
-</script>
 
 @endsection
