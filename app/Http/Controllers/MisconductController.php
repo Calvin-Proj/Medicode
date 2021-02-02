@@ -9,7 +9,8 @@ class MisconductController extends Controller
 {
     public function getMisconduct(Request $request, Misconduct $misconduct)
     {
-        $data = $module->getData();
-        return \DataTables::of($data)->make(true);
+        $data = $misconduct->getData();
+        return \DataTables::of($data)
+            ->make(true);
     }
 }

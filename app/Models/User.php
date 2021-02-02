@@ -121,4 +121,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Test');
 
     }
+    public function misconduct()
+    {
+
+        return $this->belongsTo('App\Models\Misconduct');
+
+    }
 }
