@@ -135,7 +135,7 @@
                                 </thead>
 
                                 <tbody>
-                                    
+
                                     @foreach ($lect_studs as $lect_stud)
                                     @if ($lect_stud->usertype == 'student')
 
@@ -177,18 +177,18 @@
 
                                  <tr>
                                     @if($module=='')
-                                        <td>Modules pending </td>
+                                        <td>Modules Pending</td>
                                         <td></td>
-                                        <td></td>  
-                                         
-                                   
-                                    
+                                        <td></td>
+
+
+
                                     @else{
-                                        <td>{{$module->module_code}}</td>
+                                    <td>{{$module->module_code}}</td>
                                     <td>{{$module->module_name}}</td>
-                                    <td>{{$module->module_year}}</td> 
+                                    <td>{{$module->module_year}}</td>
                                     }
-                                   
+
                                     @endif
 
                                  </tr>
