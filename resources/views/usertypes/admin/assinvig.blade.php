@@ -17,10 +17,12 @@
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th class="text-center px-20">Action</th>
+                            <th>Test ID</th>
+                            <th>Test Date</th>
+                            <th>Test Time</th>
+                            <th>Module</th>
+                            <th>Venue</th>
+                            <th class="text-center px-20">Assign</th>
                         </tr>
                     </thead>
                 </table>
@@ -62,6 +64,7 @@
     </div>
 </div>
 
+
 <!-- Delete Invig Modal -->
 <div style="display:none" id="DeleteInvigModal">
     <div class="flex absolute top-0 left-0 items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);">
@@ -101,11 +104,13 @@
         pageLength: 5,
         // scrollX: true,
         "order": [[ 0, "desc" ]],
-        ajax: '{{ route('get-adinvig') }}',
+        ajax: '{{ route('get-assinvig') }}',
         columns: [
                 {data: 'id', name: 'id'},
-                {data: 'name', name: 'name'},
-                {data: 'email', name: 'email'},
+                {data: 'test_date', name: 'test_date'},
+                {data: 'test_time', name: 'test_time'},
+                {data: 'module_name', name: 'module_name'},
+                {data: 'venue_name', name: 'venue_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });

@@ -22,6 +22,7 @@ use App\Http\Controllers\StudentDTController;
 use App\Http\Controllers\SickNoteController;
 use App\Http\Controllers\MisconductController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\InvigAssignController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +74,8 @@ Route::resource('adinvig', InvigDTController::class);
 Route::get('get-adinvig', [InvigDTController::class, 'getInvigs'])->name('get-adinvig');
 Route::get('/admin/adminmanageinvigs', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
 Route::get('/admin/adminassigninvigs', [AdminController::class, 'indexassign'])->name('adminassigninvigs');
+//Route::resource('adinvig', InvigAssignController::class);
+Route::get('get-assinvig', [InvigAssignController::class, 'getTests'])->name('get-assinvig');
 //Resource Route for Student.
 Route::resource('adstud', StudentDTController::class);
 Route::get('get-adstud', [StudentDTController::class, 'getStudents'])->name('get-adstud');

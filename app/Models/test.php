@@ -18,6 +18,16 @@ class Test extends Model
     protected $table = 'tests';
     protected $guarded = array();
 
+    public function getAllData()
+    {
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->orderBy('created_at','desc')
+        ->get();
+        return $tests;
+    }
     public function getData()
     {
         //needs data from module relation venue info
@@ -113,7 +123,7 @@ class Test extends Model
 
     }
 
-    
+
     public function misconducts()
     {
 
