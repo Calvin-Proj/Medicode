@@ -64,7 +64,13 @@ class User extends Authenticatable
     }
     public function getStudentData()
     {
-        return static::where('usertype','student')->orderBy('created_at','desc')->get();
+        $tests = DB::table('users')
+        ->Join('module_user','users.id', '=', 'module_user.user_id')
+        ->join('modules', 'modules.id', '=', 'module_user.module_id')
+        ->select('users.*', 'modules.module_name')
+        ->where('usertype','student')
+        ->get();
+        return $tests;
     }
 
     public function findData($id)

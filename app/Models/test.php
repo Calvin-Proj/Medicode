@@ -33,11 +33,10 @@ class Test extends Model
 
     public function getLectData()
     {
-        $tests = DB::table('tests')
-        ->join('venues', 'tests.venue_id', '=', 'venues.id')
-        ->join('buildings', 'venues.building_id', '=', 'buildings.id')
-        ->join('modules', 'tests.module_id', '=', 'modules.id')
-        ->select('tests.*', 'venues.venue_name','modules.module_name', 'buildings.building_location')
+        $tests = DB::table('users')
+        ->Join('module_user','users.id', '=', 'module_user.user_id')
+        ->join('modules', 'modules.id', '=', 'module_user.module_id')
+        ->select('users.*', 'modules.module_name')
         ->get();
         return $tests;
     }
@@ -49,7 +48,7 @@ class Test extends Model
         $tests = DB::table('tests')
         ->join('venues', 'tests.venue_id', '=', 'venues.id')
         ->join('modules', 'tests.module_id', '=', 'modules.id')
-        ->join('module_user', 'modules.id', '=', 'module_user.user_id')
+        ->join('module_user', 'modules.id', '=', 'module_user.module_id')
         ->select('tests.*', 'venues.venue_name','modules.module_name')
         ->where('test_type','Standard Test')
         ->where('test_date','>=',$currentDate)

@@ -150,6 +150,7 @@
                 data: {
                     name: $('#lecturer_name1').val(),
                     email: $('#lecturer_email1').val(),
+                    module: $('#lecturer_module1').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
