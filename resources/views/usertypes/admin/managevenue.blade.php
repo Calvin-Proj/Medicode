@@ -70,8 +70,10 @@
                     <span class="w-9"></span>
                     <span class="w-9"></span>
                     <select name="building_id" id="building_id" class="text-gray-600 w-32">
-                        <option value="1">B1</option>
-                        <option value="2">B2</option>
+                        <option value="1">Building 1</option>
+                        <option value="2">Building 2</option>
+                        <option value="3">Building 3</option>
+                        <option value="4">Building 4</option>
                     </select>
                     </div>
                 </div>

@@ -13,13 +13,13 @@
     <div class="flex items-center">
        @switch(auth()->user()->usertype)
     @case('admin')
-    <img class="block h-8 w-8" src="https://magic.facetofacegames.com/wp-content/uploads/batmanIcon.jpg" alt="avatar">
+    <img class="block h-8 w-8" src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/woman10-512.png" alt="avatar">
         @break
     @case('lecturer')
     <img class="block h-8 w-8" src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man4-512.png" alt="avatar">
         @break
     @case('invig')
-    <img class="block h-8 w-8" src="https://www.iconfinder.com/icons/2758850/man_african_avatar_male_icon" alt="avatar">
+    <img class="block h-8 w-8" src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man13-512.png" alt="avatar">
         @break
     @case('student')
     <img class="block h-8 w-8" src="https://cdn4.iconfinder.com/data/icons/professions-1-2/151/8-512.png" alt="avatar">
