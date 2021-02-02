@@ -49,11 +49,13 @@ class User extends Authenticatable
 
     public function getLectData()
     {
-        $lect = DB::table('users')
+        //needs data from module relation venue info
+        $adlect = DB::table('users')
         ->join('modules', 'modules.id', '=', 'module_user.module_id')
-        ->select('venues.*', 'building_name')
+        ->select('users.*','modules.module_name')
+        ->orderBy('created_at','desc')
         ->get();
-        return $lect;
+        return $adlect;
     }
 
     public function getInvigData()
@@ -78,13 +80,6 @@ class User extends Authenticatable
     public function deleteData($id)
     {
         return static::find($id)->delete();
-    }
-
-    public function module()
-    {
-
-  return $this->hasOne('App\Models\Module');
-
     }
 
     public function modules()

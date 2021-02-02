@@ -20,10 +20,24 @@ class Test extends Model
 
     public function getData()
     {
+        //needs data from module relation venue info
         $tests = DB::table('tests')
         ->join('venues', 'tests.venue_id', '=', 'venues.id')
         ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->join('module_user', 'modules.id', '=', 'module_user.user_id')
         ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->orderBy('created_at','desc')
+        ->get();
+        return $tests;
+    }
+
+    public function getLectData()
+    {
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('buildings', 'venues.building_id', '=', 'buildings.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name', 'buildings.building_location')
         ->get();
         return $tests;
     }

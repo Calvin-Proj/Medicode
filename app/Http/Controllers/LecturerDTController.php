@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Test;
 use Illuminate\Http\Request;
 
 class LecturerDTController extends Controller
@@ -13,7 +13,7 @@ class LecturerDTController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getLecturers(Request $request, User $lecturer)
+    public function getLecturers(Request $request, Test $lecturer)
     {
         $data = $lecturer->getLectData();
         return \DataTables::of($data)
@@ -27,7 +27,7 @@ class LecturerDTController extends Controller
 
     public function edit($id)
     {
-        $lecturer = new User;
+        $lecturer = new Test;
         $data = $lecturer->findData($id);
 
         $html = '<div class="flex text-white p-2">
@@ -55,7 +55,7 @@ class LecturerDTController extends Controller
             return response()->json(['errors' => $validator->errors()->all()]);
         }
 
-        $lecturer = new User;
+        $lecturer = new Test;
         $lecturer->updateData($id, $request->all());
 
         return response()->json(['success'=>'Lecturer updated successfully']);
@@ -63,7 +63,7 @@ class LecturerDTController extends Controller
 
     public function destroy($id)
     {
-        $lecturer = new User;
+        $lecturer = new Test;
         $lecturer->deleteData($id);
 
         return response()->json(['success'=>'Lecturer deleted successfully']);
