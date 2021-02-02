@@ -46,6 +46,7 @@
                                             <x-admin-manage-venue-btn/>
                                             <x-admin-manage-lect-btn/>
                                             <x-admin-manage-invigilator-btn/>
+                                            <x-admin-assign-invigilator-btn/>
                                             <x-admin-manage-students-btn/>
                                     @break
                                 @case('lecturer')

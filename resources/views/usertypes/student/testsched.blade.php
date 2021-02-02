@@ -146,7 +146,7 @@
   control.style.display = "block";
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
-  setTimeout(function(){calculateAndDisplayRoute(directionsService, directionsRenderer);}, 700);
+  setTimeout(function(){calculateAndDisplayRoute(directionsService, directionsRenderer);}, 1200);
 
 
   document.getElementById("start").addEventListener("change", onChangeHandler);

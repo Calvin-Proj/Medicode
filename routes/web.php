@@ -72,6 +72,7 @@ Route::get('/admin/adminmanagelecturers', [AdminController::class, 'indexlecture
 Route::resource('adinvig', InvigDTController::class);
 Route::get('get-adinvig', [InvigDTController::class, 'getInvigs'])->name('get-adinvig');
 Route::get('/admin/adminmanageinvigs', [AdminController::class, 'indexinvig'])->name('adminmanageinvigs');
+Route::get('/admin/adminassigninvigs', [AdminController::class, 'indexassign'])->name('adminassigninvigs');
 //Resource Route for Student.
 Route::resource('adstud', StudentDTController::class);
 Route::get('get-adstud', [StudentDTController::class, 'getStudents'])->name('get-adstud');

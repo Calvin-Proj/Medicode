@@ -17,6 +17,10 @@ class AdminController extends Controller
     {
         return view('usertypes.admin.managemodule');
     }
+    public function indexassign()
+    {
+        return view('usertypes.admin.assinvig');
+    }
     public function indexvenue()
     {
         return view('usertypes.admin.managevenue');
