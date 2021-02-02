@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -15,10 +16,7 @@ class StudentController extends Controller
 
 
     //button routes for students
-    public function indextestsched()
-    {
-        return view('usertypes.student.testsched');
-    }
+    
     public function indexbooktest()
     {
         return view('usertypes.student.booksicktest');
@@ -37,8 +35,21 @@ class StudentController extends Controller
                     })
                     ->rawColumns(['action'])
                     ->make(true);
+                    
         }
-        return view('usertypes.student.testsched');
+
+        $building=DB::table('buildings')
+        ->join('venues','buildings.id','=','venues.building_id')
+        ->join('tests','venues.id','=','tests.venue_id')
+        ->join('modules', 'tests.module_id','=','module_id')
+        ->join('module_user', 'modules.id', '=', 'module_user.module_id')
+        ->join('users', 'module_user.user_id', '=', 'user_id')
+        ->select('buildings.building_location' , 'tests.*','modules.module_code', 'users.name','venues.no_of_seats')
+        ->first();
+     // dd($building->no_of_seats);
+         
+        
+        return view('usertypes.student.testsched',compact('building'));
     }
     public function indexhelp()
     {
