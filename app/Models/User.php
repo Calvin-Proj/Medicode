@@ -80,13 +80,6 @@ class User extends Authenticatable
         return static::find($id)->delete();
     }
 
-    public function module()
-    {
-
-  return $this->hasOne('App\Models\Module');
-
-    }
-
     public function modules()
     {
 
