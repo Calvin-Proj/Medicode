@@ -15,12 +15,9 @@
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Test Date</th>
-                            <th>Test Type</th>
-                            <th>Test Description</th>
-                            <th>Test Time</th>
-                            <th class="text-center px-20">Action</th>
+                            <th>Test ID</th>
+                            <th>User Email</th>
+                            <th>Misconduct Description</th>
                         </tr>
                     </thead>
                 </table>
@@ -47,11 +44,9 @@
         "order": [[ 0, "desc" ]],
         ajax: '{{ route('get-lectmis') }}',
         columns: [
-                {data: 'id', name: 'id'},
-                {data: 'test_date', name: 'test_date'},
-                {data: 'test_type', name: 'test_type'},
-                {data: 'test_desc', name: 'test_desc'},
-                {data: 'test_time', name: 'test_time'},
+                {data: 'test_id', name: 'test_id'},
+                {data: 'email', name: 'email'},
+                {data: 'misconduct_desc', name: 'misconduct_desc'},
             ]
     });
     });
