@@ -42,60 +42,48 @@
         <!--header-->
         <div class="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
           <h3 class="text-3xl font-semibold">
-            Test
+                sad
           </h3>
-          <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
-            <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-              ×
-            </span>
-          </button>
-        </div>
-        <!--body-->
-
-        <div id="floating-panel">
-            <strong>Start:</strong>
-            <select id="start">
-              <option value="framesby">Chicago</option>
-              <option value="st louis, mo">St Louis</option>
-              <option value="joplin, mo">Joplin, MO</option>
-              <option value="oklahoma city, ok">Oklahoma City</option>
-              <option value="amarillo, tx">Amarillo</option>
-              <option value="gallup, nm">Gallup, NM</option>
-              <option value="flagstaff, az">Flagstaff, AZ</option>
-              <option value="winona, az">Winona</option>
-              <option value="kingman, az">Kingman</option>
-              <option value="barstow, ca">Barstow</option>
-              <option value="san bernardino, ca">San Bernardino</option>
-              <option value="los angeles, ca">Los Angeles</option>
-            </select>
-            <br />
-            <strong>End:</strong>
-            <select id="end">
-              <option value="summerstrand">Chicago</option>
-              <option value="st louis, mo">St Louis</option>
-              <option value="joplin, mo">Joplin, MO</option>
-              <option value="oklahoma city, ok">Oklahoma City</option>
-              <option value="amarillo, tx">Amarillo</option>
-              <option value="gallup, nm">Gallup, NM</option>
-              <option value="flagstaff, az">Flagstaff, AZ</option>
-              <option value="winona, az">Winona</option>
-              <option value="kingman, az">Kingman</option>
-              <option value="barstow, ca">Barstow</option>
-              <option value="san bernardino, ca">San Bernardino</option>
-              <option value="los angeles, ca">Los Angeles</option>
-            </select>
-          </div>
-          <div id="right-panel"></div>
-          <div id="map"></div>
-
-        <!--footer-->
-        <div class="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
           <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Close
           </button>
-          <button class="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
-            Save Changes
-          </button>
+        </div>
+        <!--body-->
+            <div class="container w-full h-full">
+                <div id="map" class="w-full h-full"></div>
+                    <div class="flex h-full">
+                        <div id="right-panel"></div>
+                        <div>
+                            <div>
+                                Test Details:
+                            </div>
+                            <div>
+                                Seating Plan:
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                <div id="floating-panel" class="z-0">
+                    <select id="start">
+                      <option value="framesby"></option>
+                    </select>
+                    <select id="end">
+                      <option value="summerstrand"></option>
+                    </select>
+                </div>
+
+
+        </div>
+    </div>
+
+
+
+
+        <!--footer-->
+        <div class="">
+
         </div>
       </div>
     </div>
@@ -149,7 +137,7 @@
   const directionsRenderer = new google.maps.DirectionsRenderer();
   const directionsService = new google.maps.DirectionsService();
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
+    zoom: 10,
     center: { lat: 41.85, lng: -87.65 },
   });
   directionsRenderer.setMap(map);
@@ -158,9 +146,9 @@
   control.style.display = "block";
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
-  const onChangeHandler = function () {
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
-  };
+  setTimeout(function(){calculateAndDisplayRoute(directionsService, directionsRenderer);}, 700);
+
+
   document.getElementById("start").addEventListener("change", onChangeHandler);
   document.getElementById("end").addEventListener("change", onChangeHandler);
 }
@@ -183,6 +171,15 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     }
   );
 }
+</script>
+<script>
+    url: "{{ route('admods.store') }}",
+            method: 'post',
+            data: {
+                module_code: $('#module_code').val(),
+                module_name: $('#module_name').val(),
+                module_year: $('#module_year').val(),
+                },
 </script>
 
 @endsection
