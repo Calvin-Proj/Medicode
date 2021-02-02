@@ -176,10 +176,21 @@
                                  <tbody>
 
                                  <tr>
+                                    @if($module=='')
+                                        <td>Modules pending </td>
+                                        <td></td>
+                                        <td></td>  
+                                         
+                                   
                                     
-                                    <td>{{$module->module_code}}</td>
+                                    @else{
+                                        <td>{{$module->module_code}}</td>
                                     <td>{{$module->module_name}}</td>
-                                    <td>{{$module->module_year}}</td>
+                                    <td>{{$module->module_year}}</td> 
+                                    }
+                                   
+                                    @endif
+
                                  </tr>
 
                                  </tbody>
