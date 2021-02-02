@@ -20,6 +20,7 @@
                             <th>Id</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Modules</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -106,6 +107,7 @@
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
                 {data: 'email', name: 'email'},
+                {data: 'module_name', name: 'module_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });

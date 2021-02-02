@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -48,7 +49,12 @@ class User extends Authenticatable
 
     public function getLectData()
     {
-        return static::where('usertype','lecturer')->orderBy('created_at','desc')->get();
+        $lect = Module::with(array('users'=>function($query){
+            $query->select('id','name');
+        }))
+       ->where('module_name', 'ONT3660')
+       ->get();
+        return $lect;
     }
 
     public function getInvigData()

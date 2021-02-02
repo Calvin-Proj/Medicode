@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,7 +20,11 @@ class Venue extends Model
 
     public function getData()
     {
-        return static::orderBy('created_at','desc')->get();
+        $venue = DB::table('venues')
+        ->join('buildings', 'buildings.id', '=', 'venues.building_id')
+        ->select('venues.*', 'building_name')
+        ->get();
+        return $venue;
     }
 
     public function storeData($input)
@@ -42,7 +47,7 @@ class Venue extends Model
         return static::find($id)->delete();
     }
 
-    public function tests()
+    public function test()
     {
 
         return $this->hasOne('App\Models\Test');

@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Test extends Model
 {
@@ -19,21 +20,43 @@ class Test extends Model
 
     public function getData()
     {
-        return static::orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->get();
+        return $tests;
     }
 
     public function getStudData()
     {
-        //needs data from module relation lecturer name venue info
+        //needs data from module relation venue info
         $currentDate = date("Y-m-d");
-        return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->join('module_user', 'modules.id', '=', 'module_user.user_id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->where('test_type','Standard Test')
+        ->where('test_date','>=',$currentDate)
+        ->orderBy('created_at','desc')
+        ->get();
+        return $tests;
     }
 
     public function getSickStudData()
     {
-        //needs data from module relation venue info
         $currentDate = date("Y-m-d");
-        return static::where('test_type','Sick Test')->where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->join('module_user', 'modules.id', '=', 'module_user.user_id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->where('test_date','>=',$currentDate)
+        ->where('test_type','Sick Test')
+        ->orderBy('created_at','desc')
+        ->get();
+        return $tests;
     }
 
     public function getInvigTestData()
@@ -70,14 +93,14 @@ class Test extends Model
 
     }
 
-    public function attendances()
+    public function attendance()
     {
 
         return $this->hasOne('App\Models\Attendance');
 
     }
 
-    public function venues()
+    public function venue()
     {
 
         return $this->hasOne('App\Models\Venue');
@@ -94,6 +117,12 @@ class Test extends Model
     {
 
         return $this->belongsToMany('App\Models\User');
+
+    }
+    public function sick_notes()
+    {
+
+        return $this->hasMany('App\Models\Sick_Note');
 
     }
 }

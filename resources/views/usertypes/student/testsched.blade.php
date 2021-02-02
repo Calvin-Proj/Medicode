@@ -22,6 +22,8 @@
                             <th>Test Type</th>
                             <th>Test Description</th>
                             <th>Test Time</th>
+                            <th>Module Name</th>
+                            <th>Venue Name</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -50,7 +52,7 @@
         </div>
         <!--body-->
             <div class="p-6 flex flex-row h-full w-full row-auto flex-wrap items-center align-text-top">
-                <div id='map' style='width: 50%; height: 100%;'></div>
+                <div id="map" class="w-1/2 h-20"></div>
                 <div class="flex flex-col align-text-top w-1/2 h-full">
                     <div class="px-4 text-xl font-semibold h-1/2 p-3">Test Details:</div>
                     <div class="px-4 text-xl font-semibold h-1/2 p-3">Seating Plan:</div>
@@ -97,6 +99,8 @@
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
+                {data: 'module_name', name: 'module_name'},
+                {data: 'venue_name', name: 'venue_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
@@ -110,30 +114,5 @@
       document.getElementById(modalID + "-backdrop").classList.toggle("flex");
     }
   </script>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsdmluOTgiLCJhIjoiY2tqdHl4cGRhMng3cjMwbWpnNjk5cnd1eCJ9.sjVSnQMH_VC1vrLHQY4f5g';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-    });
-
-    map.addControl(
-    new MapboxDirections({
-    accessToken: mapboxgl.accessToken
-    }),
-    'top-left'
-    );
-
-        function resizeWin() {
-            window.screen.resizeTo(1919, 1079);
-            window.screen.focus();
-        }
-        setTimeout(function(){
-            function resizeWin() {
-                window.screen.resizeTo(1919, 1079);
-                window.screen.focus();
-            }
-        }, 200);
-</script>
 
 @endsection

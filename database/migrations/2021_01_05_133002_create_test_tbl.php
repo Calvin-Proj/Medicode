@@ -20,9 +20,8 @@ class CreateTestTbl extends Migration
             $table->text('test_desc');
             $table->integer('module_id');
             $table->integer('venue_id');
-           
 
-            
+
 
 
             $table->timestamps();

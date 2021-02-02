@@ -22,9 +22,11 @@
                         <tr>
                             <th>Id</th>
                             <th>Test Date</th>
+                            <th>Test Time</th>
                             <th>Test Type</th>
                             <th>Test Description</th>
-                            <th>Test Time</th>
+                            <th>Venue Name</th>
+                            <th>Module Name</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -68,7 +70,8 @@
                     </div>
                     <div class="form-group flex justify-start p-2 text-white">
                         <label for="test_type">Test Type:</label>
-                        <span class="w-16"></span>
+                        <span class="w-8"></span>
+                        <span class="w-7"></span>
                         <select name="test_type" id="test_type" class="text-gray-600 w-32">
                             <option value="Standard Test">Standard Test</option>
                             <option value="Sick Test">Sick Test</option>
@@ -80,7 +83,26 @@
                         <textarea class="form-control w-60 text-gray-600" name="test_desc" id="test_desc">
                         </textarea>
                     </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                        <label for="test_type">Test Venue:</label>
+                        <span class="w-6"></span>
+                        <span class="w-6"></span>
+                        <select name="venue_id" id="venue_id" class="text-gray-600 w-32">
+                            <option value="1">Heinz Betz</option>
+                            <option value="2">Eng 03</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                        <label for="test_type">Module:</label>
+                        <span class="w-9"></span>
+                        <span class="w-8"></span>
+                        <select name="module_id" id="module_id" class="text-gray-600 w-32">
+                            <option value="1">ONT3660</option>
+                            <option value="2">WITH3666</option>
+                        </select>
+                    </div>
                 </div>
+
                 <!-- Modal footer -->
                 <div class="modal-footer flex flex-wrap justify-end p-4">
                     <button type="button" class="btn btn-success bg-primary rounded-lg text-white p-1.5 text-lg  hover:bg-highlight hover:text-black focus:outline-none" id="SubmitCreateTestForm">Create</button>
@@ -169,9 +191,11 @@
         columns: [
                 {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
+                {data: 'test_time', name: 'test_time'},
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
-                {data: 'test_time', name: 'test_time'},
+                {data: 'venue_name', name: 'venue_name'},
+                {data: 'module_name', name: 'module_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
@@ -193,9 +217,11 @@
             method: 'post',
             data: {
                     test_date: $('#test_date').val(),
+                    test_time: $('#test_time').val(),
                     test_type: $('#test_type').val(),
                     test_desc: $('#test_desc').val(),
-                    test_time: $('#test_time').val(),
+                    venue_id: $('#venue_id').val(),
+                    module_id: $('#module_id').val(),
                 },
             success: function(result)
             {
@@ -280,6 +306,8 @@
                     test_time: $('#test_time1').val(),
                     test_type: $('#test_type1').val(),
                     test_desc: $('#test_desc1').val(),
+                    venue_id: $('#venue_id1').val(),
+                    module_id: $('#module_id1').val(),
                 },
                 success: function(result) {
                     if(result.errors) {

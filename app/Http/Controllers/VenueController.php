@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Venue;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VenueController extends Controller
 {
@@ -30,6 +31,7 @@ class VenueController extends Controller
         $validator = \Validator::make($request->all(), [
             'no_of_seats' => 'required',
             'venue_name' => 'required',
+            'building_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -56,6 +58,15 @@ class VenueController extends Controller
                     <span class="w-11"></span>
                     <span class="w-10"></span>
                     <input type="text" name="venue_name1" id="venue_name1" value="'.$data->venue_name.'" class="text-gray-600 w-38">
+                </div>
+                <div class="form-group flex justify-start p-2 text-white">
+                    <label for="building_id">Building Name:</label>
+                    <span class="w-9"></span>
+                    <span class="w-9"></span>
+                    <select name="building_id1" id="building_id1" value="'.$data->building_id.'" class="text-gray-600 w-32">
+                        <option value="1">B1</option>
+                        <option value="2">B2</option>
+                    </select>
                 </div>';
 
 
@@ -74,6 +85,7 @@ class VenueController extends Controller
         $validator = \Validator::make($request->all(), [
             'no_of_seats' => 'required',
             'venue_name' => 'required',
+            'building_id' => 'required',
         ]);
 
         if ($validator->fails()) {

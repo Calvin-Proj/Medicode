@@ -16,10 +16,11 @@ class SickNoteCopntroller extends Controller
     public function store(Request $request, Sick_Note $sick_note)
     {
         $validator = \Validator::make($request->all(), [
-            'sick_note_date' => 'required',
-            'sick_note_time' => 'required',
-            'sick_note_type' => 'required',
-            'sick_note_desc' => 'required',
+            'id' => 'required',
+            'sick_note' => 'required',
+            'sick_note_name' => 'required',
+            'test_id' => 'required',
+            'user_id' => 'required',
 
         ]);
 

@@ -23,6 +23,7 @@
                             <th>Id</th>
                             <th>Number of Seats</th>
                             <th>Venue Name</th>
+                            <th>Building Name</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -63,6 +64,15 @@
                         <span class="w-11"></span>
                         <span class="w-10"></span>
                         <input type="text" class="text-primary" name="venue_name" id="venue_name">
+                    </div>
+                    <div class="form-group flex justify-start p-2 text-white">
+                    <label for="building_id">Building Name:</label>
+                    <span class="w-9"></span>
+                    <span class="w-9"></span>
+                    <select name="building_id" id="building_id" class="text-gray-600 w-32">
+                        <option value="1">B1</option>
+                        <option value="2">B2</option>
+                    </select>
                     </div>
                 </div>
                 <!-- Modal footer -->
@@ -154,6 +164,7 @@
                 {data: 'id', name: 'id'},
                 {data: 'no_of_seats', name: 'no_of_seats'},
                 {data: 'venue_name', name: 'venue_name'},
+                {data: 'building_name', name: 'building_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
@@ -176,6 +187,7 @@
             data: {
                 no_of_seats: $('#no_of_seats').val(),
                 venue_name: $('#venue_name').val(),
+                building_id: $('#building_id').val(),
                 },
             success: function(result)
             {
@@ -258,6 +270,7 @@
                 data: {
                     no_of_seats: $('#no_of_seats1').val(),
                     venue_name: $('#venue_name1').val(),
+                    building_id: $('#building_id1').val(),
                 },
                 success: function(result) {
                     if(result.errors) {

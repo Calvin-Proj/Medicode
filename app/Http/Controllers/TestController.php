@@ -48,6 +48,8 @@ class TestController extends Controller
             'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
+            'venue_id' => 'required',
+            'module_id' => 'required',
 
         ]);
 
@@ -94,6 +96,24 @@ class TestController extends Controller
                     <span class="w-2"></span>
                     <textarea name="test_desc1" id="test_desc1"'.$data->test_desc.'" class="text-gray-600 w-48">
                     </textarea>
+                </div>
+                <div class="flex text-white p-2">
+                    <label for="test_type">Venue:</label>
+                    <span class="w-10"></span>
+                    <span class="w-9"></span>
+                    <select name="venue_id1" id="venue_id1" value="'.$data->venue_id.'" class="text-gray-600 w-32">
+                        <option value="1">Heinz Betz</option>
+                        <option value="2">ENG03</option>
+                    </select>
+                </div>
+                <div class="flex text-white p-2">
+                    <label for="test_type">Module:</label>
+                    <span class="w-8"></span>
+                    <span class="w-8"></span>
+                    <select name="module_id1" id="module_id1" value="'.$data->module_id.'" class="text-gray-600 w-32">
+                        <option value="1">ONT3660</option>
+                        <option value="2">WIH3660</option>
+                    </select>
                 </div>';
 
         return response()->json(['html'=>$html]);
@@ -110,9 +130,11 @@ class TestController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'test_date' => 'required',
+            'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
-            'test_time' => 'required',
+            'venue_id' => 'required',
+            'module_id' => 'required',
         ]);
 
         if ($validator->fails()) {
