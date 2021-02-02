@@ -9,7 +9,7 @@ class Misconduct extends Model
 {
     use HasFactory;
 
-    protected $table = 'misconduct';
+    protected $table = 'misconducts';
     protected $guarded = array();
 
     public function getData()
@@ -17,10 +17,10 @@ class Misconduct extends Model
         return static::orderBy('created_at','desc')->get();
     }
 
-    public function attendance()
+    public function test()
     {
 
-        return $this->belongsTo('App\Models\Attendance');
+        return $this->belongsTo('App\Models\Test');
 
     }
 

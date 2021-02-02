@@ -39,24 +39,20 @@
         <!--header-->
         <div class="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
           <h3 class="text-3xl font-semibold">
-            Test
+            Upload Sick Note
           </h3>
-          <button class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onclick="toggleModal('modal-id')">
-            <span class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-              ×
-            </span>
-          </button>
         </div>
         <!--body-->
-
+        <input type="file" id="myFile" name="filename" class="p-5">
+        
 
         <!--footer-->
-        <div class="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
-          <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
+        <div class="flex items-center p-5 border-t border-solid border-gray-300 rounded-b">
+          <button class="text-red-500 background-transparent font-bold uppercase  py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Close
           </button>
-          <button class="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
-            Save Changes
+          <button class="bg-green-500 text-white active:bg-green-600 ml-5 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
+            Submit
           </button>
         </div>
       </div>

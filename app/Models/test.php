@@ -100,6 +100,14 @@ class Test extends Model
 
     }
 
+    
+    public function misconducts()
+    {
+
+        return $this->hasMany('App\Models\Misconduct');
+
+    }
+
     public function venue()
     {
 

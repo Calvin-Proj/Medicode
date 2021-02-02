@@ -125,6 +125,7 @@ Route::get('/invig/schedule', [InvigController::class, 'indexinvigschedule'])->n
 Route::get('get-invigschedtest', [InvigDTController::class, 'getInvigsTest'])->name('get-invigschedtest');
 /////////////////////////////
 Route::get('/invig/submisconduct', [InvigController::class, 'indexinvigmiscon'])->name('invigmisconduct');
+Route::post('/invig/submisconduct', [InvigController::class, 'createinvigmiscon']);
 //Routes for invigilator editing account
 Route::get('/invig/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/invig/edit{user}', [AccountEdit::class, 'update']);

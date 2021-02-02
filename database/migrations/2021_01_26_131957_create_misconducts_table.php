@@ -15,7 +15,7 @@ class CreateMisconductsTable extends Migration
     {
         Schema::create('misconducts', function (Blueprint $table) {
             $table->id();
-            $table->integer("attendance_id"); //foreign
+            $table->integer("test_id"); //foreign
             $table->integer("user_id"); //student //foreign
             $table->text("misconduct_desc", 255);
             $table->timestamps();
