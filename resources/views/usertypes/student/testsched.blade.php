@@ -54,12 +54,19 @@
                     <div class="flex h-full">
                         <div id="right-panel"></div>
                         <div>
-                            <div>
-                                Test Details:
+                            <div class="text-2xl px-2 font-bold"> Test Details </div>
+                            <div class="grid grid-cols-3 gap-4  py-2 px-4">
+                              
+                              <div><label class="font-semibold">Lecturer:</label> {{$building->name}}</div>
+                              <div><label class="font-semibold">Module Code:</label> {{$building->module_code}}</div>
+                              <div><label class="font-semibold">Test Type:</label> {{$building->test_type}}</div>
+                              <div><label class="font-semibold">Building Location:</label> {{$building->building_location}}</div>
+                              <div><label class="font-semibold">Date:</label> {{$building->test_date}}</div>
+                              <div><label class="font-semibold">Time: </label> {{$building->test_time}}</div>
+                         
                             </div>
-                            <div>
-                                Seating Plan:
-                            </div>
+                            
+                            <div class="text-2xl px-2 py-4 "> <label class="font-bold">Seating plan </label>- {{$building->no_of_seats}} seats</div>
                         </div>
                     </div>
 
@@ -70,7 +77,7 @@
                       <option value="framesby"></option>
                     </select>
                     <select id="end">
-                      <option value="summerstrand"></option>
+                      <option value="{{$building->building_location}}"></option>
                     </select>
                 </div>
 
