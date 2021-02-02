@@ -23,6 +23,7 @@
                             <th>Test Description</th>
                             <th>Test Time</th>
                             <th>Module Name</th>
+                            <th>Venue Name</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -51,7 +52,8 @@
         </div>
         <!--body-->
             <div class="p-6 flex flex-row h-full w-full row-auto flex-wrap items-center align-text-top">
-                <div id='map' style='width: 50%; height: 100%;'></div>
+                <div id="right-panel"></div>
+                <div id="map"></div>
                 <div class="flex flex-col align-text-top w-1/2 h-full">
                     <div class="px-4 text-xl font-semibold h-1/2 p-3">Test Details:</div>
                     <div class="px-4 text-xl font-semibold h-1/2 p-3">Seating Plan:</div>
@@ -78,6 +80,8 @@
 @section('script')
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzC02eDw7_1mg4qO6-h7SSL_W_pKmgfHs&callback=initMap"
+type="text/javascript"></script>
 
 <script type="text/javascript">
     $(document).ready(function()
@@ -99,6 +103,7 @@
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
                 {data: 'module_name', name: 'module_name'},
+                {data: 'venue_name', name: 'venue_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
@@ -113,29 +118,44 @@
     }
   </script>
 <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiY2FsdmluOTgiLCJhIjoiY2tqdHl4cGRhMng3cjMwbWpnNjk5cnd1eCJ9.sjVSnQMH_VC1vrLHQY4f5g';
-    var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-    });
+    function initMap() {
+  const directionsRenderer = new google.maps.DirectionsRenderer();
+  const directionsService = new google.maps.DirectionsService();
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 7,
+    center: { lat: 41.85, lng: -87.65 },
+  });
+  directionsRenderer.setMap(map);
+  directionsRenderer.setPanel(document.getElementById("right-panel"));
+  const control = document.getElementById("floating-panel");
+  control.style.display = "block";
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
-    map.addControl(
-    new MapboxDirections({
-    accessToken: mapboxgl.accessToken
-    }),
-    'top-left'
-    );
+  const onChangeHandler = function () {
+    calculateAndDisplayRoute(directionsService, directionsRenderer);
+  };
+  document.getElementById("start").addEventListener("change", onChangeHandler);
+  document.getElementById("end").addEventListener("change", onChangeHandler);
+}
 
-        function resizeWin() {
-            window.screen.resizeTo(1919, 1079);
-            window.screen.focus();
-        }
-        setTimeout(function(){
-            function resizeWin() {
-                window.screen.resizeTo(1919, 1079);
-                window.screen.focus();
-            }
-        }, 200);
+function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+  const start = document.getElementById("start").value;
+  const end = document.getElementById("end").value;
+  directionsService.route(
+    {
+      origin: start,
+      destination: end,
+      travelMode: google.maps.TravelMode.DRIVING,
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsRenderer.setDirections(response);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+}
 </script>
 
 @endsection

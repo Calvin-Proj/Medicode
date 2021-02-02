@@ -30,16 +30,32 @@ class Test extends Model
 
     public function getStudData()
     {
-        //needs data from module relation lecturer name venue info
+        //needs data from module relation venue info
         $currentDate = date("Y-m-d");
-        return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->join('module_user', 'modules.id', '=', 'module_user.user_id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->where('test_date','>=',$currentDate)
+        ->orderBy('created_at','desc')
+        ->get();
+        return $tests;
     }
 
     public function getSickStudData()
     {
-        //needs data from module relation venue info
         $currentDate = date("Y-m-d");
-        return static::where('test_type','Sick Test')->where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->join('module_user', 'modules.id', '=', 'module_user.user_id')
+        ->select('tests.*', 'venues.venue_name','modules.module_name')
+        ->where('test_date','>=',$currentDate)
+        ->where('test_type','Sick Test')
+        ->orderBy('created_at','desc')
+        ->get();
+        return $tests;
     }
 
     public function getInvigTestData()
