@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-@if (\Session::has('error'))
-<div class="alert alert-success w-full bg-red-500 text-white">
+<div class="container bg-white rounded-lg">
+    @if (\Session::has('error'))
+<div class="alert alert-success w-full bg-red-500 text-white rounded-sm" name="error" id="error">
     <ul>
         <li>{!! \Session::get('error') !!}</li>
     </ul>
 </div>
 @endif
-<div class="container bg-white rounded-lg">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -54,7 +54,7 @@
             Upload Sick Note
           </h3>
         </div>
-       
+
         <!--body- upload note-->
         <div class="form-group form-control p-5">
           <label  for="title">Title</label><br>
@@ -122,7 +122,7 @@
                 {data: 'test_time', name: 'test_time'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
-            
+
     });
 
     });
@@ -130,7 +130,7 @@
 </script>
 <script type="text/javascript">
     function toggleModal(modalID){
-     
+
       document.getElementById(modalID).classList.toggle("hidden");
       document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
       document.getElementById(modalID).classList.toggle("flex");
