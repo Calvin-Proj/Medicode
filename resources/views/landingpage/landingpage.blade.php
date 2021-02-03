@@ -103,7 +103,7 @@
               Scheduling tests isn't very efficient.
             </h3>
             <p class="text-gray-600 mb-8">
-              We have aimed to make the life of all users at a school much simpler by making the process of scheduling tests and managing them much easier.
+              We have aimed to make the life of all users at a school much simpler by making the process of scheduling tests and managing them easier.
               <br />
               <br />
             </p>
@@ -246,8 +246,8 @@
                 Each user has different features for their profile intended to make the scheduling process much simpler.
                 <ul class="text-gray-600 list-disc px-12">
                     <li>Users are able to view GPS coordinates to his specific test centre.</li>
-                    <li>Invigilators can submit misconduct and scan QR codes for authentication and attendance purposes.</li>
-                    <li>Lecturers can create tests for each type and manage attendance and sick test notes.</li>
+                    <li>Invigilators can submit misconduct via the system for the lecturer to view and manage externally.</li>
+                    <li>Lecturers can create tests for each test type and manage attendance and sick test notes.</li>
                     <li>The Admin user is able to manage all data within the system.</li>
                 </ul>
                 <br />
@@ -286,7 +286,7 @@
                 Calvin Kemp
               </div>
               <p class="text-gray-800 text-base px-6 mb-5 text-center">
-                Watashi wa nerusonmandera daigaku no gakusei de, genzai sofutō~ea kaihatsu kōsu ni sanka shite imasu. Nihon ni sumitaidesu.
+                I'm a student at the University of Nelson Mandela, I'm currently finishing my Software Development course and looking to work abroad in a few years.
               </p>
             </a>
           </div>
@@ -297,8 +297,8 @@
               <div class="w-full font-bold text-xl text-gray-800 px-6 text-center">
                 Matthew De Kock
               </div>
-              <p class="text-gray-800 text-base px-6 mb-5">
-                I'm a student at the University of Nelson Mandela, currently partaking in a Software Development course. I really like Star Trek, and I think Star Wars is for babies.
+              <p class="text-gray-800 text-base px-6 mb-5 text-center">
+                I'm a student at the University of Nelson Mandela, currently doing my Software Devlopment course. I wish to further my studies.
               </p>
             </a>
           </div>
@@ -308,10 +308,7 @@
     <section class="bg-gray-100 py-8">
       <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-    <!-- Change the colour #f8fafc to match the previous section colour -->
-    <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
+
     <script>
       var scrollpos = window.scrollY;
       var header = document.getElementById("header");
@@ -321,7 +318,7 @@
       var toToggle = document.querySelectorAll(".toggleColour");
 
       document.addEventListener("scroll", function () {
-        /*Apply classes for slide in bar*/
+
         scrollpos = window.scrollY;
 
         if (scrollpos > 10) {
@@ -330,7 +327,7 @@
           navaction.classList.add("gradient");
           navaction.classList.remove("text-gray-800");
           navaction.classList.add("text-white");
-          //Use to switch toggleColour colours
+
           for (var i = 0; i < toToggle.length; i++) {
             toToggle[i].classList.add("text-gray-800");
             toToggle[i].classList.remove("text-white");
@@ -344,7 +341,7 @@
           navaction.classList.add("bg-white");
           navaction.classList.remove("text-white");
           navaction.classList.add("text-gray-800");
-          //Use to switch toggleColour colours
+
           for (var i = 0; i < toToggle.length; i++) {
             toToggle[i].classList.add("text-white");
             toToggle[i].classList.remove("text-gray-800");
@@ -357,8 +354,7 @@
       });
     </script>
     <script>
-      /*Toggle dropdown list*/
-      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
 
       var navMenuDiv = document.getElementById("nav-content");
       var navMenu = document.getElementById("nav-toggle");
