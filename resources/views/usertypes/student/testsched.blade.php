@@ -56,16 +56,16 @@
                         <div>
                             <div class="text-2xl px-2 font-bold"> Test Details </div>
                             <div class="grid grid-cols-3 gap-4  py-2 px-4">
-                              
+
                               <div><label class="font-semibold">Lecturer:</label> {{$building->name}}</div>
                               <div><label class="font-semibold">Module Code:</label> {{$building->module_code}}</div>
                               <div><label class="font-semibold">Test Type:</label> {{$building->test_type}}</div>
                               <div><label class="font-semibold">Building Location:</label> {{$building->building_location}}</div>
                               <div><label class="font-semibold">Date:</label> {{$building->test_date}}</div>
                               <div><label class="font-semibold">Time: </label> {{$building->test_time}}</div>
-                         
+
                             </div>
-                            
+
                             <div class="text-2xl px-2 py-4 "> <label class="font-bold">Seating plan </label>- {{$building->no_of_seats}} seats</div>
                         </div>
                     </div>
@@ -103,6 +103,15 @@
 @section('script')
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function()
@@ -110,6 +119,10 @@
         // init datatable.
         var dataTable = $('.datatable').DataTable(
         {
+        dom: 'Bfrtip',
+        buttons: [
+        'copy', 'csv', 'excel', 'pdf', 'print'
+        ] ,
         processing: true,
         serverSide: true,
         autoWidth: false,
