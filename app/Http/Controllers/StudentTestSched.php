@@ -58,6 +58,8 @@ class StudentTestSched extends Controller
             'test_time' => 'required',
             'test_type' => 'required',
             'test_desc' => 'required',
+            'module_name' => 'required',
+            'venue_name' => 'required',
 
         ]);
 

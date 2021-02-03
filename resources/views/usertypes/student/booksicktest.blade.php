@@ -29,6 +29,8 @@
                             <th>Test Type</th>
                             <th>Test Description</th>
                             <th>Test Time</th>
+                            <th>Module Name</th>
+                            <th>Venue Name</th>
                             <th class="text-center px-20">Action</th>
                         </tr>
                     </thead>
@@ -120,6 +122,8 @@
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
+                {data: 'module_name', name: 'module_name'},
+                {data: 'venue_name', name: 'venue_name'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
 
