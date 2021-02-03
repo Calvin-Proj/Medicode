@@ -42,11 +42,12 @@ class StudentController extends Controller
           $file->move('SickNotes',$name);
           
           $input['path'] = $name;
-      
+          $input['user_id'] = auth()->user()->id;
         }
-        
-        
+    
         Sick_Note::create($input);
+
+
 
         }
     public function index(Request $request)
