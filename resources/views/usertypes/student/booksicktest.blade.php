@@ -32,8 +32,13 @@
 </div>
 <!--modal-->
 <!--modal-->
+
 <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center" id="modal-id">
-    <div class="relative mx-auto max-w-7xl h-screen w-full py-16">
+  <form action="{{ route('fileUpload') }}" method="POST" enctype="multipart/form-data" >
+    @csrf
+   
+  
+    <div class="relative mx-auto max-w-7xl h-2/12 w-full py-16">
       <!--content-->
       <div class="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none w-full h-full">
         <!--header-->
@@ -43,20 +48,20 @@
           </h3>
         </div>
         <!--body-->
-        <input type="file" id="myFile" name="filename" class="p-5">
-        
+        <input type="file" class="form-control-file p-5" name="sick_note" id="exampleInputFile">
 
         <!--footer-->
         <div class="flex items-center p-5 border-t border-solid border-gray-300 rounded-b">
           <button class="text-red-500 background-transparent font-bold uppercase  py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Close
           </button>
-          <button class="bg-green-500 text-white active:bg-green-600 ml-5 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
+          <button class="bg-green-500 text-white active:bg-green-600 ml-5 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1">
             Submit
           </button>
         </div>
       </div>
     </div>
+  </form>
   </div>
 <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
 <!--modal-->

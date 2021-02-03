@@ -26,9 +26,9 @@ class InvigController extends Controller
     public function createinvigmiscon(Request $request)
     {  $this->validate(request(), 
         [
-         //  'user_id' => 'required',
-        //   'test_id' => 'required',
-        //   'misconduct_desc' => 'required'
+           'user_id' => 'required',
+            'test_id' => 'required',
+            'misconduct_desc' => 'required'
          ]);
  
          $misconduct= new Misconduct;
@@ -40,8 +40,7 @@ class InvigController extends Controller
  
          session()->flash('updated', 'Account successfully updated ');
   
-       
-        return redirect('/');
+         return redirect('/');
  
        
     }

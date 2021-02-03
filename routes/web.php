@@ -146,7 +146,8 @@ Route::get('get-sicktests', [StudentTestSched::class, 'getSickTests'])->name('ge
 //Student Navbar
 Route::get('/student/help', [StudentController::class, 'indexhelp'])->name('studenthelp');
 Route::get('/student/testschedule', [StudentController::class, 'index'])->name('studenttestsched');
-Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
+ Route::get('/student/booksicktest', [StudentController::class, 'indexbooktest'])->name('studentbooksicktest');
+Route::post('/student/booksicktest', [StudentController::class, 'fileUpload'])->name('fileUpload');
 //Routes for student editing account
 Route::get('/student/edit{user}', [AccountEdit::class, 'edit']);
 Route::post('/student/edit{user}', [AccountEdit::class, 'update']);
