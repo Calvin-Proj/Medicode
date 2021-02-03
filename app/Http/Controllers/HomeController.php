@@ -156,7 +156,13 @@ class HomeController extends Controller
                  ->orderBy('test_date','asc')
                  ->first();
 
-                return view('usertypes.student.homeStud', compact('modules','count_Module', 'tests','count_t','count_t_c','nearestDate'));
+                 $booked= DB::table('sick_notes')
+                 ->where('user_id',$id)
+                 ->get();
+
+                 $booked=count($booked);
+
+                return view('usertypes.student.homeStud', compact('modules','count_Module', 'tests','count_t','count_t_c','nearestDate','booked'));
                 break;
 
             case 'invig':

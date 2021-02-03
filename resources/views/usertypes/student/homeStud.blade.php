@@ -31,7 +31,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Nearest Upcoming test Date</h5>
-                        <h3 class="font-bold text-3xl text-white">{{$nearestDate->test_date}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$nearestDate->test_date ?? ''}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Sick tests booked</h5>
-                        <h3 class="font-bold text-3xl text-white"> <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$booked}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>

@@ -47,6 +47,7 @@ class StudentController extends Controller
     
         Sick_Note::create($input);
 
+        return redirect('/');
 
 
         }
