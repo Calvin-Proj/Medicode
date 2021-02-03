@@ -14,8 +14,7 @@
             <div class="card">
                 <div>
                     <div class="mt-2 mx-2">
-                        <!-- modal div -->
-                        <!-- Create Test Model -->
+                      '<button class="px-4 py-2 text-white bg-secondary rounded-sm fo font-semibold hover:bg-highlight hover:text-primary focus:outline-none" type="button" onclick="toggleModal(`modal-id`)">Book</button>'
                     </div>
                 </div>
             </div>
@@ -29,7 +28,7 @@
                             <th>Test Type</th>
                             <th>Test Description</th>
                             <th>Test Time</th>
-                            <th class="text-center px-20">Action</th>
+                            
                         </tr>
                     </thead>
                 </table>
@@ -120,8 +119,7 @@
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
-                {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
-            ]
+                 ]
 
     });
 
