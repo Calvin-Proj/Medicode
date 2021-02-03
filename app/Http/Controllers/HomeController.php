@@ -74,39 +74,47 @@ class HomeController extends Controller
                 $id= auth()->user()->id;
 
                 $module=User::find($id)->modules()->first();
-               
-
-
-                // $stud_modCodes_arr= array();
-                // $i=0;
-                // foreach ( $modules as  $module) {
-                //     $stud_modCodes_arr[$i]= $module->module_code;
-                //     $i=$i+1;
-                // }
 
 
                 $lect_studs=User::has('modules')->where('usertype','student')->get();
                 $lect_studs_count = count($lect_studs);
+                
+                $tests=Test::where('module_id', $module->id)
+                ->where('test_type','Standard Test')->get();
+                $count_test_created = count($tests);
+               
 
-               //$tests=Test::find($module->module_name);
-              
-            //     foreach ($lect_studs as $lect_stud) {
-            //        if ($lect_stud->usertype == 'student') {
-            //         dd($lect_stud);
-            //        }
-            //    }
-                //dd($stud_modCodes_arr);
-                // $lect_studs=User::whereHas('modules',function($q,$stud_modCodes_arr){
-                //     $q->whereIn('module_code',[$stud_modCodes_arr]);
-                // })->get();
-                // foreach ($lect_studs as $lect_stud) {
-                //     echo($lect_stud->name);
-                // }
+                $tests=Test::where('module_id', $module->id)
+                ->where('test_type','Sick Test')
+                ->get();
+                $count_stest_created = count($tests);
 
 
+//
+                $currentDate = date("Y-m-d");
+                $tests=Test::where('module_id', $module->id)
+                ->where('test_type','Standard Test')
+                ->where('test_date','<',$currentDate)
+                ->get();
+                $count_test_created_comp = count($tests);
 
+                $tests=Test::where('module_id', $module->id)
+                ->where('test_type','Sick Test')
+                ->where('test_date','<',$currentDate)
+                ->get();
+                $count_stest_created_comp = count($tests);
 
-                return view('usertypes.lecturer.homeLect',compact('module','lect_studs','lect_studs_count'));
+                $tests_upcoming=Test::where('module_id', $module->id)
+                ->where('test_date','>',$currentDate)
+                ->orderby('test_date', 'asc')->limit(4)->get();
+
+                
+             
+               
+                
+  //             
+
+                return view('usertypes.lecturer.homeLect',compact('module','lect_studs','lect_studs_count', 'count_test_created','count_stest_created','count_test_created_comp','count_stest_created_comp','tests_upcoming'));
 
 
                 break;

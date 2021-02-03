@@ -31,7 +31,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-white">tests created</h5>
-                                <h3 class="font-bold text-3xl text-white">10 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-white">{{$count_test_created}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-white">Sick tests created</h5>
-                                <h3 class="font-bold text-3xl text-white">1 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-white">{{$count_stest_created}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-white">Tests Completed</h5>
-                                <h3 class="font-bold text-3xl text-white">6 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-white">{{$count_test_created_comp}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-white">sick tests completed</h5>
-                                <h3 class="font-bold text-3xl text-white">0 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-white">{{$count_stest_created_comp}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -122,29 +122,27 @@
                     <!--Table Card-->
                     <div class="bg-white border-transparent rounded-lg shadow-xl">
                         <div class="bg-yellow-400 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                            <h5 class="font-bold uppercase text-black">Students</h5>
+                            <h5 class="font-bold uppercase text-black">Upcoming Tests</h5>
                         </div>
                         <div class="p-5">
                             <table class="w-full p-5 text-gray-700 table-auto" >
                                 <thead>
                                     <tr>
-                                        <th class="text-left text-blue-900">Name</th>
-                                        <th class="text-left text-blue-900">Email</th>
+                                        <th class="text-left text-blue-900">Test ID</th>
+                                        <th class="text-left text-blue-900">Date</th>
 
                                     </tr>
                                 </thead>
 
                                 <tbody>
 
-                                    @foreach ($lect_studs as $lect_stud)
-                                    @if ($lect_stud->usertype == 'student')
-
+                                    @foreach ($tests_upcoming as $test_upcoming)
                                     <tr>
-                                        <td>{{$lect_stud->name}}</td>
-                                        <td>{{$lect_stud->email}}</td>
+                                        <td>{{$test_upcoming->id}}</td>
+                                        <td>{{$test_upcoming->test_date}}</td>
 
                                     </tr>
-                                    @endif
+                                    
                                     @endforeach
                                 </tbody>
                             </table>
@@ -161,7 +159,7 @@
                      <!--Table Card-->
                      <div class="bg-white border-transparent rounded-lg shadow-xl">
                          <div class="bg-yellow-400 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
-                             <h5 class="font-bold uppercase text-black">Modules</h5>
+                             <h5 class="font-bold uppercase text-black">Module</h5>
                          </div>
                          <div class="p-5">
                              <table class="w-full p-5 text-gray-700">
@@ -177,17 +175,17 @@
 
                                  <tr>
                                     @if($module=='')
-                                        <td>Modules Pending</td>
+                                        <td>Module Pending</td>
                                         <td></td>
                                         <td></td>
 
 
 
-                                    @else{
+                                    @else
                                     <td>{{$module->module_code}}</td>
                                     <td>{{$module->module_name}}</td>
                                     <td>{{$module->module_year}}</td>
-                                    }
+                                    
 
                                     @endif
 
