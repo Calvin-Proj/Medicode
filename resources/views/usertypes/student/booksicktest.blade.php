@@ -13,6 +13,7 @@
                     </div>
                 </div>
             </div>
+            <div id="sick_note_user_id" name="sick_note_user_id" value="{{ auth()->user()->id }}"></div>
             <div class="table-responsive px-2">
                 <table class="table table-bordered datatable">
                     <thead>
@@ -44,14 +45,14 @@
         </div>
         <!--body-->
         <input type="file" id="myFile" name="filename" class="p-5">
-        
+
 
         <!--footer-->
         <div class="flex items-center p-5 border-t border-solid border-gray-300 rounded-b">
           <button class="text-red-500 background-transparent font-bold uppercase  py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Close
           </button>
-          <button class="bg-green-500 text-white active:bg-green-600 ml-5 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
+          <button class="bg-green-500 text-white active:bg-green-600 ml-5 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg  outline-none focus:outline-none mr-1 mb-1" id="SubmitCreateModuleForm" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Submit
           </button>
         </div>
@@ -89,7 +90,9 @@
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
+
     });
+
 </script>
 <script type="text/javascript">
     function toggleModal(modalID){

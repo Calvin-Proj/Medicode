@@ -23,6 +23,9 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "@popperjs/core": "^2.6.0"
+        "@popperjs/core": "^2.6.0",
+        "datatables.net-buttons": "^1.6.5",
+        "jszip": "^3.5.0",
+        "pdfmake": "^0.1.70"
     }
 }
