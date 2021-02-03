@@ -1,13 +1,21 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
 
 use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CheckUsertype
+class CheckUserType
 {
-    public function handle($request, Closure $next, ...$roles)
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle(Request $request, Closure $next)
     {
         $roleIds = ['admin' => 'admin', 'lect' => 'lecturer', 'invig' => 'invig', 'stud' => 'student'];
         $allowedRoleIds = [];
@@ -27,6 +35,5 @@ class CheckUsertype
         }
 
         return redirect('/');
-
     }
 }
