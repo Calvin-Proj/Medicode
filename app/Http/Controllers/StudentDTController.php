@@ -39,6 +39,15 @@ class StudentDTController extends Controller
                     <span class="w-8"></span>
                     <span class="w-7"></span>
                     <input type="text" name="student_email1" id="student_email1" value="'.$data->email.'" class="text-gray-600">
+                </div>
+                <div class="form-group flex justify-start p-2 text-white">
+                    <label for="module_id">Building Name:</label>
+                    <span class="w-6"></span>
+                    <span class="w-7"></span>
+                    <select name="module_id1" id="module_id1" value="'.$data->module_id.'" class="text-gray-600 w-32">
+                        <option value="1">ONT3660</option>
+                        <option value="2">WIH3600</option>
+                    </select>
                 </div>';
         return response()->json(['html'=>$html]);
     }
@@ -48,6 +57,7 @@ class StudentDTController extends Controller
         $validator = \Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
+            'module_id' => 'required',
         ]);
 
         if ($validator->fails()) {

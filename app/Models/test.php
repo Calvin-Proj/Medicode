@@ -47,6 +47,7 @@ class Test extends Model
         ->Join('module_user','users.id', '=', 'module_user.user_id')
         ->join('modules', 'modules.id', '=', 'module_user.module_id')
         ->select('users.*', 'modules.module_name')
+        ->where('usertype','lecturer')
         ->get();
         return $tests;
     }

@@ -13,6 +13,7 @@
                     </div>
                 </div>
             </div>
+            <div id="sick_note_user_id" name="sick_note_user_id" value="{{ auth()->user()->id }}"></div>
             <div class="table-responsive px-2">
                 <table class="table table-bordered datatable">
                     <thead>
@@ -94,7 +95,9 @@
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
     });
+
     });
+
 </script>
 <script type="text/javascript">
     function toggleModal(modalID){
