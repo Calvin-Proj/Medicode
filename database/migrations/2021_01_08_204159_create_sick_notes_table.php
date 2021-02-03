@@ -16,7 +16,8 @@ class CreateSickNotesTable extends Migration
         Schema::create('sick_notes', function (Blueprint $table) {
             $table->id();
             $table->string('title'); 
-            $table->string('path'); 
+            $table->binary('path'); 
+            $table->string('file'); 
             //$table->integer('test_id');
             $table->integer("user_id"); //student //foreign
             $table->timestamps();
