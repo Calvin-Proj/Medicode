@@ -66,7 +66,7 @@ class User extends Authenticatable
     {
         $tests = DB::table('users')
         ->Join('module_user','users.id', '=', 'module_user.user_id')
-        ->join('modules', 'modules.id', '=', 'module_user.module_id')
+        ->Join('modules', 'modules.id', '=', 'module_user.module_id')
         ->select('users.*', 'modules.module_name')
         ->where('usertype','student')
         ->get();

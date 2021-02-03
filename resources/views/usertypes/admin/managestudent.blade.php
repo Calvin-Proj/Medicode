@@ -150,6 +150,7 @@
                 data: {
                     name: $('#student_name1').val(),
                     email: $('#student_email1').val(),
+                    module_id: $('#module_id1').val(),
                 },
                 success: function(result) {
                     if(result.errors) {
@@ -199,10 +200,7 @@
         });
 
 
-
-
-
-    });
+});
 </script>
 
 

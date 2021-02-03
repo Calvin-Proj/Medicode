@@ -133,7 +133,7 @@
             <!-- Modal body -->
 
             <div class="modal-body p-2">
-                <h4>Are you sure want to delete this venue?</h4>
+                <h4>Are you sure want to delete this Venue?</h4>
             </div>
             <!-- Modal footer -->
             <div class="modal-footer p-2 modal-footer flex flex-wrap justify-center">
