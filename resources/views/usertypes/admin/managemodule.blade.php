@@ -8,7 +8,9 @@
             <div class="card">
                 <div>
                     <div class="mt-2 mx-2">
-                            
+                        <button class="px-6 py-2 text-white bg-secondary rounded-sm hover:bg-highlight hover:text-primary focus:outline-none" id="show_create" name="show_create">
+                            Create Module
+                        </button>
                         <!-- modal div -->
                         <!-- Create Module Model -->
                     </div>
@@ -239,6 +241,21 @@
     });
 
     //buttons for create
+    $(document).ready(function()
+    {
+        $("#show_create").click(function ()
+        {
+            $( "#CreateModuleModal" ).show();
+        });
+        $("#hide_create").click(function ()
+        {
+            $( "#CreateModuleModal" ).hide();
+        });
+        $("#hide_create1").click(function ()
+        {
+            $("#CreateModuleModal").hide();
+        });
+    });
 
 
     // Get single module in EditModel

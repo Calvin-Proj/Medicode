@@ -15,7 +15,7 @@ class CheckUserType
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next, ...$roles)
     {
         $roleIds = ['admin' => 'admin', 'lect' => 'lecturer', 'invig' => 'invig', 'stud' => 'student'];
         $allowedRoleIds = [];
@@ -35,5 +35,6 @@ class CheckUserType
         }
 
         return redirect('/');
+
     }
 }
