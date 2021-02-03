@@ -33,13 +33,22 @@ class StudentController extends Controller
         //         ]);
        
 
-        $sick_note= new Sick_Note;
-        $sick_note->sick_note=$request->sick_note;
-        $sick_note->user_id= auth()->user()->id;
-        $sick_note->user_id=  '1';     
-        $sick_note->save();
-    
-    }
+        $input= $request->all();
+        
+        if($file= $request->file('file'))
+        {
+          $name = $file->getClientOriginalName();
+          
+          $file->move('SickNotes',$name);
+          
+          $input['path'] = $name;
+      
+        }
+        
+        
+        Sick_Note::create($input);
+
+        }
     public function index(Request $request)
     {
         if ($request->ajax()) {

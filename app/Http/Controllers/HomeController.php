@@ -7,6 +7,7 @@ use App\Models\Module;
 use App\Models\Building;
 use App\Models\Venue;
 use App\Models\Test;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -113,10 +114,41 @@ class HomeController extends Controller
             case 'student':
                 $id= auth()->user()->id;
 
-                $user=User::find($id)->modules()->get();
-                $count_Module=count($user);
+                $modules=User::find($id)->modules()->get();
+                
+                $count_Module=count($modules);
 
-                return view('usertypes.student.homeStud')->with('count_Module',$count_Module);
+                $currentDate = date("Y-m-d");
+                $tests = DB::table('tests')
+                ->join('modules', 'tests.module_id', '=', 'modules.id')
+                ->join('module_user', 'modules.id', '=', 'module_user.module_id')
+                ->select('tests.*', 'modules.*')
+                ->where('test_type','Standard Test')
+                ->where('test_date','>=',$currentDate)
+                ->orderBy('test_date','asc')
+                ->get();
+
+                $count_t = count($tests);
+                $tests_completed = DB::table('tests')
+                ->join('modules', 'tests.module_id', '=', 'modules.id')
+                ->join('module_user', 'modules.id', '=', 'module_user.module_id')
+                ->select('tests.*', 'modules.*')
+                ->where('test_type','Standard Test')
+                ->where('test_date','<',$currentDate)
+                ->get();
+
+                 $count_t_c= count($tests_completed);
+                
+                 $nearestDate = DB::table('tests')
+                 ->join('modules', 'tests.module_id', '=', 'modules.id')
+                 ->join('module_user', 'modules.id', '=', 'module_user.module_id')
+                 ->select('tests.*', 'modules.*')
+                 ->where('test_type','Standard Test')
+                 ->where('test_date','>=',$currentDate)
+                 ->orderBy('test_date','asc')
+                 ->first();
+
+                return view('usertypes.student.homeStud', compact('modules','count_Module', 'tests','count_t','count_t_c','nearestDate'));
                 break;
 
             case 'invig':

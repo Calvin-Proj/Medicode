@@ -39,7 +39,7 @@
     @csrf
 
 
-    <div class="relative mx-auto max-w-7xl h-2/12 w-full py-16">
+    <div class="relative mx-auto max-w-7xl h-3/12 w-full py-16">
       <!--content-->
       <div class="border-0 rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none w-full h-full">
         <!--header-->
@@ -48,9 +48,15 @@
             Upload Sick Note
           </h3>
         </div>
-        <!--body-->
-        <input type="file" class="form-control-file p-5" name="sick_note" id="exampleInputFile">
+        <!--body- upload note-->
+        <div class="form-group form-control p-5">
+          <label class="" for="title">Title</label><br>
+          <input type="text"  name="title"> <br>
+          </div>
 
+        <div class="form-group">
+        <input type="file" class="form-control-file p-5" name="file" id="fileUpload">
+        </div>
         <!--footer-->
         <div class="flex items-center p-5 border-t border-solid border-gray-300 rounded-b">
           <button class="text-red-500 background-transparent font-bold uppercase  py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
@@ -107,6 +113,7 @@
                 {data: 'test_time', name: 'test_time'},
                 {data: 'Actions', name: 'Actions',orderable:false,searchable:false,sClass:'text-center'},
             ]
+            
     });
 
     });

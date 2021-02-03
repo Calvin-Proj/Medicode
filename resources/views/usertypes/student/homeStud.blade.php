@@ -30,8 +30,8 @@
                         <div class="rounded-full p-5 bg-yellow-400"><i class="fas fa-pencil-alt fa-3x fa-inverse"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-white">Something</h5>
-                        <h3 class="font-bold text-3xl text-white">10 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h5 class="font-bold uppercase text-white">Nearest Upcoming test Date</h5>
+                        <h3 class="font-bold text-3xl text-white">{{$nearestDate->test_date}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Upcoming Tests</h5>
-                        <h3 class="font-bold text-3xl text-white">2 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white">{{$count_t}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Sick tests booked</h5>
-                        <h3 class="font-bold text-3xl text-white">1 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white"> <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-white">Tests Completed</h5>
-                        <h3 class="font-bold text-3xl text-white">6 <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
+                        <h3 class="font-bold text-3xl text-white"> {{$count_t_c}} <span class="text-white-500"><i class="fas fa-caret-up"></i></span></h3>
                     </div>
                 </div>
             </div>
@@ -116,16 +116,16 @@
     </div>
 
 
-    <div class="flex flex-row flex-wrap flex-grow mt-2">
+    <div class="flex flex-row flex-wrap flex-grow mt-2 ">
 
-        <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/2 xl:w-1/3 p-6 ">
             <!--Table Card-->
-            <div class="bg-white border-transparent rounded-lg shadow-xl">
+            <div class="bg-white border-transparent rounded-lg shadow-xl ">
                 <div class="bg-yellow-400 uppercase text-gray-800 border-b-2 border-gray-300 rounded-tl-lg rounded-tr-lg p-2">
                     <h5 class="font-bold uppercase text-black">Upcoming tests</h5>
                 </div>
-                <div class="p-5">
-                    <table class="w-full p-5 text-gray-700">
+                <div class="p-5 overflow-y-auto">
+                    <table class="w-full p-5 text-gray-700 ">
                         <thead>
                         <tr>
                             <th class="text-left text-blue-900">Module Code</th>
@@ -135,25 +135,20 @@
                         </thead>
 
                         <tbody>
-                        <tr>
-                            <td>Obi Wan Kenobi</td>
-                            <td>Light</td>
-                            <td>Jedi</td>
-                        </tr>
-                        <tr>
-                            <td>Greedo</td>
-                            <td>South</td>
-                            <td>Scumbag</td>
-                        </tr>
-                        <tr>
-                            <td>Darth Vader</td>
-                            <td>Dark</td>
-                            <td>Sith</td>
-                        </tr>
+                            
+                            @foreach ($tests as $test)
+                            <tr>
+                                <td>{{$test->module_code}}</td>
+                                <td>{{$test->test_time}}</td>
+                                <td>{{$test->test_date}}</td>
+                            </tr>
+                            @endforeach
+                         
+                  
                         </tbody>
                     </table>
 
-                    <p class="py-2"><a href="#">See More issues...</a></p>
+                    
 
                 </div>
             </div>
@@ -178,25 +173,17 @@
                         </thead>
 
                         <tbody>
+                            @foreach($modules as $module)
                         <tr>
-                            <td>Obi Wan Kenobi</td>
-                            <td>Light</td>
+                            <td>{{$module->module_code}}</td>
+                            <td>{{$module->module_name}}</td>
 
                         </tr>
-                        <tr>
-                            <td>Greedo</td>
-                            <td>South</td>
-
-                        </tr>
-                        <tr>
-                            <td>Darth Vader</td>
-                            <td>Dark</td>
-
-                        </tr>
+                            @endforeach
                         </tbody>
                     </table>
 
-                    <p class="py-2"><a href="#">See More issues...</a></p>
+                   
 
                 </div>
             </div>
