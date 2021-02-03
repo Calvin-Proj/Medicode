@@ -42,7 +42,7 @@
         <!--header-->
         <div class="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
           <h3 class="text-3xl font-semibold">
-                sad
+               Test
           </h3>
           <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Close
@@ -50,9 +50,9 @@
         </div>
         <!--body-->
             <div class="container w-full h-full">
-                <div id="map" class="w-full h-full"></div>
+                <div id="map" class="w-full h-1/3"></div>
                     <div class="flex h-full">
-                        <div id="right-panel"></div>
+                        <div class="h-2/3" id="right-panel"></div>
                         <div>
                             <div class="text-2xl px-2 font-bold"> Test Details </div>
                             <div class="grid grid-cols-3 gap-4  py-2 px-4">
