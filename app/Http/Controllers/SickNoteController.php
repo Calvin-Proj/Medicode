@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Sick_Note;
 use Illuminate\Http\Request;
+use App\Models\Sick_Note;
 
-class SickNoteCopntroller extends Controller
+class SickNoteController extends Controller
 {
     public function getSickNotes(Request $request, Sick_Note $sick_note)
     {

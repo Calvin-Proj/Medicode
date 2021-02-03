@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Middleware;
-use Illuminate\Support\Facades\Auth;
 
 use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CheckUsertype
+class CheckUserType
 {
     public function handle($request, Closure $next, ...$roles)
     {
