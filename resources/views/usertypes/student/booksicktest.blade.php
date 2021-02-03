@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if (\Session::has('error'))
+<div class="alert alert-success w-full bg-red-500 text-white">
+    <ul>
+        <li>{!! \Session::get('error') !!}</li>
+    </ul>
+</div>
+@endif
 <div class="container bg-white rounded-lg">
     <div class="row">
         <div class="col-md-12">
@@ -48,10 +54,13 @@
             Upload Sick Note
           </h3>
         </div>
+       
         <!--body- upload note-->
         <div class="form-group form-control p-5">
-          <label class="" for="title">Title</label><br>
-          <input type="text"  name="title"> <br>
+          <label  for="title">Title</label><br>
+          <input type="text"  name="title"> <br><br>
+          <label  for="test_id">Test ID</label><br>
+          <input type="text"  name="test_id"> <br>
           </div>
 
         <div class="form-group">
@@ -121,6 +130,7 @@
 </script>
 <script type="text/javascript">
     function toggleModal(modalID){
+     
       document.getElementById(modalID).classList.toggle("hidden");
       document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
       document.getElementById(modalID).classList.toggle("flex");

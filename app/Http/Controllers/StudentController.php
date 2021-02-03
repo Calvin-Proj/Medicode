@@ -27,10 +27,11 @@ class StudentController extends Controller
 
     public function fileUpload(Request $request)
     {
-        // $this->validate(request(),  
-        //     [
-        //         'sick_note' => 'required|mimes:pdf,xlx,csv|max:2048',
-        //         ]);
+        //  $this->validate(request(),  
+        //          [
+        //          'sick_note' => 'required|mimes:pdf,xlx,csv|max:2048',
+        //          'test_id'=> 'required|int'
+        //          ]);
        
 
         $input= $request->all();
@@ -43,8 +44,21 @@ class StudentController extends Controller
           
           $input['path'] = $name;
           $input['user_id'] = auth()->user()->id;
+          
+         
         }
-    
+         $id=auth()->user()->id;
+         $testids=Sick_Note::where('user_id',$id)
+         ->get();
+         
+
+
+          foreach ($testids as $testid) {
+              if ($testid->id == $input['test_id'] ) {
+                return redirect()->back()->with('error', 'Test has already been booked.');     }
+          }
+
+
         Sick_Note::create($input);
 
         return redirect('/');

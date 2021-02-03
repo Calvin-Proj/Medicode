@@ -18,7 +18,7 @@ class CreateSickNotesTable extends Migration
             $table->string('title'); 
             $table->binary('path'); 
             $table->string('file'); 
-            //$table->integer('test_id');
+            $table->integer('test_id');
             $table->integer("user_id"); //student //foreign
             $table->timestamps();
         });
