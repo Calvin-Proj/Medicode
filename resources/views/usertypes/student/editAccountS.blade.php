@@ -9,7 +9,7 @@
 
 
             <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+          
 
             <form method="POST" action="/student/edit{{auth()->user()->id}}">
                 @csrf
@@ -28,6 +28,7 @@
                   <h3></h3>
 
                 <!-- Header -->
+                <x-auth-validation-errors class="mb-4 px-2" :errors="$errors" />
                 <div class="flex justify-center font-semibold text-lg">
                     <label for="header">Edit Details</label>
                 </div>

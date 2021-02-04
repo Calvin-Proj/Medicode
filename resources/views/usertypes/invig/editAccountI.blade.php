@@ -9,25 +9,18 @@
 
 
             <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            
 
             <form method="POST" action="/invig/edit{{auth()->user()->id}}">
                 @csrf
-                    @if ($errors->any())
-                      <div class="alert alert-danger">
-                         <ul>
-                           @foreach ($errors->all() as $error)
-                               <li>{{ $error }}</li>
-                            @endforeach
-                         </ul>
-                       </div>
-                   @endif
+              
 
                   <!-- <img class="block h-14 w-14 justify-center" src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man4-512.png" alt="avatar">-->
 
                   <h3></h3>
 
                 <!-- Header -->
+                <x-auth-validation-errors class="mb-4 px-2" :errors="$errors" />
                 <div class="flex justify-center font-semibold text-lg">
                     <label for="header">Edit Details</label>
                 </div>

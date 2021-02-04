@@ -14,7 +14,7 @@
             <div class="card">
                 <div>
                     <div class="mt-2 mx-2">
-                      '<button class="px-4 py-2 text-white bg-secondary rounded-sm fo font-semibold hover:bg-highlight hover:text-primary focus:outline-none" type="button" onclick="toggleModal(`modal-id`)">Book</button>'
+                      <button class="px-4 py-2 text-white bg-secondary rounded-sm fo font-semibold hover:bg-highlight hover:text-primary focus:outline-none" type="button" onclick="toggleModal(`modal-id`)">Book</button>
                     </div>
                 </div>
             </div>
