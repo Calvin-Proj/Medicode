@@ -27,11 +27,12 @@ class StudentController extends Controller
 
     public function fileUpload(Request $request)
     {
-        //  $this->validate(request(),  
-        //          [
-        //          'sick_note' => 'required|mimes:pdf,xlx,csv|max:2048',
-        //          'test_id'=> 'required|int'
-        //          ]);
+           $this->validate(request(),  
+                   [
+                  'title'=> 'required|string',
+                   'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+                  'test_id'=> 'required|int'
+                   ]);
        
 
         $input= $request->all();
@@ -47,20 +48,30 @@ class StudentController extends Controller
           
          
         }
+
+        $test_id=Test::where('id','=', $input['test_id'])
+        ->where('test_type','=','Sick Test')
+        ->first();
+        
+        if ($test_id == null ) 
+        {
+          return redirect()->back()->with('error', 'SickTest does not exist');                  
+        }
+
+
          $id=auth()->user()->id;
-         $testids=Sick_Note::where('user_id',$id)
-         ->get();
-         
 
+         $check=Sick_Note::where('user_id','=',$id)
+         ->where('test_id','=',$input['test_id'] )->first();
 
-          foreach ($testids as $testid) {
-              if ($testid->id == $input['test_id'] ) {
-                return redirect()->back()->with('error', 'Test has already been booked.');     }
-          }
-
-
+         if($check <> null) 
+         {
+             return redirect()->back()->with('error', 'You have already booked for this test');  
+         }
+        
         Sick_Note::create($input);
 
+        session()->flash('updated', 'Sick Note Uploaded ');
         return redirect('/');
 
 
