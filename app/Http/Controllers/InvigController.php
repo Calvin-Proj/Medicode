@@ -31,7 +31,7 @@ class InvigController extends Controller
          $this->validate(request(), 
          [
             'user_id' => 'required|int',
-             'test_id' => 'required',
+             'test_id' => 'required|int',
              'misconduct_desc' => 'required'
           ]);
  

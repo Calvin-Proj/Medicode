@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container bg-white rounded-lg">
+  <x-auth-validation-errors class="mb-4" :errors="$errors" />
     @if (\Session::has('error'))
 <div class="alert alert-success w-full bg-red-500 text-white rounded-sm" name="error" id="error">
     <ul>
