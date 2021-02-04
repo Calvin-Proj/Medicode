@@ -17,8 +17,8 @@ class Sick_Note extends Model
     {
 
         $sicknotes = DB::table('sick_notes')
-        ->join('users', 'users.id', '=', 'sick_notes.user_id')
-        ->join('tests', 'tests.id', '=', 'sick_notes.test_id')
+        ->join('users', 'sick_notes.user_id', '=', 'users.id')
+        ->join('tests', 'sick_notes.test_id', '=', 'tests.id')
         ->select('sick_notes.*', 'users.email','tests.id')
         ->get();
         return $sicknotes;

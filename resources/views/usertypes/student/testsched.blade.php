@@ -17,7 +17,6 @@
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Test Date</th>
                             <th>Test Type</th>
                             <th>Test Description</th>
@@ -42,7 +41,7 @@
         <!--header-->
         <div class="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t">
           <h3 class="text-3xl font-semibold">
-               Test
+            Test
           </h3>
           <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" onclick="toggleModal('modal-id')">
             Close
@@ -131,7 +130,6 @@
         "order": [[ 0, "desc" ]],
         ajax: '{{ route('get-tests') }}',
         columns: [
-                {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},

@@ -20,7 +20,6 @@
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Test Date</th>
                             <th>Test Time</th>
                             <th>Test Type</th>
@@ -202,7 +201,6 @@
         "order": [[ 0, "desc" ]],
         ajax: '{{ route('get-lecttests') }}',
         columns: [
-                {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_time', name: 'test_time'},
                 {data: 'test_type', name: 'test_type'},

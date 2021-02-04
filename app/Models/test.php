@@ -80,9 +80,19 @@ class Test extends Model
 
     public function getInvigTestData()
     {
-        //needs data from module relation venue info
+
         $currentDate = date("Y-m-d");
-        return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
+        $tests = DB::table('tests')
+        ->join('venues', 'tests.venue_id', '=', 'venues.id')
+        ->join('modules', 'tests.module_id', '=', 'modules.id')
+        ->select('tests.*', 'venues.venue_name', 'modules.module_code')
+        ->where('test_date','>=',$currentDate)
+        ->get();
+        return $tests;
+
+        //needs data from module relation venue info
+        //$currentDate = date("Y-m-d");
+       //return static::where('test_date','>=',$currentDate)->orderBy('created_at','desc')->get();
     }
 
     public function storeData($input)

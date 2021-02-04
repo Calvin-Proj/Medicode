@@ -1,6 +1,6 @@
 <form action="{{ route('lecturerhelp') }}" method="get" >
     <button type="submit" class="inline-flex h-full py-4 px-3 hover:bg-highlight hover:text-black focus:outline-none focus:text-highlight">
-        <div class="flex items-center">
+        <div class="flex">
             Need Help
             <span class="w-1">
             </span>

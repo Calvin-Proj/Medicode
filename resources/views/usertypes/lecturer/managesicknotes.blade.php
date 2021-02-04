@@ -8,9 +8,6 @@
             <div class="card">
                 <div>
                     <div class="mt-2 mx-2">
-                        <button class="px-6 py-2 text-white bg-secondary rounded-sm hover:bg-highlight hover:text-primary focus:outline-none" id="show_create" name="show_create">
-                            Create Sick_Note
-                        </button>
                         <!-- modal div -->
                         <!-- Create Sick_Note Model -->
                     </div>
@@ -20,12 +17,11 @@
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Sick Note</th>
-                            <th>Sick Note Name</th>
+                            <th>Title</th>
+                            <th>File</th>
+                            <th>Path</th>
                             <th>Test ID</th>
-                            <th>User ID</th>
-                            <th class="text-center px-20">Action</th>
+                            <th>Student Email</th>
                         </tr>
                     </thead>
                 </table>
@@ -123,11 +119,11 @@
         "order": [[ 0, "desc" ]],
         ajax: '{{ route('get-lectsick') }}',
         columns: [
-                {data: 'id', name: 'id'},
-                {data: 'sick_note', name: 'sick_note'},
-                {data: 'sick_note_name', name: 'sick_note_name'},
+                {data: 'title', name: 'title'},
+                {data: 'path', name: 'path'},
+                {data: 'file', name: 'file'},
                 {data: 'test_id', name: 'test_id'},
-                {data: 'user_id', name: 'user_id'},
+                {data: 'email', name: 'email'},
             ]
     });
 

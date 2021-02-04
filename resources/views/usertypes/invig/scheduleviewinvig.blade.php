@@ -15,12 +15,13 @@
                 <table class="table table-bordered datatable">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Test Date</th>
                             <th>Test Type</th>
                             <th>Test Description</th>
                             <th>Test Time</th>
-                            <th class="text-center px-20">Action</th>
+                            <th>Module Code</th>
+                            <th>Venue Name</th>
+                            <th>Invigilator Name</th>
                         </tr>
                     </thead>
                 </table>
@@ -60,11 +61,12 @@
         "order": [[ 0, "desc" ]],
         ajax: '{{ route('get-invigschedtest') }}',
         columns: [
-                {data: 'id', name: 'id'},
                 {data: 'test_date', name: 'test_date'},
                 {data: 'test_type', name: 'test_type'},
                 {data: 'test_desc', name: 'test_desc'},
                 {data: 'test_time', name: 'test_time'},
+                {data: 'module_code', name: 'module_code'},
+                {data: 'venue_name', name: 'venue_name'},
             ]
     });
     });
